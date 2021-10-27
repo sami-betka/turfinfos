@@ -1,0 +1,594 @@
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turfinfos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turf_infos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turf_infos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turf_infos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turf_infos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turf_infos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table user (
+       id bigint not null,
+        age integer not null,
+        country_code varchar(255),
+        email varchar(255),
+        name varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turf_infos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table user (
+       id bigint not null,
+        age integer not null,
+        country_code varchar(255),
+        email varchar(255),
+        name varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turf_infos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table user (
+       id bigint not null,
+        age integer not null,
+        country_code varchar(255),
+        email varchar(255),
+        name varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turf_infos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table user (
+       id bigint not null,
+        age integer not null,
+        country_code varchar(255),
+        email varchar(255),
+        name varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turf_infos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table user (
+       id bigint not null,
+        age integer not null,
+        country_code varchar(255),
+        email varchar(255),
+        name varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turf_infos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table user (
+       id bigint not null,
+        age integer not null,
+        country_code varchar(255),
+        email varchar(255),
+        name varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turf_infos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table user (
+       id bigint not null,
+        age integer not null,
+        country_code varchar(255),
+        email varchar(255),
+        name varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turf_infos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table user (
+       id bigint not null,
+        age integer not null,
+        country_code varchar(255),
+        email varchar(255),
+        name varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turf_infos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table user (
+       id bigint not null,
+        age integer not null,
+        country_code varchar(255),
+        email varchar(255),
+        name varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turf_infos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table user (
+       id bigint not null,
+        age integer not null,
+        country_code varchar(255),
+        email varchar(255),
+        name varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turf_infos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table user (
+       id bigint not null,
+        age integer not null,
+        country_code varchar(255),
+        email varchar(255),
+        name varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table turf_infos (
+       id bigint not null,
+        description varchar(255),
+        published bit,
+        title varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+
+    create table user (
+       id bigint not null,
+        age integer not null,
+        country_code varchar(255),
+        email varchar(255),
+        name varchar(255),
+        primary key (id)
+    ) engine=MyISAM
+create table hibernate_sequence (next_val bigint) engine=MyISAM
+insert into hibernate_sequence values ( 1 )
+create table turf_infos (id bigint not null, c varchar(255), r varchar(255), cheval varchar(255), numcourse integer, numero varchar(255), pourc_vict_cheval_hippo double precision, pourc_vict_ent_hippo double precision, pourc_vict_jock_hippo double precision, primary key (id)) engine=MyISAM
+create table user (id bigint not null, age integer not null, country_code varchar(255), email varchar(255), name varchar(255), primary key (id)) engine=MyISAM
+alter table turf_infos add constraint UKnbwx16ahjafssagumdrpkdvri unique (numcourse)
+create table hibernate_sequence (next_val bigint) engine=MyISAM
+insert into hibernate_sequence values ( 1 )
+create table turf_infos (id bigint not null, c varchar(255), r varchar(255), cheval varchar(255), numcourse integer, numero varchar(255), pourc_vict_cheval_hippo double precision, pourc_vict_ent_hippo double precision, pourc_vict_jock_hippo double precision, primary key (id)) engine=MyISAM
+create table user (id bigint not null, age integer not null, country_code varchar(255), email varchar(255), name varchar(255), primary key (id)) engine=MyISAM
+alter table turf_infos add constraint UKnbwx16ahjafssagumdrpkdvri unique (numcourse)
+create table hibernate_sequence (next_val bigint) engine=MyISAM
+insert into hibernate_sequence values ( 1 )
+create table turf_infos (id bigint not null, c varchar(255), r varchar(255), cheval varchar(255), numcourse integer, numero varchar(255), pourc_vict_cheval_hippo double precision, pourc_vict_ent_hippo double precision, pourc_vict_jock_hippo double precision, primary key (id)) engine=MyISAM
+create table user (id bigint not null, age integer not null, country_code varchar(255), email varchar(255), name varchar(255), primary key (id)) engine=MyISAM
+alter table turf_infos add constraint UKnbwx16ahjafssagumdrpkdvri unique (numcourse)
+create table hibernate_sequence (next_val bigint) engine=MyISAM
+insert into hibernate_sequence values ( 1 )
+create table turf_infos (id bigint not null, c varchar(255), r varchar(255), cheval varchar(255), key varchar(255), numcourse integer, numero varchar(255), pourc_vict_cheval_hippo double precision, pourc_vict_ent_hippo double precision, pourc_vict_jock_hippo double precision, primary key (id)) engine=MyISAM
+create table user (id bigint not null, age integer not null, country_code varchar(255), email varchar(255), name varchar(255), primary key (id)) engine=MyISAM
+alter table turf_infos add constraint UKm67vunsvwktivimqcuqfe035c unique (key)
+create table hibernate_sequence (next_val bigint) engine=MyISAM
+insert into hibernate_sequence values ( 1 )
+create table turf_infos (id bigint not null, c varchar(255), r varchar(255), cheval varchar(255), key varchar(255), numcourse integer, numero varchar(255), pourc_vict_cheval_hippo double precision, pourc_vict_ent_hippo double precision, pourc_vict_jock_hippo double precision, primary key (id)) engine=MyISAM
+create table user (id bigint not null, age integer not null, country_code varchar(255), email varchar(255), name varchar(255), primary key (id)) engine=MyISAM
+alter table turf_infos add constraint UKm67vunsvwktivimqcuqfe035c unique (key)
+create table hibernate_sequence (next_val bigint) engine=MyISAM
+insert into hibernate_sequence values ( 1 )
+create table turf_infos (id bigint not null, c varchar(255), r varchar(255), cheval varchar(255), key varchar(255), numcourse integer, numero varchar(255), pourc_vict_cheval_hippo double precision, pourc_vict_ent_hippo double precision, pourc_vict_jock_hippo double precision, primary key (id)) engine=MyISAM
+create table user (id bigint not null, age integer not null, country_code varchar(255), email varchar(255), name varchar(255), primary key (id)) engine=MyISAM
+alter table turf_infos add constraint UKm67vunsvwktivimqcuqfe035c unique (key)
