@@ -8,76 +8,396 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
 </head>
+<style>
+tr, th, td {
+  border: 1px solid black;
+/*   width: 100%; */
+/*     table-layout:fixed; */
+
+  
+}
+</style>
 <body>
+<h3 style="text-align: center; margin-bottom: 10px; text-decoration: underline;">Bienvenue sur Djetay'Infos</h3>
 
-<div class="container-fluid">
+<h5 th:text="${'Courses du : ' + date}" style="text-align: center; margin-bottom: 20px; text-decoration: underline;"></h5>
+
+
+
+
+
+            <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-12">
-			<div class="row">
-				<div th:each="entry1 : ${reunionmap}" class="col-md-8">
-				
-				
-				          <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="row">
-				<div class="col-md-8">
-				<h3 th:text="${'C' + entry1.key}"></h3>
+		<div class="col-md-6">
+		
+<!-- 		FIRST -->
+			<div th:if="${oneexists}" class="row" style="margin-bottom: 10px;">
+			    <p th:text="${onetitle}" style="font-weight: bold;"></p>
+				<div class="col-md-11">
 <!-- 				              <table class="" th:if="${status}"> -->
-
-                 <div th:each="entry2 : ${entry1.values}">
-                 
-<!--                  <div> -->
-
-                          <table class="table-sm table-striped table-responsive" style="border: 1px solid black;">
+                          <table class="table-sm table-striped table-responsive">
                           
                 <thead>       
     
-                   <<tr>
-                    <th scope="">%-V-CHEV-H</th>
-                    <td th:each="elem : ${entry2.get('pvch')}" th:text="${elem.numero}"></td>
+                   <tr>
+                    <th scope="">V-C-H(%)</th>
+                    <td th:each="c, i : ${onepvch}" th:text="${c.numero}"></td>
                     </tr>
                     
-<!--                     <tr> -->
-<!--                     <th scope="">%-V-JOCK-H</th> -->
-<!--                     <td th:each="info, i : ${infos}" th:text="${info.pourcVictJockHippo}"></td> -->
-<!--                     </tr> -->
+                    <tr>
+                    <th scope="">V-J-H(%)</th>
+                    <td th:each="j, i : ${onepvjh}" th:text="${j.numero}"></td>
+                    </tr>
                     
-<!--                     <tr> -->
-<!--                     <th scope="">%-V-ENT-H</th> -->
-<!--                     <td th:each="info, i : ${infos}" th:text="${info.pourcVictEntHippo}"></td> -->
-<!--                    </tr> -->
+                    <tr>
+                    <th scope="">V-E-H(%)</th>
+                    <td th:each="e, i : ${onepveh}" th:text="${e.numero}"></td>
+                   </tr>
                    
                 </thead>
-                
             </table>
-            
-                             </div>
-<!--                              </div> -->
-            
 				</div>
-				<div class="col-md-2">
-				
+					</div>
+					
+<!-- 				SECOND	 -->
+								<div th:if="${twoexists}" class="row" style="margin-bottom: 10px;">
+			    <p th:text="${twotitle}" style="font-weight: bold;"></p>
+				<div class="col-md-11">
+<!-- 				              <table class="" th:if="${status}"> -->
+                          <table class="table-sm table-striped table-responsive">
+                          
+                <thead>       
+    
+                   <tr>
+                    <th scope="">V-C-H(%)</th>
+                    <td th:each="c, i : ${twopvch}" th:text="${c.numero}"></td>
+                    </tr>
+                    
+                    <tr>
+                    <th scope="">V-J-H(%)</th>
+                    <td th:each="j, i : ${twopvjh}" th:text="${j.numero}"></td>
+                    </tr>
+                    
+                    <tr>
+                    <th scope="">V-E-H(%)</th>
+                    <td th:each="e, i : ${twopveh}" th:text="${e.numero}"></td>
+                   </tr>
+                   
+                </thead>
+            </table>
 				</div>
-				<div class="col-md-2">
-				
+					</div>
+					
+<!-- 					THIRD -->
+								<div th:if="${threeexists}" class="row" style="margin-bottom: 10px;">
+			    <p th:text="${threetitle}" style="font-weight: bold;"></p>
+				<div class="col-md-11">
+<!-- 				              <table class="" th:if="${status}"> -->
+                          <table class="table-sm table-striped table-responsive">
+                          
+                <thead>       
+    
+                   <tr>
+                    <th scope="">V-C-H(%)</th>
+                    <td th:each="c, i : ${threepvch}" th:text="${c.numero}"></td>
+                    </tr>
+                    
+                    <tr>
+                    <th scope="">V-J-H(%)</th>
+                    <td th:each="j, i : ${threepvjh}" th:text="${j.numero}"></td>
+                    </tr>
+                    
+                    <tr>
+                    <th scope="">V-E-H(%)</th>
+                    <td th:each="e, i : ${threepveh}" th:text="${e.numero}"></td>
+                   </tr>
+                   
+                </thead>
+            </table>
 				</div>
-			</div>
-		</div>
-	</div>
-</div>
-				
-				
-				</div>
-				<div class="col-md-2">
-				</div>
-				<div class="col-md-2">
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+					</div>
+					
+<!-- 					FOURTH -->
 
+			<div th:if="${fourexists}" class="row" style="margin-bottom: 10px;">
+			    <p th:text="${fourtitle}" style="font-weight: bold;"></p>
+				<div class="col-md-11">
+<!-- 				              <table class="" th:if="${status}"> -->
+                          <table class="table-sm table-striped table-responsive">
+                          
+                <thead>   
+                    
+                   <tr>
+                    <th scope="">V-C-H(%)</th>
+                    <td th:each="c, i : ${fourpvch}" th:text="${c.numero}"></td>
+                    </tr>
+                    
+                    <tr>
+                    <th scope="">V-J-H(%)</th>
+                    <td th:each="j, i : ${fourpvjh}" th:text="${j.numero}"></td>
+                    </tr>
+                    
+                    <tr>
+                    <th scope="">V-E-H(%)</th>
+                    <td th:each="e, i : ${fourpveh}" th:text="${e.numero}"></td>
+                   </tr>
+                   
+                </thead>
+            </table>
+				</div>
+					</div>
+		
+			</div>
+			
+			
+                              <!-- COL 6 to 12 -->
+			
+					<div class="col-md-6">
+		
+<!-- 		FIFTH -->
+			<div th:if="${fiveexists}" class="row" style="margin-bottom: 10px;">
+			    <p th:text="${fivetitle}" style="font-weight: bold;"></p>
+				<div class="col-md-11">
+<!-- 				              <table class="" th:if="${status}"> -->
+                          <table class="table-sm table-striped table-responsive">
+                          
+                <thead>       
+    
+                   <tr>
+                    <th scope="">V-C-H(%)</th>
+                    <td th:each="c, i : ${fivepvch}" th:text="${c.numero}"></td>
+                    </tr>
+                    
+                    <tr>
+                    <th scope="">V-J-H(%)</th>
+                    <td th:each="j, i : ${fivepvjh}" th:text="${j.numero}"></td>
+                    </tr>
+                    
+                    <tr>
+                    <th scope="">V-E-H(%)</th>
+                    <td th:each="e, i : ${fivepveh}" th:text="${e.numero}"></td>
+                   </tr>
+                   
+                </thead>
+            </table>
+				</div>
+					</div>
+					
+<!-- 				SIXTH	 -->
+								<div th:if="${sixexists}" class="row" style="margin-bottom: 10px;">
+			    <p th:text="${sixtitle}" style="font-weight: bold;"></p>
+				<div class="col-md-11">
+<!-- 				              <table class="" th:if="${status}"> -->
+                          <table class="table-sm table-striped table-responsive">
+                          
+                <thead>       
+    
+                   <tr>
+                    <th scope="">V-C-H(%)</th>
+                    <td th:each="c, i : ${sixpvch}" th:text="${c.numero}"></td>
+                    </tr>
+                    
+                    <tr>
+                    <th scope="">V-J-H(%)</th>
+                    <td th:each="j, i : ${sixpvjh}" th:text="${j.numero}"></td>
+                    </tr>
+                    
+                    <tr>
+                    <th scope="">V-E-H(%)</th>
+                    <td th:each="e, i : ${sixpveh}" th:text="${e.numero}"></td>
+                   </tr>
+                   
+                </thead>
+            </table>
+				</div>
+					</div>
+					
+<!-- 					SEVENTH -->
+								<div th:if="${sevenexists}" class="row" style="margin-bottom: 10px;">
+			    <p th:text="${seventitle}" style="font-weight: bold;"></p>
+				<div class="col-md-11">
+<!-- 				              <table class="" th:if="${status}"> -->
+                          <table class="table-sm table-striped table-responsive">
+                          
+                <thead>       
+    
+                   <tr>
+                    <th scope="">V-C-H(%)</th>
+                    <td th:each="c, i : ${sevenpvch}" th:text="${c.numero}"></td>
+                    </tr>
+                    
+                    <tr>
+                    <th scope="">V-J-H(%)</th>
+                    <td th:each="j, i : ${sevenpvjh}" th:text="${j.numero}"></td>
+                    </tr>
+                    
+                    <tr>
+                    <th scope="">V-E-H(%)</th>
+                    <td th:each="e, i : ${sevenpveh}" th:text="${e.numero}"></td>
+                   </tr>
+                   
+                </thead>
+            </table>
+				</div>
+					</div>
+					
+<!-- 					EIGHTH -->
+
+			<div th:if="${eightexists}" class="row" style="margin-bottom: 10px;">
+			    <p th:text="${eighttitle}" style="font-weight: bold;"></p>
+				<div class="col-md-11">
+<!-- 				              <table class="" th:if="${status}"> -->
+                          <table class="table-sm table-striped table-responsive">
+                          
+                <thead>   
+                    
+                   <tr>
+                    <th scope="">V-C-H(%)</th>
+                    <td th:each="c, i : ${eightpvch}" th:text="${c.numero}"></td>
+                    </tr>
+                    
+                    <tr>
+                    <th scope="">V-J-H(%)</th>
+                    <td th:each="j, i : ${eightpvjh}" th:text="${j.numero}"></td>
+                    </tr>
+                    
+                    <tr>
+                    <th scope="">V-E-H(%)</th>
+                    <td th:each="e, i : ${eightpveh}" th:text="${e.numero}"></td>
+                   </tr>
+                   
+                </thead>
+            </table>
+				</div>
+					</div>
+					
+					
+					<!-- 					NINTH -->
+
+			<div th:if="${nineexists}" class="row" style="margin-bottom: 10px;">
+			    <p th:text="${ninetitle}" style="font-weight: bold;"></p>
+				<div class="col-md-11">
+<!-- 				              <table class="" th:if="${status}"> -->
+                          <table class="table-sm table-striped table-responsive">
+                          
+                <thead>   
+                    
+                   <tr>
+                    <th scope="">V-C-H(%)</th>
+                    <td th:each="c, i : ${ninepvch}" th:text="${c.numero}"></td>
+                    </tr>
+                    
+                    <tr>
+                    <th scope="">V-J-H(%)</th>
+                    <td th:each="j, i : ${ninepvjh}" th:text="${j.numero}"></td>
+                    </tr>
+                    
+                    <tr>
+                    <th scope="">V-E-H(%)</th>
+                    <td th:each="e, i : ${ninepveh}" th:text="${e.numero}"></td>
+                   </tr>
+                   
+                </thead>
+            </table>
+				</div>
+					</div>
+					
+					<!-- 					TENTH -->
+
+			<div th:if="${tenexists}" class="row" style="margin-bottom: 10px;">
+			    <p th:text="${tentitle}" style="font-weight: bold;"></p>
+				<div class="col-md-11">
+<!-- 				              <table class="" th:if="${status}"> -->
+                          <table class="table-sm table-striped table-responsive">
+                          
+                <thead>   
+                    
+                   <tr>
+                    <th scope="">V-C-H(%)</th>
+                    <td th:each="c, i : ${tenpvch}" th:text="${c.numero}"></td>
+                    </tr>
+                    
+                    <tr>
+                    <th scope="">V-J-H(%)</th>
+                    <td th:each="j, i : ${tenpvjh}" th:text="${j.numero}"></td>
+                    </tr>
+                    
+                    <tr>
+                    <th scope="">V-E-H(%)</th>
+                    <td th:each="e, i : ${tenpveh}" th:text="${e.numero}"></td>
+                   </tr>
+                   
+                </thead>
+            </table>
+				</div>
+					</div>
+					
+					<!-- 					ELEVENTH -->
+
+			<div th:if="${elevenexists}" class="row" style="margin-bottom: 10px;">
+			    <p th:text="${eleventitle}" style="font-weight: bold;"></p>
+				<div class="col-md-11">
+<!-- 				              <table class="" th:if="${status}"> -->
+                          <table class="table-sm table-striped table-responsive">
+                          
+                <thead>   
+                    
+                   <tr>
+                    <th scope="">V-C-H(%)</th>
+                    <td th:each="c, i : ${elevenpvch}" th:text="${c.numero}"></td>
+                    </tr>
+                    
+                    <tr>
+                    <th scope="">V-J-H(%)</th>
+                    <td th:each="j, i : ${elevenpvjh}" th:text="${j.numero}"></td>
+                    </tr>
+                    
+                    <tr>
+                    <th scope="">V-E-H(%)</th>
+                    <td th:each="e, i : ${elevenpveh}" th:text="${e.numero}"></td>
+                   </tr>
+                   
+                </thead>
+            </table>
+				</div>
+					</div>
+					
+					<!-- 					TWELVTH -->
+
+			<div th:if="${twelveexists}" class="row" style="margin-bottom: 10px;">
+			    <p th:text="${twelvetitle}" style="font-weight: bold;"></p>
+				<div class="col-md-11">
+<!-- 				              <table class="" th:if="${status}"> -->
+                          <table class="table-sm table-striped table-responsive">
+                          
+                <thead>   
+                    
+                   <tr>
+                    <th scope="">V-C-H(%)</th>
+                    <td th:each="c, i : ${twelvepvch}" th:text="${c.numero}"></td>
+                    </tr>
+                    
+                    <tr>
+                    <th scope="">V-J-H(%)</th>
+                    <td th:each="j, i : ${twelvepvjh}" th:text="${j.numero}"></td>
+                    </tr>
+                    
+                    <tr>
+                    <th scope="">V-E-H(%)</th>
+                    <td th:each="e, i : ${twelvepveh}" th:text="${e.numero}"></td>
+                   </tr>
+                   
+                </thead>
+            </table>
+				</div>
+					</div>
+							
+			</div>
+			
+
+			
+		</div>
+	</div>
 
 
 

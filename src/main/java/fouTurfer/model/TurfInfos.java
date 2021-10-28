@@ -19,13 +19,13 @@ import com.opencsv.bean.CsvBindByName;
 )
 @SequenceGenerator(
 		  name = "TURF_INFOS_SEQ_GENERATOR",
-		  sequenceName = "BANKROLL_SEQ",
+		  sequenceName = "TURF_INFOS_SEQ",
 		  initialValue = 1, allocationSize = 1)
 
 public class TurfInfos {
 
   @Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TURF_INFOS_SEQ_GENERATOR")
+@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TURF_INFOS_SEQ_GENERATOR")
   @Column(name = "id")
   @CsvBindByName
   private Long id;
@@ -40,7 +40,7 @@ private String R;
 
 //@Column(name = "")
 @CsvBindByName
-private String C;
+private Integer C;
 
 @Column(name = "numcourse")
 @CsvBindByName
@@ -49,7 +49,7 @@ private Integer numcourse;
   
 //@Column(name = "")
 @CsvBindByName
-private String numero;
+private Integer numero;
 
 //@Column(name = "")
 @CsvBindByName
@@ -70,7 +70,7 @@ private String cheval;
 //  @CsvNumber("###.##")
   private Double pourcVictEntHippo;
 
-  public TurfInfos(Long id, String jour, String R, String C, Integer numcourse, String numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo) {
+  public TurfInfos(Long id, String jour, String R, Integer C, Integer numcourse, Integer numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo) {
     this.id = id;
     this.R = R;
     this.C = C;
@@ -121,11 +121,11 @@ public void setPourcVictEntHippo(Double pourcVictEntHippo) {
 	this.pourcVictEntHippo = pourcVictEntHippo;
 }
 
-public String getNumero() {
+public Integer getNumero() {
 	return numero;
 }
 
-public void setNumero(String numero) {
+public void setNumero(Integer numero) {
 	this.numero = numero;
 }
 
@@ -145,11 +145,11 @@ public void setR(String r) {
 	R = r;
 }
 
-public String getC() {
+public Integer getC() {
 	return C;
 }
 
-public void setC(String c) {
+public void setC(Integer c) {
 	C = c;
 }
 

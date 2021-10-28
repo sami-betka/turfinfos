@@ -4,6 +4,11 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -119,8 +124,8 @@ public class UploadController {
         }
         
         
-//        return "upload";
-        return "file-upload-status";
+        return "upload";
+//        return "file-upload-status";
 //        return "races-page";
 
     }
@@ -143,13 +148,155 @@ public class UploadController {
     @GetMapping("/reunion-infos")
     public String getReunionInfos(@RequestParam("jour") String jour,
     		@RequestParam("reunion") String reunion,
-    		Model model) {
+    		Model model) {    	
     	
-    	System.out.println(jour + reunion);
+    	model.addAttribute("date", jour);
     	
-    	model.addAttribute("reunionmap", turfInfoService.createReunionInfosMap(jour, reunion));
-    	System.out.println(turfInfoService.createReunionInfosMap(jour, reunion).toString());
+    	//RACELIST
+    	List<TurfInfos> allReunionInfos = turfInfosRepository.findAllByJourAndByReunion(jour, reunion);
+    	
+    	//biglist
+//		LinkedList<LinkedList<TurfInfos>> biglist = new LinkedList<LinkedList<TurfInfos>>();
+
+    	//Num des courses
+		Set<Integer> distinctNumraces = allReunionInfos.stream()
+		.map(TurfInfos :: getC)
+		.sorted()
+		.collect(Collectors.toSet());
+		List<Integer> list = new ArrayList<Integer>(distinctNumraces);
+		Collections.reverse(list);
+		distinctNumraces = new LinkedHashSet<>(list);
+		
+		  //Cast
+//		 LinkedList<String> distinctNumracesString = new LinkedList<>();
+//				 
+//		    for(Integer i : distinctNumraces) {
+//		    	distinctNumracesString.add(i.toString());
+//		    }
+		
+		System.out.println(distinctNumraces.size());
+		
+		model.addAttribute("distinctnumraces", distinctNumraces);
+		
+		for(Integer num : distinctNumraces) {
+					
+			//Infos de la course en question
+			List<TurfInfos> allraceInfos = 
+					allReunionInfos
+					.stream()
+					.filter(ti -> ti.getC().equals(num))
+					.collect(Collectors.toList());
+			
+			//création des listes filtrées et triées par parametre
+			
+			List<TurfInfos> listBypvch =  allraceInfos.stream()
+					.sorted(Comparator.comparingDouble(TurfInfos::getPourcVictChevalHippo))
+					.collect(Collectors.toList());
+			Collections.reverse(listBypvch);
+			
+			List<TurfInfos> listBypvjh =  allraceInfos.stream()
+					.sorted(Comparator.comparingDouble(TurfInfos::getPourcVictJockHippo))
+					.collect(Collectors.toList());
+			Collections.reverse(listBypvjh);
+			
+			List<TurfInfos> listBypveh =  allraceInfos.stream()
+					.sorted(Comparator.comparingDouble(TurfInfos::getPourcVictEntHippo))
+					.collect(Collectors.toList());
+			Collections.reverse(listBypveh);
+
+			TurfInfos tinf = listBypvch.stream().findFirst().get();
+			model.addAttribute(numToString(num) + "title","R" + tinf.getR() + "C" + num );
+			model.addAttribute(numToString(num) + "pvch", listBypvch);
+			model.addAttribute(numToString(num) + "pvjh", listBypvjh);
+			model.addAttribute(numToString(num) + "pveh", listBypveh);
+			model.addAttribute(numToString(num) + "exists", true);
+
+			//+ message model   num = true
+
+
+	}
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		System.out.println(distinctNumcourses.toString());
+		
+//		
+
+		
+//		System.out.println(biglist.toString());
+    	
     	return "reunion-infos";
+    }
+    
+    ///////////////////////////////////////////////////////////////
+    private String numToString(Integer num) {
+    	
+    	String str = null;
+    	
+    	 switch(num){
+    	   
+         case 1: 
+             str = "one";
+             break;
+     
+         case 2:
+             str = "two";
+             break;
+     
+         case 3:
+             str = "three";
+             break;
+             
+         case 4: 
+             str = "four";
+             break;
+     
+         case 5:
+             str = "five";
+             break;
+     
+         case 6:
+             str = "six";
+             break;
+             
+         case 7: 
+                 str = "seven";
+                 break;
+         
+             case 8:
+                 str = "eight";
+                 break;
+         
+             case 9:
+                 str = "nine";
+                 break;
+                 
+             case 10: 
+                 str = "ten";
+                 break;
+         
+             case 11:
+                 str = "eleven";
+                 break;
+         
+             case 12:
+                 str = "twelve";
+                 break;
+             
+//         default:
+//             System.out.println("Choix incorrect");
+//             break;
+     }
+    
+    	return str;
     }
     
 }

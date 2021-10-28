@@ -1,11 +1,10 @@
 package fouTurfer.service;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,80 +30,102 @@ public class TurfInfoService {
 //		return map;
 //	}
 	
-	public  Map<String, Map<String, Object>> createReunionInfosMap(String jour, String R){
-		
-		Map<String, Map<String, Object>> reunionInfosMap = new HashMap<>();
-		
-		//Récupere toutes les infos de la réunion
-		List<TurfInfos> allReunionInfos = turfInfosRepository.findAllByJour(jour)
-				.stream()
-				.filter(ti -> ti.getR().equals(R))
-				.collect(Collectors.toList());
-		/////////////////////////////////////////////
-//		List<TurfInfos> testlist = new ArrayList<>();
-//		for(TurfInfos ti: turfInfosRepository.findAllByJour(jour)) {
+	
+	
+	
+	
+//	public  Map<String, Map<String, Object>> createReunionInfosMap(String jour, String R){
+//		
+//		Map<String, Map<String, Object>> reunionInfosMap = new HashMap<>();
+//		
+//		//Récupere toutes les infos de la réunion
+//		List<TurfInfos> allReunionInfos = turfInfosRepository.findAllByJour(jour)
+//				.stream()
+//				.filter(ti -> ti.getR().equals(R))
+//				.collect(Collectors.toList());
+//		/////////////////////////////////////////////
+////		List<TurfInfos> testlist = new ArrayList<>();
+////		for(TurfInfos ti: turfInfosRepository.findAllByJour(jour)) {
+////			
+////			if(ti.getR())
+////			
+////		}
+//		////////////////////////////////////////////
+//		
+//		System.out.println("R= " + R);
+//		System.out.println(turfInfosRepository.findAllByJour(jour).size() + "taille de findAllByJourservice");
+//		System.out.println(allReunionInfos.size() + "taille de ");
+//
+//
+//
+//		
+//		//Compte le nombre de course (C) de la réunion
+//		Set<Integer> distinctRaces = allReunionInfos.stream()
+//				.map(TurfInfos :: getNumcourse)
+//				.sorted()
+//				.collect(Collectors.toSet());
+	
+////		System.out.println(distinctRaces.size() + "taille de distoinctraces service");
+//		
+//		for (Integer numcourse : distinctRaces) {
 //			
-//			if(ti.getR())
-//			
+//			reunionInfosMap.put(getCByNumcourse(numcourse), createRaceInfosMap(numcourse));	
 //		}
-		////////////////////////////////////////////
-		
-		System.out.println("R= " + R);
-		System.out.println(turfInfosRepository.findAllByJour(jour).size() + "taille de findAllByJourservice");
-		System.out.println(allReunionInfos.size() + "taille de ");
-
-
-
-		
-		//Compte le nombre de course (C) de la réunion
-		Set<Integer> distinctRaces = allReunionInfos.stream()
-				.map(TurfInfos :: getNumcourse)
-				.sorted()
-				.collect(Collectors.toSet());
-//		System.out.println(distinctRaces.size() + "taille de distoinctraces service");
-		
-		for (Integer numcourse : distinctRaces) {
-			
-			reunionInfosMap.put(getCByNumcourse(numcourse), createRaceInfosMap(numcourse));	
-		}
-		
-		return reunionInfosMap;
-	}
+//		
+//		return reunionInfosMap;
+//	}
 	
-	public Map<String, Object> createRaceInfosMap(Integer numcourse){
+	public LinkedList<List<String>> createRaceInfosList(List<TurfInfos> raceInfos){
 		
-		Map<String, Object> raceInfosMap = new HashMap<>();
+		LinkedList<List<String>> raceInfosList = new LinkedList<>();
 		
-		List<TurfInfos> raceInfos = turfInfosRepository.findAllByNumcourse(numcourse);
+//		List<TurfInfos> raceInfos = turfInfosRepository.findAllByNumcourse(numcourse);
 				
-//		RC1.sort(null);
-		List<TurfInfos> raceSortedByPvch = raceInfos.stream()
-// 				.map(TurfInfos :: getPourcVictChevalHippo)
-				.sorted(Comparator.comparingDouble(TurfInfos::getPourcVictChevalHippo))
+		//get(0)
+	    List<Double> raceSortedByPvch =  raceInfos.stream()
+ 				.map(TurfInfos :: getPourcVictChevalHippo)
+				.sorted()
 				.collect(Collectors.toList());
+	    //Cast
+		 LinkedList<String> raceSortedByPvchString = new LinkedList<>();
+	    for(Double d : raceSortedByPvch) {
+	    	raceSortedByPvchString.add(d.toString());
+	    }
 		
-		List<TurfInfos> raceSortedByPvjh = raceInfos.stream()
-// 				.map(TurfInfos :: getPourcVictJockHippo)
-				.sorted(Comparator.comparingDouble(TurfInfos::getPourcVictJockHippo))
+		//get(1)
+		List<Double> raceSortedByPvjh = raceInfos.stream()
+ 				.map(TurfInfos :: getPourcVictJockHippo)
+				.sorted()
 				.collect(Collectors.toList());
+	    //Cast
+		 LinkedList<String> raceSortedByPvjhString = new LinkedList<>();
+		    for(Double d : raceSortedByPvjh) {
+		    	raceSortedByPvjhString.add(d.toString());
+		    }
 		
-		List<TurfInfos> raceSortedByPveh = raceInfos.stream()
-// 				.map(TurfInfos :: getPourcVictEntHippo)
-				.sorted(Comparator.comparingDouble(TurfInfos::getPourcVictEntHippo))
+		//get(2)
+		List<Double> raceSortedByPveh = raceInfos.stream()
+ 				.map(TurfInfos :: getPourcVictEntHippo)
+				.sorted()
 				.collect(Collectors.toList());
+	    //Cast
+		 LinkedList<String> raceSortedByPvehString = new LinkedList<>();
+		    for(Double d : raceSortedByPveh) {
+		    	raceSortedByPvehString.add(d.toString());
+		    }
 
 
-		raceInfosMap.put("pvch", raceSortedByPvch);
-		raceInfosMap.put("pvjh", raceSortedByPvjh);
-		raceInfosMap.put("pveh", raceSortedByPveh);
+		raceInfosList.add(raceSortedByPvchString);
+		raceInfosList.add(raceSortedByPvjhString);
+		raceInfosList.add(raceSortedByPvehString);
 
 		
-		return raceInfosMap;
+		return raceInfosList;
 	}
 	
-	public String getCByNumcourse(Integer numcourse){
-			 
-		return turfInfosRepository.findAllByNumcourse(numcourse).stream().findFirst().get().getC();
-	}
+//	public String getCByNumcourse(Integer numcourse){
+//			 
+//		return turfInfosRepository.findAllByNumcourse(numcourse).stream().findFirst().get().getC();
+//	}
 
 }
