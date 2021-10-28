@@ -6,6 +6,18 @@
 
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<style>
+body{
+  padding-bottom: 50px;
+}
+table, th, td {
+  border: 1px solid black;
+/*   border-collapse: collapse; */
+}
+th, td {
+  text-align: center;
+}
+</style>
 </head>
 <body>
 
@@ -20,7 +32,7 @@
             </div>
 
             <!--display users list-->
-            <table class="table-sm table-striped table-responsive" th:if="${status}">
+            <table class="table table-sm table-striped table-responsive" th:if="${status}">
                 <thead>
                 <tr>
                     <th scope="col">R&eacute;union</th>
@@ -41,57 +53,59 @@
                     <td th:text="${info.pourcVictChevalHippo}"></td>
                     <td th:text="${info.pourcVictJockHippo}"></td>
                     <td th:text="${info.pourcVictEntHippo}"></td>
-<!--                     <td th:text="${info.age}"></td> -->
                 </tr>
                 </tbody>
             </table><br>
+           
+        </div>
+    </div>
+</div>
+
+
             
             
-              <table class="table-sm table-striped table-responsive" th:if="${status}">
-                <thead>
-<!--                 <tr> -->
-<!--                     <th scope="col">R&eacute;union</th> -->
-<!--                      <td th:each="info, i : ${infos}" th:text="${info.R}"></td> -->
-<!--                 </tr> -->
-<!--                  <tr> -->
-<!--                     <th th:each="info, i : ${infos}" scope="col">Course</th> -->
-<!--                     <td th:text="${info.C}"></td> -->
-<!--                  </tr>    -->
-                 
-                  <tr>  
-                    <th scope="col">Num&eacute;ro</th>
-                    <td th:each="info, i : ${infos}" th:text="${info.numero}"></td>
-                  </tr> 
-                  
-                  <tr>
-                    <th scope="col">Cheval</th>
-                    <td th:each="info, i : ${infos}" th:text="${info.cheval}"></td>
-                   </tr> 
-                   
+            <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-8">
+<!-- 				              <table class="" th:if="${status}"> -->
+                          <table class="table-sm table-striped table-responsive" th:if="${status}">
+                          
+                <thead>       
+    
                    <tr>
-                    <th scope="col">%-V-CHEV-H</th>
+                    <th scope="">%-V-CHEV-H</th>
                     <td th:each="p, i : ${pvch}" th:text="${p.numero}"></td>
                     </tr>
                     
                     <tr>
-                    <th scope="col">%-V-JOCK-H</th>
+                    <th scope="">%-V-JOCK-H</th>
                     <td th:each="info, i : ${infos}" th:text="${info.pourcVictJockHippo}"></td>
                     </tr>
                     
                     <tr>
-                    <th scope="col">%-V-ENT-H</th>
+                    <th scope="">%-V-ENT-H</th>
                     <td th:each="info, i : ${infos}" th:text="${info.pourcVictEntHippo}"></td>
                    </tr>
                    
                 </thead>
-                <tbody>
+<!--                 <tbody> -->
 <!--                 <tr th:each="info, i : ${infos}"> -->
-<!-- <!--                     <td th:text="${info.age}"></td> --> -->
+<!--                     <td th:text="${info.age}"></td> -->
 <!--                 </tr> -->
 <!--                 </tbody> -->
             </table>
-        </div>
-    </div>
+				</div>
+				<div class="col-md-2">
+				
+				</div>
+				<div class="col-md-2">
+				
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 

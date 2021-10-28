@@ -1,27 +1,84 @@
+<!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
 
+<head>
+<!-- <meta charset="ISO-8859-1"> -->
+<meta charset="utf-8" />
+
+<title>Insert title here</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+</head>
 <body>
 
+<h3 style="text-align: center; margin-bottom: 30px; text-decoration: underline;">Bienvenue sur Djetayyy'Infos</h3>
 
-<form method="POST" th:action="@{/upload-csv-file}" enctype="multipart/form-data">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4" style=" border: 1px solid black;">
+				
+				<form method="POST" th:action="@{/upload-csv-file}" enctype="multipart/form-data">
     <div class="form-group mt-3">
-        <label for="file">S&eacute;l&eacute;ctionner un fichier .CSV</label>
+        <label style="font-weight: bold;" for="file">Importer un nouveau fichier .CSV</label>
         <input type="file" name="file" class="form-control-file" id="file" accept=".csv">
     </div>
     <button type="submit" class="btn btn-primary">Importer le fichier</button>
 </form>
 
+   <div class="text-white" th:if="${messagesuccess}" style="text-align: center; border: 1px solid black; margin: 5px; background-color: green;" >
+	                 	<h2 th:text="${messagesuccess}"/></h2>
+	               </div>
+	                <div class="" th:if="${messageempty}" style="text-align: center; border: 1px solid black; margin: 5px; background-color: yellow;" >
+	                 	<h2 th:text="${messageempty}"/></h2>
+	               </div>
+	                <div class="text-white" th:if="${messageerror}" style="text-align: center; border: 1px solid black; margin: 5px; background-color: red;" >
+	                 	<h2 th:text="${messageerror}"/></h2>
+	               </div>
+
+				</div>
+				<div class="col-md-4">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<br>
 
 
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4" style="border: 1px solid black;">
+				
+                   <form style="margin-bottom: 5px;" method="POST" th:action="@{/day-infos}" enctype="multipart/form-data">
 
+                            <div class="">
+								<label class="text-dark" style="font-weight: bold;">Choisir une date et acc&eacute;der aux infos:</label><br> 
+								<select class="form-control form-control-user" name="jour" required="required">
+									<option value="">--Choisir--</option>
 
+									<option th:each="d : ${dates}" th:value="${d}"
+										th:text="${d}"></option>
+								</select>
+							</div>
+							    <button type="submit" class="btn btn-small btn-primary">Envoyer</button>					
+                   </form>
+	               
+				</div>
+				<div class="col-md-4">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
-
-
-<!-- 	<div th:if="${message}"> -->
-<!-- 		<h2 th:text="${message}"/></h2> -->
-<!-- 	</div> -->
 
 <!-- 	<div> -->
 	

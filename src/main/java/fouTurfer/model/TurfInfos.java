@@ -5,28 +5,34 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 import com.opencsv.bean.CsvBindByName;
 
 @Entity
-@Table(name = "turf_infos",
-uniqueConstraints=
-@UniqueConstraint(columnNames={"id", "turfkey"})
+@Table(name = "turf_infos"
+//,
+//uniqueConstraints=
+//@UniqueConstraint(columnNames={"id", "numcourse"})
 )
+@SequenceGenerator(
+		  name = "TURF_INFOS_SEQ_GENERATOR",
+		  sequenceName = "BANKROLL_SEQ",
+		  initialValue = 1, allocationSize = 1)
 
 public class TurfInfos {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TURF_INFOS_SEQ_GENERATOR")
   @Column(name = "id")
   @CsvBindByName
   private Long id;
   
-  @Column(name = "turfkey")
+//  @Column(name = "")
 @CsvBindByName
-private String turfKey;
+private String jour;
   
 //@Column(name = "")
 @CsvBindByName
@@ -64,7 +70,7 @@ private String cheval;
 //  @CsvNumber("###.##")
   private Double pourcVictEntHippo;
 
-  public TurfInfos(Long id, String turfKey, String R, String C, Integer numcourse, String numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo) {
+  public TurfInfos(Long id, String jour, String R, String C, Integer numcourse, String numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo) {
     this.id = id;
     this.R = R;
     this.C = C;
@@ -73,7 +79,7 @@ private String cheval;
     this.pourcVictEntHippo = pourcVictEntHippo;
     this.numero = numero;
     this.cheval = cheval;
-    this.turfKey = cheval + numcourse;
+    this.jour = jour;
 ;
 
   }
@@ -147,13 +153,6 @@ public void setC(String c) {
 	C = c;
 }
 
-public String getTurfKey() {
-	return turfKey;
-}
-
-public void setTurfKey(String turfKey) {
-	this.turfKey = turfKey;
-}
 
 public Integer getNumcourse() {
 	return numcourse;
@@ -161,6 +160,14 @@ public Integer getNumcourse() {
 
 public void setNumcourse(Integer numcourse) {
 	this.numcourse = numcourse;
+}
+
+public String getJour() {
+	return jour;
+}
+
+public void setJour(String jour) {
+	this.jour = jour;
 }
   
   
