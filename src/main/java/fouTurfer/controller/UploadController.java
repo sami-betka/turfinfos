@@ -216,17 +216,23 @@ public class UploadController {
 
 	}
 		
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-//		System.out.println(distinctNumcourses.toString());
+//		 -if 0% ne pas afficher
+//		
+//		 -place cheval hippodrome %
+//		 
+//		 
+//		 -couple
+//		 -v
+//		 -vh
+//		 -p
+//		 -ph
+//		 
+//		 -entraineur: que sur l'hippodrome
+//		 
+//		 
+//		 + nouvelle page pour entrer les chronos
+//	
+				
 		
 //		
 
