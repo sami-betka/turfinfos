@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 
 import com.opencsv.bean.CsvBindByName;
 
@@ -69,8 +68,10 @@ private String cheval;
   @CsvBindByName
 //  @CsvNumber("###.##")
   private Double pourcVictEntHippo;
+  
+  private Integer chrono;
 
-  public TurfInfos(Long id, String jour, String R, Integer C, Integer numcourse, Integer numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo) {
+  public TurfInfos(Long id, String jour, String R, Integer C, Integer numcourse, Integer numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo, Integer chrono) {
     this.id = id;
     this.R = R;
     this.C = C;
@@ -80,7 +81,7 @@ private String cheval;
     this.numero = numero;
     this.cheval = cheval;
     this.jour = jour;
-;
+    this.chrono = chrono;
 
   }
 
@@ -168,6 +169,14 @@ public String getJour() {
 
 public void setJour(String jour) {
 	this.jour = jour;
+}
+
+public Integer getChrono() {
+	return chrono;
+}
+
+public void setChrono(Integer chrono) {
+	this.chrono = chrono;
 }
   
   

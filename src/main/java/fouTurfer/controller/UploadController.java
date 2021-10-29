@@ -10,6 +10,7 @@ import java.util.Comparator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -191,25 +192,49 @@ public class UploadController {
 			
 			List<TurfInfos> listBypvch =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getPourcVictChevalHippo))
+					.filter(ti -> !ti.getPourcVictChevalHippo().equals(0d))
 					.collect(Collectors.toList());
 			Collections.reverse(listBypvch);
 			
 			List<TurfInfos> listBypvjh =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getPourcVictJockHippo))
+					.filter(ti -> !ti.getPourcVictJockHippo().equals(0d))
 					.collect(Collectors.toList());
 			Collections.reverse(listBypvjh);
 			
 			List<TurfInfos> listBypveh =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getPourcVictEntHippo))
+					.filter(ti -> !ti.getPourcVictEntHippo().equals(0d))
 					.collect(Collectors.toList());
 			Collections.reverse(listBypveh);
+			
+			//CHRONOS
+			List<TurfInfos> listByChronos =  allraceInfos.stream()
+					.filter(ti -> ti.getChrono()!= null)
+					.sorted(Comparator.comparingInt(TurfInfos::getChrono))
+					.collect(Collectors.toList());
+//			Collections.reverse(listBypvch);
 
-			TurfInfos tinf = listBypvch.stream().findFirst().get();
+			
+			Optional<TurfInfos> optTinf = allraceInfos.stream().findFirst();
+			if(optTinf.isPresent()) {
+				TurfInfos tinf = optTinf.get();
 			model.addAttribute(numToString(num) + "title","R" + tinf.getR() + "C" + num );
 			model.addAttribute(numToString(num) + "pvch", listBypvch);
 			model.addAttribute(numToString(num) + "pvjh", listBypvjh);
 			model.addAttribute(numToString(num) + "pveh", listBypveh);
+			
+			model.addAttribute(numToString(num) + "chronoslist", listByChronos);
+			model.addAttribute("chronos", false); //??????????????????
+
 			model.addAttribute(numToString(num) + "exists", true);
+						
+			
+					
+
+
+
+			}
 
 			//+ message model   num = true
 
@@ -232,12 +257,14 @@ public class UploadController {
 //		 
 //		 + nouvelle page pour entrer les chronos
 //	
+//		ORDRE:
+//			-chronos
+//			-vict ent hippo
+//			-vict jock hippo
+//			-vict chev 
+//			-vict chev hippo
 				
 		
-//		
-
-		
-//		System.out.println(biglist.toString());
     	
     	return "reunion-infos";
     }

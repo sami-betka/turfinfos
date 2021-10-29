@@ -123,9 +123,10 @@ public class TurfInfoService {
 		return raceInfosList;
 	}
 	
-//	public String getCByNumcourse(Integer numcourse){
-//			 
-//		return turfInfosRepository.findAllByNumcourse(numcourse).stream().findFirst().get().getC();
-//	}
+	public LinkedList<Integer> orderedChronosList(List<TurfInfos> list){
+			 
+
+		return null;
+	}
 
 }

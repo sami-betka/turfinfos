@@ -9,7 +9,7 @@
 
 </head>
 <style>
-tr, th, td {
+th, td {
   border: 1px solid black;
 /*   width: 100%; */
 /*     table-layout:fixed; */
@@ -54,8 +54,16 @@ tr, th, td {
                     <td th:each="e, i : ${onepveh}" th:text="${e.numero}"></td>
                    </tr>
                    
+                    <tr>
+                    <th scope="">Chronos</th>
+                    <td th:each="c, i : ${onechronoslist}" th:text="${c.numero}"></td>
+                   </tr>
+                   
                 </thead>
             </table>
+            
+                     <a th:href="@{/enter-chronos}" style="margin-top: 1px;" class="btn btn-primary btn-small" type="button" th:if="${chronos eq false}"> Renseigner les chronos</a>
+            
 				</div>
 					</div>
 					
@@ -207,8 +215,11 @@ tr, th, td {
                     <td th:each="e, i : ${sixpveh}" th:text="${e.numero}"></td>
                    </tr>
                    
-                </thead>
+                </thead>                
             </table>
+            
+                    
+            
 				</div>
 					</div>
 					

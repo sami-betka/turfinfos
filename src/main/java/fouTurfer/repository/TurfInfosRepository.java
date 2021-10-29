@@ -21,7 +21,12 @@ public interface TurfInfosRepository extends JpaRepository<TurfInfos, Long> {
 	List<TurfInfos> findAllByJour(String jour);
 	
 	@Query("SELECT ti FROM TurfInfos ti "
-			+ "WHERE ti.jour = :jour AND ti.R = :reunion")
+			+ "WHERE ti.jour = :jour AND ti.R = :reunion "
+//			+ "AND ti.pourcVictChevalHippo != 0 "
+//			+ "AND ti.pourcVictJockHippo != 0 "
+//			+ "AND ti.pourcVictEntHippo != 0 "
+
+			)
 	List<TurfInfos> findAllByJourAndByReunion(String jour, String reunion);
 
 	
