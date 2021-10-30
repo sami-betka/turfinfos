@@ -16,8 +16,8 @@ public class TurfInfoController {
 	
 	   @PostMapping("/set-chronos")
 	    public String enterChronos(
-	    		@RequestParam(name = "one", required = false) Long one, 
-	    		@RequestParam(name = "two", required = false) Long two,
+	    		@RequestParam(name = "oneone", required = false) String one, 
+	    		@RequestParam(name = "two", required = false) String two,
 	    		@RequestParam(name = "three", required = false) TurfInfos three,
 	    		@RequestParam(name = "four", required = false) TurfInfos four,
 	    		@RequestParam(name = "five", required = false) TurfInfos five,

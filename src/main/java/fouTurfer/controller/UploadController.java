@@ -189,7 +189,7 @@ public class UploadController {
 					.filter(ti -> ti.getC().equals(num))
 					.collect(Collectors.toList());
 			
-			//création des listes filtrées et triées par parametre
+			//création des listes filtrées et triées par parametre voulu
 			
 			List<TurfInfos> listBypvch =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getPourcVictChevalHippo))
@@ -209,6 +209,51 @@ public class UploadController {
 					.collect(Collectors.toList());
 			Collections.reverse(listBypveh);
 			
+			List<TurfInfos> listByppch =  allraceInfos.stream()
+					.sorted(Comparator.comparingDouble(TurfInfos::getPourcPlaceChevalHippo))
+					.filter(ti -> !ti.getPourcPlaceChevalHippo().equals(0d))
+					.collect(Collectors.toList());
+			Collections.reverse(listByppch);
+			
+			List<TurfInfos> listByppjh =  allraceInfos.stream()
+					.sorted(Comparator.comparingDouble(TurfInfos::getPourcPlaceJockHippo))
+					.filter(ti -> !ti.getPourcPlaceJockHippo().equals(0d))
+					.collect(Collectors.toList());
+			Collections.reverse(listByppjh);
+			
+			List<TurfInfos> listByppeh =  allraceInfos.stream()
+					.sorted(Comparator.comparingDouble(TurfInfos::getPourcPlaceEntHippo))
+					.filter(ti -> !ti.getPourcPlaceEntHippo().equals(0d))
+					.collect(Collectors.toList());
+			Collections.reverse(listByppeh);
+			
+			List<TurfInfos> listBytxv =  allraceInfos.stream()
+					.sorted(Comparator.comparingDouble(TurfInfos::getTxVictCouple))
+					.filter(ti -> !ti.getTxVictCouple().equals(0d))
+					.collect(Collectors.toList());
+			Collections.reverse(listBytxv);
+			
+			List<TurfInfos> listBytxp =  allraceInfos.stream()
+					.sorted(Comparator.comparingDouble(TurfInfos::getTxPlaceCouple))
+					.filter(ti -> !ti.getTxPlaceCouple().equals(0d))
+					.collect(Collectors.toList());
+			Collections.reverse(listBytxp);
+			
+			List<TurfInfos> listBytxvh =  allraceInfos.stream()
+					.sorted(Comparator.comparingDouble(TurfInfos::getTxVictCoupleHippo))
+					.filter(ti -> !ti.getTxVictCoupleHippo().equals(0d))
+					.collect(Collectors.toList());
+			Collections.reverse(listBytxvh);
+			
+			List<TurfInfos> listBytxph =  allraceInfos.stream()
+					.sorted(Comparator.comparingDouble(TurfInfos::getTxPlaceCoupleHippo))
+					.filter(ti -> !ti.getTxPlaceCoupleHippo().equals(0d))
+					.collect(Collectors.toList());
+			Collections.reverse(listBytxph);
+			
+			
+			
+			
 			//CHRONOS
 			List<TurfInfos> listByChronos =  allraceInfos.stream()
 					.filter(ti -> ti.getChrono()!= null)
@@ -224,6 +269,16 @@ public class UploadController {
 			model.addAttribute(numToString(num) + "pvch", listBypvch);
 			model.addAttribute(numToString(num) + "pvjh", listBypvjh);
 			model.addAttribute(numToString(num) + "pveh", listBypveh);
+			
+			model.addAttribute(numToString(num) + "ppch", listByppch);
+			model.addAttribute(numToString(num) + "ppjh", listByppjh);
+			model.addAttribute(numToString(num) + "ppeh", listByppeh);
+			model.addAttribute(numToString(num) + "txv", listBytxv);
+			model.addAttribute(numToString(num) + "txp", listBytxp);
+			model.addAttribute(numToString(num) + "txvh", listBytxvh);
+			model.addAttribute(numToString(num) + "txph", listBytxph);
+
+
 			
 			model.addAttribute(numToString(num) + "chronoslist", listByChronos);
 			model.addAttribute("chronos", false); //??????????????????

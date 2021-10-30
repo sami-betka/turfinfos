@@ -69,9 +69,46 @@ private String cheval;
 //  @CsvNumber("###.##")
   private Double pourcVictEntHippo;
   
+//@Column(name = "")
+@CsvBindByName
+//@CsvNumber("###.##")
+private Double pourcPlaceChevalHippo;
+
+//@Column(name = "")
+@CsvBindByName
+//@CsvNumber("###.##")
+private Double pourcPlaceJockHippo;
+
+//@Column(name = "")
+@CsvBindByName
+//@CsvNumber("###.##")
+private Double pourcPlaceEntHippo;
+
+//@Column(name = "")
+@CsvBindByName
+//@CsvNumber("###.##")
+private Double TxVictCouple;
+
+//@Column(name = "")
+@CsvBindByName
+//@CsvNumber("###.##")
+private Double TxPlaceCouple;
+
+//@Column(name = "")
+@CsvBindByName
+//@CsvNumber("###.##")
+private Double TxVictCoupleHippo;
+
+//@Column(name = "")
+@CsvBindByName
+//@CsvNumber("###.##")
+private Double TxPlaceCoupleHippo;
+
+
+  
   private Integer chrono;
 
-  public TurfInfos(Long id, String jour, String R, Integer C, Integer numcourse, Integer numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo, Integer chrono) {
+  public TurfInfos(Long id, String jour, String R, Integer C, Integer numcourse, Integer numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo, Double pourcPlaceChevalHippo, Double pourcPlaceJockHippo, Double pourcPlaceEntHippo, Double TxVictCouple, Double TxPlaceCouple, Double TxVictCoupleHippo, Double TxPlaceCoupleHippo, Integer chrono) {
     this.id = id;
     this.R = R;
     this.C = C;
@@ -81,6 +118,14 @@ private String cheval;
     this.numero = numero;
     this.cheval = cheval;
     this.jour = jour;
+    this.pourcPlaceChevalHippo = pourcPlaceChevalHippo;
+    this.pourcPlaceJockHippo = pourcPlaceJockHippo;
+    this.pourcPlaceEntHippo = pourcPlaceEntHippo;
+    this.TxVictCouple = TxVictCouple;
+    this.TxPlaceCouple = TxPlaceCouple;
+    this.TxVictCoupleHippo = TxVictCoupleHippo;
+    this.TxPlaceCoupleHippo = TxPlaceCoupleHippo;
+
     this.chrono = chrono;
 
   }
@@ -177,6 +222,62 @@ public Integer getChrono() {
 
 public void setChrono(Integer chrono) {
 	this.chrono = chrono;
+}
+
+public Double getPourcPlaceChevalHippo() {
+	return pourcPlaceChevalHippo;
+}
+
+public void setPourcPlaceChevalHippo(Double pourcPlaceChevalHippo) {
+	this.pourcPlaceChevalHippo = pourcPlaceChevalHippo;
+}
+
+public Double getPourcPlaceJockHippo() {
+	return pourcPlaceJockHippo;
+}
+
+public void setPourcPlaceJockHippo(Double pourcPlaceJockHippo) {
+	this.pourcPlaceJockHippo = pourcPlaceJockHippo;
+}
+
+public Double getPourcPlaceEntHippo() {
+	return pourcPlaceEntHippo;
+}
+
+public void setPourcPlaceEntHippo(Double pourcPlaceEntHippo) {
+	this.pourcPlaceEntHippo = pourcPlaceEntHippo;
+}
+
+public Double getTxVictCouple() {
+	return TxVictCouple;
+}
+
+public void setTxVictCouple(Double txVictCouple) {
+	TxVictCouple = txVictCouple;
+}
+
+public Double getTxPlaceCouple() {
+	return TxPlaceCouple;
+}
+
+public void setTxPlaceCouple(Double txPlaceCouple) {
+	TxPlaceCouple = txPlaceCouple;
+}
+
+public Double getTxVictCoupleHippo() {
+	return TxVictCoupleHippo;
+}
+
+public void setTxVictCoupleHippo(Double txVictCoupleHippo) {
+	TxVictCoupleHippo = txVictCoupleHippo;
+}
+
+public Double getTxPlaceCoupleHippo() {
+	return TxPlaceCoupleHippo;
+}
+
+public void setTxPlaceCoupleHippo(Double txPlaceCoupleHippo) {
+	TxPlaceCoupleHippo = txPlaceCoupleHippo;
 }
   
   

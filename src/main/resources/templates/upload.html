@@ -26,18 +26,28 @@
         <label style="font-weight: bold;" for="file">Importer un nouveau fichier .CSV</label>
         <input type="file" name="file" class="form-control-file" id="file" accept=".csv">
     </div>
-    <button type="submit" class="btn btn-primary">Importer le fichier</button>
+    <button type="submit" class="btn btn-primary">Importer le fichier <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  </button>
+                       
+
 </form>
 
-   <div class="text-white" th:if="${messagesuccess}" style="text-align: center; border: 1px solid black; margin: 5px; background-color: green;" >
-	                 	<h2 th:text="${messagesuccess}"/></h2>
-	               </div>
-	                <div class="" th:if="${messageempty}" style="text-align: center; border: 1px solid black; margin: 5px; background-color: yellow;" >
-	                 	<h2 th:text="${messageempty}"/></h2>
-	               </div>
-	                <div class="text-white" th:if="${messageerror}" style="text-align: center; border: 1px solid black; margin: 5px; background-color: red;" >
-	                 	<h2 th:text="${messageerror}"/></h2>
-	               </div>
+<!--    <div class="text-white" th:if="${messagesuccess}" style="text-align: center; border: 1px solid black; margin: 5px; background-color: green;" > -->
+<!-- 	                 	<h2 th:text="${messagesuccess}"/></h2> -->
+<!-- 	               </div> -->
+<!-- 	                <div class="" th:if="${messageempty}" style="text-align: center; border: 1px solid black; margin: 5px; background-color: yellow;" > -->
+<!-- 	                 	<h2 th:text="${messageempty}"/></h2> -->
+<!-- 	               </div> -->
+<!-- 	                <div class="text-white" th:if="${messageerror}" style="text-align: center; border: 1px solid black; margin: 5px; background-color: red;" > -->
+<!-- 	                 	<h2 th:text="${messageerror}"/></h2> -->
+<!-- 	               </div> -->
+
+<div th:if="${messagesuccess}" th:text="${messagesuccess}" class="alert alert-success" role="alert">
+</div>
+<div th:if="${messageerror}" th:text="${messageerror}" class="alert alert-danger" role="alert">
+</div>
+<div th:if="${messageempty}" th:text="${messageempty}" class="alert alert-warning" role="alert">
+</div>
 
 				</div>
 				<div class="col-md-4">
@@ -98,6 +108,8 @@
 <!-- 			</li> -->
 <!-- 		</ul> -->
 <!-- 	</div> -->
+
+	<script type="text/javascript" th:src="@{/js/test.js}"></script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
