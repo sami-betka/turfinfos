@@ -92,47 +92,21 @@
             
 <!--             //Collapse chronos BEGIN-->
 
-<!-- <p> -->
-<!--   <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> -->
-<!--     Renseigner les chronos -->
-<!--   </a> -->
-<!-- </p> -->
-<!-- <div class="collapse" id="collapseExample"> -->
+        <div th:if="${onechronos eq false}">
+        		<div th:replace="_components :: chronos-button">...</div>
+        		<div th:replace="_components :: chronos-dropdowns(${onehorses})">...</div>
+        </div>
+<!--          <div th:if="${onechronos eq true}"> -->
+<!--         		<div th:replace="_components :: chronos-modif">...</div> -->
+<!--         </div> -->
+        <div th:if="${onechronos eq true}">
+                <div th:replace="_components :: chronos-modif">...</div>
+		        <div th:replace="_components :: chronos-dropdowns(${onehorses})">...</div>
+		</div>
+		
 
-<!--  <form th:action="@{set-chronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST"> -->
-<!--   <div th:each="num : ${numeros}" class="form-group col-md-4"> -->
-<!--       <label for="" th:text="${'Chrono ' + num}"></label> -->
-<!--       <select  class="form-control" th:attr="data-name=${num +''}"> -->
-<!--         <option>Choisir...</option> -->
-<!--            <option th:each="horse : ${horses}" th:value="${horse.id}" -->
-<!-- 		      th:text="${horse.numero}"> -->
-<!-- 		   </option>       -->
-<!--      </select> -->
-<!--     </div> -->
-
-    
-<!--       <button type="submit" class="btn btn-primary">Envoyer</button> -->
-<!--  </form> -->
-
-<!-- </div> -->
-    
-<!--                             <div class="form-group"> -->
-<!-- 								<label class="text-dark" style="font-weight: bold;">Discipline:</label><br>  -->
-<!-- 								<select class="form-control form-control-user" name="discipline"> -->
-<!-- 									<option value="">--Choisir--</option> -->
-
-<!-- 									<option th:each="d : ${disciplines}" th:value="${d}" -->
-<!-- 										th:text="${d.name}"></option> -->
-<!-- 								</select> -->
-<!-- 							</div> -->
- 
-
- 
             <!--//Collapse chronos END -->
-            
-            
-<!--                      <a th:href="@{/enter-chronos}" style="margin-top: 1px;" class="btn btn-primary btn-small" type="button" th:if="${chronos eq false}"> Renseigner les chronos</a> -->
-            
+                        
 				</div>
 					</div>
 					
@@ -203,6 +177,23 @@
                    
                 </thead>
             </table>
+            
+            <!--             //Collapse chronos BEGIN-->
+
+        <div th:if="${twochronos eq false}">
+        		<div th:replace="_components :: chronos-button">...</div>
+        	    <div th:replace="_components :: chronos-dropdowns(${twohorses})">...</div>
+        		
+        </div>
+        <div th:if="${twochronos eq true}">
+                <div th:replace="_components :: chronos-modif">...</div>
+		        <div th:replace="_components :: chronos-dropdowns(${twohorses})">...</div>
+		</div>
+		
+
+            <!--//Collapse chronos END -->
+            
+            
 				</div>
 					</div>
 					
@@ -273,6 +264,23 @@
                    
                 </thead>
             </table>
+            
+                     <!--             //Collapse chronos BEGIN-->
+
+         <div th:if="${threechronos eq false}">
+        		<div th:replace="_components :: chronos-button">...</div>
+        	    <div th:replace="_components :: chronos-dropdowns(${threehorses})">...</div>
+        		
+        </div>
+        <div th:if="${threechronos eq true}">
+                <div th:replace="_components :: chronos-modif">...</div>
+		        <div th:replace="_components :: chronos-dropdowns(${threehorses})">...</div>
+		</div>
+		
+
+            <!--//Collapse chronos END -->
+            
+            
 				</div>
 					</div>
 					
@@ -344,6 +352,22 @@
                    
                 </thead>
             </table>
+            
+                     <!--             //Collapse chronos BEGIN-->
+
+        <div th:if="${fourchronos eq false}">
+        		<div th:replace="_components :: chronos-button">...</div>
+        	    <div th:replace="_components :: chronos-dropdowns(${fourhorses})">...</div>
+        		
+        </div>
+        <div th:if="${fourchronos eq true}">
+                <div th:replace="_components :: chronos-modif">...</div>
+		        <div th:replace="_components :: chronos-dropdowns(${fourhorses})">...</div>
+		</div>
+		
+
+            <!--//Collapse chronos END -->
+            
 				</div>
 					</div>
 		
@@ -421,6 +445,22 @@
                    
                 </thead>
             </table>
+            
+                     <!--             //Collapse chronos BEGIN-->
+
+       <div th:if="${fivechronos eq false}">
+        		<div th:replace="_components :: chronos-button">...</div>
+        	    <div th:replace="_components :: chronos-dropdowns(${fivehorses})">...</div>
+        		
+        </div>
+        <div th:if="${fivechronos eq true}">
+                <div th:replace="_components :: chronos-modif">...</div>
+		        <div th:replace="_components :: chronos-dropdowns(${fivehorses})">...</div>
+		</div>
+		
+
+            <!--//Collapse chronos END -->
+            
 				</div>
 					</div>
 					
@@ -492,7 +532,20 @@
                 </thead>                
             </table>
             
-                    
+                                    <!--             //Collapse chronos BEGIN-->
+
+        <div th:if="${sixchronos eq false}">
+        		<div th:replace="_components :: chronos-button">...</div>
+        	    <div th:replace="_components :: chronos-dropdowns(${sixhorses})">...</div>
+        		
+        </div>
+        <div th:if="${sixchronos eq true}">
+                <div th:replace="_components :: chronos-modif">...</div>
+		        <div th:replace="_components :: chronos-dropdowns(${sixhorses})">...</div>
+		</div>
+		
+
+            <!--//Collapse chronos END -->
             
 				</div>
 					</div>
@@ -564,6 +617,22 @@
                    
                 </thead>
             </table>
+            
+                            <!--             //Collapse chronos BEGIN-->
+
+        <div th:if="${sevenchronos eq false}">
+        		<div th:replace="_components :: chronos-button">...</div>
+        	    <div th:replace="_components :: chronos-dropdowns(${sevenhorses})">...</div>
+        		
+        </div>
+        <div th:if="${sevenchronos eq true}">
+                <div th:replace="_components :: chronos-modif">...</div>
+		        <div th:replace="_components :: chronos-dropdowns(${sevenhorses})">...</div>
+		</div>
+		
+
+            <!--//Collapse chronos END -->
+            
 				</div>
 					</div>
 					
@@ -635,6 +704,22 @@
                    
                 </thead>
             </table>
+            
+                            <!--             //Collapse chronos BEGIN-->
+
+        <div th:if="${eightchronos eq false}">
+        		<div th:replace="_components :: chronos-button">...</div>
+        	    <div th:replace="_components :: chronos-dropdowns(${eighthorses})">...</div>
+        		
+        </div>
+        <div th:if="${eightchronos eq true}">
+                <div th:replace="_components :: chronos-modif">...</div>
+		        <div th:replace="_components :: chronos-dropdowns(${eighthorses})">...</div>
+		</div>
+		
+
+            <!--//Collapse chronos END -->
+            
 				</div>
 					</div>
 					
@@ -706,6 +791,22 @@
                    
                 </thead>
             </table>
+            
+                            <!--             //Collapse chronos BEGIN-->
+
+        <div th:if="${ninechronos eq false}">
+        		<div th:replace="_components :: chronos-button">...</div>
+        	    <div th:replace="_components :: chronos-dropdowns(${ninehorses})">...</div>
+        		
+        </div>
+        <div th:if="${ninechronos eq true}">
+                <div th:replace="_components :: chronos-modif">...</div>
+		        <div th:replace="_components :: chronos-dropdowns(${ninehorses})">...</div>
+		</div>
+		
+
+            <!--//Collapse chronos END -->
+            
 				</div>
 					</div>
 					
@@ -777,6 +878,22 @@
                    
                 </thead>
             </table>
+            
+                            <!--             //Collapse chronos BEGIN-->
+
+        <div th:if="${tenchronos eq false}">
+        		<div th:replace="_components :: chronos-button">...</div>
+        	    <div th:replace="_components :: chronos-dropdowns(${tenhorses})">...</div>
+        		
+        </div>
+        <div th:if="${tenchronos eq true}">
+                <div th:replace="_components :: chronos-modif">...</div>
+		        <div th:replace="_components :: chronos-dropdowns(${tenhorses})">...</div>
+		</div>
+		
+
+            <!--//Collapse chronos END -->
+            
 				</div>
 					</div>
 					
@@ -847,6 +964,22 @@
                    
                 </thead>
             </table>
+            
+                            <!--             //Collapse chronos BEGIN-->
+
+       <div th:if="${elevenchronos eq false}">
+        		<div th:replace="_components :: chronos-button">...</div>
+        	    <div th:replace="_components :: chronos-dropdowns(${elevenhorses})">...</div>
+        		
+        </div>
+        <div th:if="${elevenchronos eq true}">
+                <div th:replace="_components :: chronos-modif">...</div>
+		        <div th:replace="_components :: chronos-dropdowns(${elevenhorses})">...</div>
+		</div>
+		
+
+            <!--//Collapse chronos END -->
+            
 				</div>
 					</div>
 					
@@ -918,6 +1051,22 @@
                    
                 </thead>
             </table>
+            
+                            <!--             //Collapse chronos BEGIN-->
+
+      <div th:if="${twelvechronos eq false}">
+        		<div th:replace="_components :: chronos-button">...</div>
+        	    <div th:replace="_components :: chronos-dropdowns(${twelvehorses})">...</div>
+        		
+        </div>
+        <div th:if="${twelvechronos eq true}">
+                <div th:replace="_components :: chronos-modif">...</div>
+		        <div th:replace="_components :: chronos-dropdowns(${twelvehorses})">...</div>
+		</div>
+		
+
+            <!--//Collapse chronos END -->
+            
 				</div>
 					</div>
 							

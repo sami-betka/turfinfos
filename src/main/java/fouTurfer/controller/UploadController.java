@@ -109,7 +109,7 @@ public class UploadController {
 
                 
                 model.addAttribute("status", true);
-                model.addAttribute("messagesuccess", "Fichier importé avec succès");
+                model.addAttribute("messagesuccess", "Fichier: (" + file.getResource().getFilename() + ") importé avec succès");
 
 
             } catch (Exception ex) {
@@ -278,11 +278,17 @@ public class UploadController {
 			model.addAttribute(numToString(num) + "txvh", listBytxvh);
 			model.addAttribute(numToString(num) + "txph", listBytxph);
 
-
-			
 			model.addAttribute(numToString(num) + "chronoslist", listByChronos);
-			model.addAttribute("chronos", false); //??????????????????
-
+			if(!listByChronos.isEmpty() || listByChronos.size()>0) {
+				model.addAttribute(numToString(num) + "chronos", true); 
+			}
+			if(listByChronos.isEmpty() || listByChronos.size()==0) {
+				model.addAttribute(numToString(num) + "chronos", false); 
+			}
+			
+						
+				System.out.println(num + "-" + listByChronos.size());
+			
 			model.addAttribute(numToString(num) + "exists", true);
 						
 
@@ -290,13 +296,15 @@ public class UploadController {
 			
 			model.addAttribute("jour", jour);
 			model.addAttribute("reunion", reunion);
+//			model.addAttribute("num", num);
+
 	
 			
-			LinkedList<String> distinctNums = new LinkedList<>();
-			for(int i =0; i<8 ; i++) {
-				distinctNums.add(numToString(i+1));
-			}
-			model.addAttribute("numeros", distinctNums);
+//			LinkedList<String> distinctNums = new LinkedList<>();
+//			for(int i =0; i<8 ; i++) {
+//				distinctNums.add(numToString(i+1));
+//			}
+//			model.addAttribute("numeros", distinctNums);
 			
 			List<TurfInfos> listByNumCheval = allraceInfos.stream()
 //					.map(TurfInfos :: getNumero)
@@ -306,7 +314,7 @@ public class UploadController {
 //					Collections.reverse(listNums);
 //					distinctNumsCheval = new LinkedHashSet<>(listNums);
 			
-			model.addAttribute("horses", listByNumCheval);
+			model.addAttribute(numToString(num) + "horses", listByNumCheval);
 			
 	
 
