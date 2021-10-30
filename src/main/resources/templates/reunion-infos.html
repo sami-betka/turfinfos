@@ -1,22 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html xmlns:th="https://www.thymeleaf.org">
-<head>
-<!-- <meta charset="ISO-8859-1"> -->
-<meta charset="utf-8" />
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+<!--     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
 
-<title>Insert title here</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link th:href="@{css/style.css}" rel="stylesheet" />
 </head>
-<style>
-th, td {
-  border: 1px solid black;
-/*   width: 100%; */
-/*     table-layout:fixed; */
 
-  
-}
-</style>
 <body>
 <h3 style="text-align: center; margin-bottom: 10px; text-decoration: underline;">Bienvenue sur Djetay'Infos</h3>
 
@@ -62,7 +55,48 @@ th, td {
                 </thead>
             </table>
             
-                     <a th:href="@{/enter-chronos}" style="margin-top: 1px;" class="btn btn-primary btn-small" type="button" th:if="${chronos eq false}"> Renseigner les chronos</a>
+<!--             //Collapse chronos BEGIN-->
+<p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Renseigner les chronos
+  </a>
+</p>
+<div class="collapse" id="collapseExample">
+
+ <form th:action="@{set-chronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST">
+  <div th:each="num : ${numeros}" class="form-group col-md-4">
+      <label for="" th:text="${'Chrono ' + num}"></label>
+      <select id="" class="form-control" name="${num}">
+        <option>Choisir...</option>
+           <option th:each="horse : ${horses}" th:value="${horse.id}"
+		      th:text="${horse.numero}">
+		   </option>      
+     </select>
+    </div>
+<!--     <input id="" name="jour" type="hidden" th:value="${jour}"> -->
+<!--     <input id="" name="reunion" type="hidden" th:value="${reunion}"> -->
+    
+      <button type="submit" class="btn btn-primary">Envoyer</button>
+ </form>
+
+</div>
+    
+<!--                             <div class="form-group"> -->
+<!-- 								<label class="text-dark" style="font-weight: bold;">Discipline:</label><br>  -->
+<!-- 								<select class="form-control form-control-user" name="discipline"> -->
+<!-- 									<option value="">--Choisir--</option> -->
+
+<!-- 									<option th:each="d : ${disciplines}" th:value="${d}" -->
+<!-- 										th:text="${d.name}"></option> -->
+<!-- 								</select> -->
+<!-- 							</div> -->
+ 
+
+ 
+            <!--//Collapse chronos END -->
+            
+            
+<!--                      <a th:href="@{/enter-chronos}" style="margin-top: 1px;" class="btn btn-primary btn-small" type="button" th:if="${chronos eq false}"> Renseigner les chronos</a> -->
             
 				</div>
 					</div>
@@ -412,8 +446,9 @@ th, td {
 
 
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+
 </body>
 </html>

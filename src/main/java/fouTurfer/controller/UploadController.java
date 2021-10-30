@@ -179,10 +179,11 @@ public class UploadController {
 		
 		model.addAttribute("distinctnumraces", distinctNumraces);
 		
+		List<TurfInfos> allraceInfos = new ArrayList<>();
 		for(Integer num : distinctNumraces) {
 					
 			//Infos de la course en question
-			List<TurfInfos> allraceInfos = 
+			allraceInfos = 
 					allReunionInfos
 					.stream()
 					.filter(ti -> ti.getC().equals(num))
@@ -229,15 +230,30 @@ public class UploadController {
 
 			model.addAttribute(numToString(num) + "exists", true);
 						
-			
-					
-
-
 
 			}
-
-			//+ message model   num = true
-
+			
+			model.addAttribute("jour", jour);
+			model.addAttribute("reunion", reunion);
+	
+			
+			LinkedList<String> distinctNums = new LinkedList<>();
+			for(int i =0; i<8 ; i++) {
+				distinctNums.add(numToString(i+1));
+			}
+			model.addAttribute("numeros", distinctNums);
+			
+			List<TurfInfos> listByNumCheval = allraceInfos.stream()
+//					.map(TurfInfos :: getNumero)
+					.sorted(Comparator.comparingInt(TurfInfos::getNumero))
+					.collect(Collectors.toList());
+//					List<Integer> listNums = new ArrayList<Integer>(distinctNumsCheval);
+//					Collections.reverse(listNums);
+//					distinctNumsCheval = new LinkedHashSet<>(listNums);
+			
+			model.addAttribute("horses", listByNumCheval);
+			
+	
 
 	}
 		
@@ -324,9 +340,65 @@ public class UploadController {
                  str = "twelve";
                  break;
              
-//         default:
-//             System.out.println("Choix incorrect");
-//             break;
+     }
+    
+    	return str;
+    }
+    
+   private String numToStringNumber(Integer num) {
+    	
+    	String str = null;
+    	
+    	 switch(num){
+    	   
+         case 1: 
+             str = "1";
+             break;
+     
+         case 2:
+             str = "2";
+             break;
+     
+         case 3:
+             str = "3";
+             break;
+             
+         case 4: 
+             str = "4";
+             break;
+     
+         case 5:
+             str = "5";
+             break;
+     
+         case 6:
+             str = "6";
+             break;
+             
+         case 7: 
+                 str = "7";
+                 break;
+         
+             case 8:
+                 str = "8";
+                 break;
+         
+             case 9:
+                 str = "9";
+                 break;
+                 
+             case 10: 
+                 str = "10";
+                 break;
+         
+             case 11:
+                 str = "11";
+                 break;
+         
+             case 12:
+                 str = "12";
+                 break;
+             
      }
     
     	return str;
