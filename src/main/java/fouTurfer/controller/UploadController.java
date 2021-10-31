@@ -55,6 +55,7 @@ public class UploadController {
 
     @PostMapping("/upload-csv-file")
     public String uploadCSVFileByRace(@RequestParam("file") MultipartFile file, Model model) {
+    	
     	  System.out.println(turfInfosRepository.findAll().size() + "turfinforep.siz 1");
 
     	
@@ -92,8 +93,12 @@ public class UploadController {
         				.collect(Collectors.toList());
                 
                 for(TurfInfos info : infos) {
-                	if(!allPvch.contains(info.getNumcourse()))
+                	if(!allPvch.contains(info.getNumcourse())) {
                 	turfInfosRepository.save(info);
+                	}
+                	if(allPvch.contains(info.getNumcourse())) {
+                		turfInfoService.update(info);
+                    	}
                 }
 
                 // Envoyer les dates au model
@@ -105,6 +110,7 @@ public class UploadController {
 
                 model.addAttribute("infos", infos);
                 model.addAttribute("pvch", turfInfosRepository.findAllByOrderByPourcVictChevalHippoDesc());
+                
           	  System.out.println(turfInfosRepository.findAll().size() + "turfinforep.siz 2");
 
                 
@@ -175,7 +181,7 @@ public class UploadController {
 //		    	distinctNumracesString.add(i.toString());
 //		    }
 		
-		System.out.println(distinctNumraces.size());
+//		System.out.println(distinctNumraces.size());
 		
 		model.addAttribute("distinctnumraces", distinctNumraces);
 		
@@ -331,7 +337,7 @@ public class UploadController {
 			}
 			
 						
-				System.out.println(num + "-" + listByChronos.size());
+//				System.out.println(num + "-" + listByChronos.size());
 			
 			model.addAttribute(numToString(num) + "exists", true);
 						

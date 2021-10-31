@@ -14,7 +14,10 @@ public interface TurfInfosRepository extends JpaRepository<TurfInfos, Long> {
 	
 	List<TurfInfos> findAllByOrderByPourcVictChevalHippoDesc();
 	
-	TurfInfos findByNumcourse(Integer numcourse);
+//	TurfInfos findByNumcourse(Integer numcourse);
+	
+	TurfInfos findByNumeroAndNumcourse(Integer numero, Integer numcourse);
+
 	
 	List<TurfInfos> findAllByNumcourse(Integer numcourse);
 	
@@ -28,6 +31,9 @@ public interface TurfInfosRepository extends JpaRepository<TurfInfos, Long> {
 
 			)
 	List<TurfInfos> findAllByJourAndByReunion(String jour, String reunion);
+	
+	List<TurfInfos> findAllByNumcourseAndChrono(Integer numcourse, Integer chrono);
+
 
 	
 

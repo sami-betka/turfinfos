@@ -104,12 +104,18 @@ private Double TxVictCoupleHippo;
 //@CsvNumber("###.##")
 private Double TxPlaceCoupleHippo;
 
+//@Column(name = "")
+@CsvBindByName
+//@CsvNumber("###.##")
+private Integer recence;
+
+
   private Integer chrono;
   
   private Double noteProno;
+  
 
-
-  public TurfInfos(Long id, String jour, String R, Integer C, Integer numcourse, Integer numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo, Double pourcPlaceChevalHippo, Double pourcPlaceJockHippo, Double pourcPlaceEntHippo, Double TxVictCouple, Double TxPlaceCouple, Double TxVictCoupleHippo, Double TxPlaceCoupleHippo, Integer chrono, Integer noteProno) {
+  public TurfInfos(Long id, String jour, String R, Integer C, Integer numcourse, Integer numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo, Double pourcPlaceChevalHippo, Double pourcPlaceJockHippo, Double pourcPlaceEntHippo, Double TxVictCouple, Double TxPlaceCouple, Double TxVictCoupleHippo, Double TxPlaceCoupleHippo, Integer chrono, Integer noteProno, Integer recence) {
     this.id = id;
     this.R = R;
     this.C = C;
@@ -126,11 +132,12 @@ private Double TxPlaceCoupleHippo;
     this.TxPlaceCouple = TxPlaceCouple;
     this.TxVictCoupleHippo = TxVictCoupleHippo;
     this.TxPlaceCoupleHippo = TxPlaceCoupleHippo;
-    this.chrono = chrono;
-    
-    this.noteProno = 0d;
-//    init();
+    this.recence = recence;
 
+    //Paramètres crées
+    
+    this.chrono = chrono;
+    this.noteProno = 0d;
 
   }
   
@@ -298,6 +305,13 @@ public void setNoteProno(Double noteProno) {
 	this.noteProno = noteProno;
 }
 
-  
+public Integer getRecence() {
+	return recence;
+}
 
+public void setRecence(Integer recence) {
+	this.recence = recence;
+}
+
+  
 }

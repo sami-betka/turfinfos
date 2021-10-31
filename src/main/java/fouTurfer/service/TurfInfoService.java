@@ -1,7 +1,5 @@
 package fouTurfer.service;
 
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -18,62 +16,33 @@ public class TurfInfoService {
 	@Autowired
 	TurfInfosRepository turfInfosRepository;
 	
-//	public Map<String, Object> getSelectedInfosLists() {
-//		
-//		Map<String, Object> map = new HashMap<>();
-//		 List<TurfInfos> allInfosForRace = turfInfosRepository.findAll();
-//		 
-//         List<TurfInfos> pvch = allInfos.stream().	
-//        		 
-////        			prods2.sort((p1, p2) -> p1.getId().compareTo(p2.getId()));
-//
-//		return map;
-//	}
-	
-	
-	
-	
-	
-//	public  Map<String, Map<String, Object>> createReunionInfosMap(String jour, String R){
-//		
-//		Map<String, Map<String, Object>> reunionInfosMap = new HashMap<>();
-//		
-//		//Récupere toutes les infos de la réunion
-//		List<TurfInfos> allReunionInfos = turfInfosRepository.findAllByJour(jour)
-//				.stream()
-//				.filter(ti -> ti.getR().equals(R))
-//				.collect(Collectors.toList());
-//		/////////////////////////////////////////////
-////		List<TurfInfos> testlist = new ArrayList<>();
-////		for(TurfInfos ti: turfInfosRepository.findAllByJour(jour)) {
-////			
-////			if(ti.getR())
-////			
-////		}
-//		////////////////////////////////////////////
-//		
-//		System.out.println("R= " + R);
-//		System.out.println(turfInfosRepository.findAllByJour(jour).size() + "taille de findAllByJourservice");
-//		System.out.println(allReunionInfos.size() + "taille de ");
-//
-//
-//
-//		
-//		//Compte le nombre de course (C) de la réunion
-//		Set<Integer> distinctRaces = allReunionInfos.stream()
-//				.map(TurfInfos :: getNumcourse)
-//				.sorted()
-//				.collect(Collectors.toSet());
-	
-////		System.out.println(distinctRaces.size() + "taille de distoinctraces service");
-//		
-//		for (Integer numcourse : distinctRaces) {
-//			
-//			reunionInfosMap.put(getCByNumcourse(numcourse), createRaceInfosMap(numcourse));	
-//		}
-//		
-//		return reunionInfosMap;
-//	}
+    public void update(TurfInfos info) {
+    	
+    	TurfInfos infoToUpdate = turfInfosRepository.findByNumeroAndNumcourse(info.getNumero(), info.getNumcourse());
+    	
+    	infoToUpdate.setC(info.getC());
+    	infoToUpdate.setCheval(info.getCheval());
+//    	infoToUpdate.setChrono(info.getChrono());
+    	infoToUpdate.setJour(info.getJour());
+//    	infoToUpdate.setNoteProno(null);
+    	infoToUpdate.setNumcourse(info.getNumcourse());
+    	infoToUpdate.setNumero(info.getNumero());
+    	infoToUpdate.setPourcPlaceChevalHippo(info.getPourcPlaceChevalHippo());
+    	infoToUpdate.setPourcPlaceEntHippo(info.getPourcPlaceEntHippo());
+    	infoToUpdate.setPourcPlaceJockHippo(info.getPourcPlaceJockHippo());
+    	infoToUpdate.setPourcVictChevalHippo(info.getPourcVictChevalHippo());
+    	infoToUpdate.setPourcVictEntHippo(info.getPourcVictEntHippo());
+    	infoToUpdate.setPourcVictJockHippo(info.getPourcVictJockHippo());
+    	infoToUpdate.setR(info.getR());
+    	infoToUpdate.setRecence(info.getRecence());
+    	infoToUpdate.setTxPlaceCouple(info.getTxPlaceCouple());
+    	infoToUpdate.setTxPlaceCoupleHippo(info.getTxPlaceCoupleHippo());
+    	infoToUpdate.setTxVictCouple(info.getTxVictCouple());
+    	infoToUpdate.setTxVictCoupleHippo(info.getTxVictCoupleHippo());
+    	
+    	turfInfosRepository.save(infoToUpdate);
+    	
+    }
 	
 	public LinkedList<List<String>> createRaceInfosList(List<TurfInfos> raceInfos){
 		
