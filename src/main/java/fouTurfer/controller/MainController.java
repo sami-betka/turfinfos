@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainController {
 	
-    @GetMapping("/enter-chronos")
-    public String enterChronos(Model model) {
+    @GetMapping("/nav")
+    public String nav(Model model) {
 
-        return "enter-chronos";
+        return "_nav-components";
     }
     
 }
