@@ -97,7 +97,7 @@
       <label for="">7&egrave;me chrono</label>
       <select  class="form-control" name="seven">
         <option value="">Choisir...</option>
-           <option th:each="horse : ${horses}" th:value="${horse.id}"
+           <option th:each="horse : ${racehorses}" th:value="${horse.id}"
 		      th:text="${horse.numero}">
 		   </option>      
      </select>
@@ -722,7 +722,7 @@
       <label for="">7&egrave;me chrono</label>
       <select  class="form-control" name="seven">
         <option value="">Choisir...</option>
-           <option th:each="horse : ${horses}" th:value="${horse.id}"
+           <option th:each="horse : ${racehorses}" th:value="${horse.id}"
 		      th:text="${horse.numero}">
 		   </option>      
      </select>
