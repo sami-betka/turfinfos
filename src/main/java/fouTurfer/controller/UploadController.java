@@ -196,61 +196,70 @@ public class UploadController {
 					.filter(ti -> !ti.getPourcVictChevalHippo().equals(0d))
 					.collect(Collectors.toList());
 			Collections.reverse(listBypvch);
-			
+			//Calcul de la note
+				
 			List<TurfInfos> listBypvjh =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getPourcVictJockHippo))
 					.filter(ti -> !ti.getPourcVictJockHippo().equals(0d))
 					.collect(Collectors.toList());
 			Collections.reverse(listBypvjh);
+			//Calcul de la note
 			
 			List<TurfInfos> listBypveh =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getPourcVictEntHippo))
 					.filter(ti -> !ti.getPourcVictEntHippo().equals(0d))
 					.collect(Collectors.toList());
 			Collections.reverse(listBypveh);
+			//Calcul de la note
 			
 			List<TurfInfos> listByppch =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getPourcPlaceChevalHippo))
 					.filter(ti -> !ti.getPourcPlaceChevalHippo().equals(0d))
 					.collect(Collectors.toList());
 			Collections.reverse(listByppch);
+			//Calcul de la note
 			
 			List<TurfInfos> listByppjh =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getPourcPlaceJockHippo))
 					.filter(ti -> !ti.getPourcPlaceJockHippo().equals(0d))
 					.collect(Collectors.toList());
 			Collections.reverse(listByppjh);
+			//Calcul de la note
 			
 			List<TurfInfos> listByppeh =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getPourcPlaceEntHippo))
 					.filter(ti -> !ti.getPourcPlaceEntHippo().equals(0d))
 					.collect(Collectors.toList());
 			Collections.reverse(listByppeh);
+			//Calcul de la note
 			
 			List<TurfInfos> listBytxv =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getTxVictCouple))
 					.filter(ti -> !ti.getTxVictCouple().equals(0d))
 					.collect(Collectors.toList());
 			Collections.reverse(listBytxv);
+			//Calcul de la note
 			
 			List<TurfInfos> listBytxp =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getTxPlaceCouple))
 					.filter(ti -> !ti.getTxPlaceCouple().equals(0d))
 					.collect(Collectors.toList());
 			Collections.reverse(listBytxp);
+			//Calcul de la note
 			
 			List<TurfInfos> listBytxvh =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getTxVictCoupleHippo))
 					.filter(ti -> !ti.getTxVictCoupleHippo().equals(0d))
 					.collect(Collectors.toList());
 			Collections.reverse(listBytxvh);
+			//Calcul de la note
 			
 			List<TurfInfos> listBytxph =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getTxPlaceCoupleHippo))
 					.filter(ti -> !ti.getTxPlaceCoupleHippo().equals(0d))
 					.collect(Collectors.toList());
 			Collections.reverse(listBytxph);
-			
+			//Calcul de la note
 			
 			
 			
@@ -260,12 +269,34 @@ public class UploadController {
 					.sorted(Comparator.comparingInt(TurfInfos::getChrono))
 					.collect(Collectors.toList());
 //			Collections.reverse(listBypvch);
+			//Calcul de la note
+			
+			List<TurfInfos> listByNoteProno =  calculateFinalNoteProno(allraceInfos,
+				    listBypvch,
+				    listBypvjh,
+				    listBypveh,
+				   
+				    listByppch,
+				    listByppjh,
+				    listByppeh,
+				   
+				    listBytxv,
+				    listBytxp,
+				    listBytxvh,
+				    listBytxph,
+				   
+				    listByChronos).stream()
+//					.filter(ti -> ti.)
+					.sorted(Comparator.comparingDouble(TurfInfos::getNoteProno))
+					.collect(Collectors.toList());
+			Collections.reverse(listByNoteProno);
 
 			
 			Optional<TurfInfos> optTinf = allraceInfos.stream().findFirst();
 			if(optTinf.isPresent()) {
 				TurfInfos tinf = optTinf.get();
 			model.addAttribute(numToString(num) + "title","R" + tinf.getR() + "C" + num );
+			
 			model.addAttribute(numToString(num) + "pvch", listBypvch);
 			model.addAttribute(numToString(num) + "pvjh", listBypvjh);
 			model.addAttribute(numToString(num) + "pveh", listBypveh);
@@ -273,12 +304,25 @@ public class UploadController {
 			model.addAttribute(numToString(num) + "ppch", listByppch);
 			model.addAttribute(numToString(num) + "ppjh", listByppjh);
 			model.addAttribute(numToString(num) + "ppeh", listByppeh);
+			
 			model.addAttribute(numToString(num) + "txv", listBytxv);
 			model.addAttribute(numToString(num) + "txp", listBytxp);
 			model.addAttribute(numToString(num) + "txvh", listBytxvh);
 			model.addAttribute(numToString(num) + "txph", listBytxph);
 
 			model.addAttribute(numToString(num) + "chronoslist", listByChronos);
+			
+			if(listByNoteProno.size() < 9) {
+				model.addAttribute(numToString(num) + "pronoslist", listByNoteProno);
+			}
+			if(listByNoteProno.size() >= 9){
+				model.addAttribute(numToString(num) + "pronoslist", listByNoteProno.subList(0, 9));
+			}
+			
+						
+			
+//			model.addAttribute(numToString(num) + "pronoslist", listByPronos);
+			
 			if(!listByChronos.isEmpty() || listByChronos.size()>0) {
 				model.addAttribute(numToString(num) + "chronos", true); 
 			}
@@ -466,5 +510,80 @@ public class UploadController {
     
     	return str;
     }
+   
+   private List<TurfInfos> calculateFinalNoteProno(List<TurfInfos>allraceInfos,
+		   List<TurfInfos> listBypvch,
+		   List<TurfInfos> listBypvjh,
+		   List<TurfInfos> listBypveh,
+		   
+		   List<TurfInfos> listByppch,
+		   List<TurfInfos> listByppjh,
+		   List<TurfInfos> listByppeh,
+		   
+		   List<TurfInfos> listBytxv,
+		   List<TurfInfos> listBytxp,
+		   List<TurfInfos> listBytxvh,
+		   List<TurfInfos> listBytxph,
+		   
+		   List<TurfInfos> listByChronos) {	 
+	   
+	   calculateNoteProno(allraceInfos, listBypvch, 1D);
+	   calculateNoteProno(allraceInfos, listBypvjh, 2D);
+	   calculateNoteProno(allraceInfos, listBypveh, 2D);
+
+	   calculateNoteProno(allraceInfos, listByppch, 1D);
+	   calculateNoteProno(allraceInfos, listByppjh, 2D);
+	   calculateNoteProno(allraceInfos, listByppeh, 2D);
+
+	   calculateNoteProno(allraceInfos, listBytxv, 1d);
+	   calculateNoteProno(allraceInfos, listBytxp, 1d);
+	   calculateNoteProno(allraceInfos, listBytxvh, 2d);
+	   calculateNoteProno(allraceInfos, listBytxph, 2d);
+
+	   calculateNoteProno(allraceInfos, listByChronos, 2D);
+
+	   
+	   
+	
+		return allraceInfos;
+   }
+   
+   private List<TurfInfos> calculateNoteProno(List<TurfInfos>allRaceInfos, List<TurfInfos>list, Double coeff) {
+	   
+	for(int i =0; i<list.size(); i++) {
+			
+			if(list.size() > 0 && i == 0) {
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 5 * coeff);
+			}	
+			if(list.size() > 1 && i == 1) {
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 4 * coeff);
+			}
+			if(list.size() > 2 && i == 2) {
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 3 * coeff);
+			}
+			if(list.size() > 3 && i == 3) {
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 2 * coeff);
+			}
+			if(list.size() > 4 && i == 4) {
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 1 * coeff);
+			}
+			if(list.size() > 5 && i == 5) {
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 1 * coeff);
+			}
+			if(list.size() > 6 && i == 6) {
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 0.5 * coeff);
+			}
+			if(list.size() > 7 && i == 7) {
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 0.5 * coeff);
+			}
+			if(list.size() > 8 && i == 8) {
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 0.5 * coeff);
+			}
+			
+		}
+	   
+	   return allRaceInfos;
+   }
+
     
 }

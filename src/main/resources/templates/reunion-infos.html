@@ -21,7 +21,8 @@
 
             <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-6">
+	
+		<div class="col-md-12">
 		
 <!-- 		FIRST -->
 			<div th:if="${oneexists}" class="row" style="margin-bottom: 10px;">
@@ -85,6 +86,11 @@
                     <tr>
                     <th scope="">Chronos</th>
                     <td th:each="c, i : ${onechronoslist}" th:text="${c.numero}"></td>
+                   </tr>
+                   
+                    <tr>
+                    <th scope="">Prono:</th>
+                    <td th:each="p, i : ${onepronoslist}" th:text="${p.numero + ' (' + p.noteProno + ')'}"></td>
                    </tr>
                    
                 </thead>
@@ -173,6 +179,11 @@
                     <th scope="">Chronos</th>
                     <td th:each="c, i : ${twochronoslist}" th:text="${c.numero}"></td>
                    </tr>
+                    
+                    <tr>
+                    <th scope="">Prono:</th>
+                    <td th:each="p, i : ${twopronoslist}" th:text="${p.numero + ' (' + p.noteProno + ')'}"></td>
+                   </tr>
                    
                    
                 </thead>
@@ -259,6 +270,11 @@
                     <tr>
                     <th scope="">Chronos</th>
                     <td th:each="c, i : ${threechronoslist}" th:text="${c.numero}"></td>
+                   </tr>
+                    
+                    <tr>
+                    <th scope="">Prono:</th>
+                    <td th:each="p, i : ${threepronoslist}" th:text="${p.numero + ' (' + p.noteProno + ')'}"></td>
                    </tr>
                    
                    
@@ -348,6 +364,11 @@
                     <th scope="">Chronos</th>
                     <td th:each="c, i : ${fourchronoslist}" th:text="${c.numero}"></td>
                    </tr>
+                    
+                    <tr>
+                    <th scope="">Prono:</th>
+                    <td th:each="p, i : ${fourpronoslist}" th:text="${p.numero + ' (' + p.noteProno + ')'}"></td>
+                   </tr>
                    
                    
                 </thead>
@@ -376,7 +397,7 @@
 			
                               <!-- COL 6 to 12 -->
 			
-					<div class="col-md-6">
+<!-- 					<div class="col-md-12"> -->
 		
 <!-- 		FIFTH -->
 			<div th:if="${fiveexists}" class="row" style="margin-bottom: 10px;">
@@ -440,6 +461,11 @@
                     <tr>
                     <th scope="">Chronos</th>
                     <td th:each="c, i : ${fivechronoslist}" th:text="${c.numero}"></td>
+                   </tr>
+                    
+                    <tr>
+                    <th scope="">Prono:</th>
+                    <td th:each="p, i : ${fivepronoslist}" th:text="${p.numero + ' (' + p.noteProno + ')'}"></td>
                    </tr>
                    
                    
@@ -527,6 +553,11 @@
                     <th scope="">Chronos</th>
                     <td th:each="c, i : ${sixchronoslist}" th:text="${c.numero}"></td>
                    </tr>
+                    
+                    <tr>
+                    <th scope="">Prono:</th>
+                    <td th:each="p, i : ${sixpronoslist}" th:text="${p.numero + ' (' + p.noteProno + ')'}"></td>
+                   </tr>
                    
                    
                 </thead>                
@@ -612,6 +643,11 @@
                     <tr>
                     <th scope="">Chronos</th>
                     <td th:each="c, i : ${sevenchronoslist}" th:text="${c.numero}"></td>
+                   </tr>
+                    
+                    <tr>
+                    <th scope="">Prono:</th>
+                    <td th:each="p, i : ${sevenpronoslist}" th:text="${p.numero + ' (' + p.noteProno + ')'}"></td>
                    </tr>
                    
                    
@@ -699,6 +735,11 @@
                     <tr>
                     <th scope="">Chronos</th>
                     <td th:each="c, i : ${eightchronoslist}" th:text="${c.numero}"></td>
+                   </tr>
+                    
+                    <tr>
+                    <th scope="">Prono:</th>
+                    <td th:each="p, i : ${eightpronoslist}" th:text="${p.numero + ' (' + p.noteProno + ')'}"></td>
                    </tr>
                    
                    
@@ -788,6 +829,11 @@
                     <th scope="">Chronos</th>
                     <td th:each="c, i : ${ninechronoslist}" th:text="${c.numero}"></td>
                    </tr>
+                    
+                    <tr>
+                    <th scope="">Prono:</th>
+                    <td th:each="p, i : ${ninepronoslist}" th:text="${p.numero + ' (' + p.noteProno + ')'}"></td>
+                   </tr>
                    
                 </thead>
             </table>
@@ -874,6 +920,11 @@
                     <th scope="">Chronos</th>
                     <td th:each="c, i : ${tenchronoslist}" th:text="${c.numero}"></td>
                    </tr>
+                    
+                    <tr>
+                    <th scope="">Prono:</th>
+                    <td th:each="p, i : ${tenpronoslist}" th:text="${p.numero + ' (' + p.noteProno + ')'}"></td>
+                   </tr>
                    
                    
                 </thead>
@@ -959,6 +1010,11 @@
                     <tr>
                     <th scope="">Chronos</th>
                     <td th:each="c, i : ${elevenchronoslist}" th:text="${c.numero}"></td>
+                   </tr>
+                    
+                    <tr>
+                    <th scope="">Prono:</th>
+                    <td th:each="p, i : ${elevenpronoslist}" th:text="${p.numero + ' (' + p.noteProno + ')'}"></td>
                    </tr>
                    
                    
@@ -1047,6 +1103,11 @@
                     <th scope="">Chronos</th>
                     <td th:each="c, i : ${twelvechronoslist}" th:text="${c.numero}"></td>
                    </tr>
+                    
+                    <tr>
+                    <th scope="">Prono:</th>
+                    <td th:each="p, i : ${twelvepronoslist}" th:text="${p.numero + ' (' + p.noteProno + ')'}"></td>
+                   </tr>
                    
                    
                 </thead>
@@ -1070,7 +1131,7 @@
 				</div>
 					</div>
 							
-			</div>
+<!-- 			</div> -->
 			
 
 			

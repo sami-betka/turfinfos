@@ -104,11 +104,12 @@ private Double TxVictCoupleHippo;
 //@CsvNumber("###.##")
 private Double TxPlaceCoupleHippo;
 
-
-  
   private Integer chrono;
+  
+  private Double noteProno;
 
-  public TurfInfos(Long id, String jour, String R, Integer C, Integer numcourse, Integer numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo, Double pourcPlaceChevalHippo, Double pourcPlaceJockHippo, Double pourcPlaceEntHippo, Double TxVictCouple, Double TxPlaceCouple, Double TxVictCoupleHippo, Double TxPlaceCoupleHippo, Integer chrono) {
+
+  public TurfInfos(Long id, String jour, String R, Integer C, Integer numcourse, Integer numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo, Double pourcPlaceChevalHippo, Double pourcPlaceJockHippo, Double pourcPlaceEntHippo, Double TxVictCouple, Double TxPlaceCouple, Double TxVictCoupleHippo, Double TxPlaceCoupleHippo, Integer chrono, Integer noteProno) {
     this.id = id;
     this.R = R;
     this.C = C;
@@ -125,13 +126,22 @@ private Double TxPlaceCoupleHippo;
     this.TxPlaceCouple = TxPlaceCouple;
     this.TxVictCoupleHippo = TxVictCoupleHippo;
     this.TxPlaceCoupleHippo = TxPlaceCoupleHippo;
-
     this.chrono = chrono;
+    
+    this.noteProno = 0d;
+//    init();
+
 
   }
+  
+//  public void init() {
+//	  
+//	    this.noteProno = 0;
+//
+//  }
 
   public TurfInfos() {
-//	    this.turfKey = this.cheval + this.numcourse;
+	    this.noteProno = 0d;
 
   }
 
@@ -279,7 +289,15 @@ public Double getTxPlaceCoupleHippo() {
 public void setTxPlaceCoupleHippo(Double txPlaceCoupleHippo) {
 	TxPlaceCoupleHippo = txPlaceCoupleHippo;
 }
-  
+
+public Double getNoteProno() {
+	return noteProno;
+}
+
+public void setNoteProno(Double noteProno) {
+	this.noteProno = noteProno;
+}
+
   
 
 }
