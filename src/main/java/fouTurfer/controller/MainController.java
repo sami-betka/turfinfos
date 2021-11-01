@@ -13,4 +13,10 @@ public class MainController {
         return "_nav-components";
     }
     
+    @GetMapping("/doigt")
+    public String doigt(Model model) {
+
+        return "doigt";
+    }
+    
 }

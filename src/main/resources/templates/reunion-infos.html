@@ -11,9 +11,17 @@
 </head>
 
 <body>
-<h3 style="text-align: center; margin-bottom: 10px; text-decoration: underline;">Bienvenue sur Djetay'Infos</h3>
+        		<div th:replace="_nav-components :: nav">...</div>
+<!-- <h3 style="text-align: center; margin-bottom: 30px; text-decoration: underline;">Bienvenue sur Djetay'Infos</h3> -->
 
-<h5 th:text="${'Courses du : ' + date}" style="text-align: center; margin-bottom: 20px; text-decoration: underline;"></h5>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-1" style="background-color: silver;">
+		</div>
+		<div class="col-md-10">
+		
+		<h5 th:text="${'Courses du : ' + date}" style="text-align: center; margin-bottom: 20px; text-decoration: underline;margin-top: 20px;"></h5>
 
 
 
@@ -33,52 +41,52 @@
                           
                 <thead>       
     
-                   <tr>
+                   <tr class="horsecolor">
                     <th scope="">V-C-H(%)</th>
                     <td th:each="c, i : ${onepvch}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                      <tr>
+                      <tr class="horsecolor">
                     <th scope="">P-C-H(%)</th>
                     <td th:each="c, i : ${oneppch}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                      <tr>
+                      <tr class="entcolor">
                     <th scope="">V-E-H(%)</th>
                     <td th:each="e, i : ${onepveh}" th:text="${e.numero}" th:classappend="${e.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                    
-                     <tr>
+                      <tr class="entcolor">
                     <th scope="">P-E-H(%)</th>
                     <td th:each="e, i : ${oneppeh}" th:text="${e.numero}" th:classappend="${e.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
-                    <tr>
+                      <tr class="jockcolor">
                     <th scope="">V-J-H(%)</th>
                     <td th:each="j, i : ${onepvjh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="jockcolor">
                     <th scope="">P-J-H(%)</th>
                     <td th:each="j, i : ${oneppjh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                     
-                     <tr>
+                   <tr class="couplecolor">
                     <th scope="">V-CO(%)</th>
                     <td th:each="j, i : ${onetxv}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                   <tr class="couplecolor">
                     <th scope="">P-CO(%)</th>
                     <td th:each="j, i : ${onetxp}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                     
-                      <tr>
+                   <tr class="couplecolor">
                     <th scope="">V-CO-H(%)</th>
                     <td th:each="j, i : ${onetxvh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                   <tr class="couplecolor">
                     <th scope="">P-CO-H(%)</th>
                     <td th:each="j, i : ${onetxph}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
@@ -125,52 +133,52 @@
                           
                 <thead>       
     
-                  <tr>
+                  <tr class="horsecolor">
                     <th scope="">V-C-H(%)</th>
                     <td th:each="c, i : ${twopvch}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                      <tr>
+                      <tr class="horsecolor">
                     <th scope="">P-C-H(%)</th>
                     <td th:each="c, i : ${twoppch}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                      <tr>
+                      <tr class="entcolor">
                     <th scope="">V-E-H(%)</th>
                     <td th:each="e, i : ${twopveh}" th:text="${e.numero}" th:classappend="${e.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                    
-                     <tr>
+                      <tr class="entcolor">
                     <th scope="">P-E-H(%)</th>
                     <td th:each="e, i : ${twoppeh}" th:text="${e.numero}" th:classappend="${e.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
-                    <tr>
+                      <tr class="jockcolor">
                     <th scope="">V-J-H(%)</th>
                     <td th:each="j, i : ${twopvjh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="jockcolor">
                     <th scope="">P-J-H(%)</th>
                     <td th:each="j, i : ${twoppjh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">V-CO(%)</th>
                     <td th:each="j, i : ${twotxv}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">P-CO(%)</th>
                     <td th:each="j, i : ${twotxp}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                     
-                      <tr>
+                      <tr class="couplecolor">
                     <th scope="">V-CO-H(%)</th>
                     <td th:each="j, i : ${twotxvh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">P-CO-H(%)</th>
                     <td th:each="j, i : ${twotxph}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
@@ -217,52 +225,52 @@
                           
                 <thead>       
     
-                    <tr>
+                    <tr class="horsecolor">
                     <th scope="">V-C-H(%)</th>
                     <td th:each="c, i : ${threepvch}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                      <tr>
+                      <tr class="horsecolor">
                     <th scope="">P-C-H(%)</th>
                     <td th:each="c, i : ${threeppch}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                      <tr>
+                      <tr class="entcolor">
                     <th scope="">V-E-H(%)</th>
                     <td th:each="e, i : ${threepveh}" th:text="${e.numero}" th:classappend="${e.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                    
-                     <tr>
+                      <tr class="entcolor">
                     <th scope="">P-E-H(%)</th>
                     <td th:each="e, i : ${threeppeh}" th:text="${e.numero}" th:classappend="${e.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
-                    <tr>
+                      <tr class="jockcolor">
                     <th scope="">V-J-H(%)</th>
                     <td th:each="j, i : ${threepvjh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="jockcolor">
                     <th scope="">P-J-H(%)</th>
                     <td th:each="j, i : ${threeppjh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">V-CO(%)</th>
                     <td th:each="j, i : ${threetxv}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">P-CO(%)</th>
                     <td th:each="j, i : ${threetxp}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                     
-                      <tr>
+                      <tr class="couplecolor">
                     <th scope="">V-CO-H(%)</th>
                     <td th:each="j, i : ${threetxvh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">P-CO-H(%)</th>
                     <td th:each="j, i : ${threetxph}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
@@ -310,52 +318,52 @@
                           
                 <thead>   
                     
-                   <tr>
+                   <tr class="horsecolor">
                     <th scope="">V-C-H(%)</th>
                     <td th:each="c, i : ${fourpvch}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                      <tr>
+                      <tr class="horsecolor">
                     <th scope="">P-C-H(%)</th>
                     <td th:each="c, i : ${fourppch}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                      <tr>
+                      <tr class="entcolor">
                     <th scope="">V-E-H(%)</th>
                     <td th:each="e, i : ${fourpveh}" th:text="${e.numero}" th:classappend="${e.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                    
-                     <tr>
+                      <tr class="entcolor">
                     <th scope="">P-E-H(%)</th>
                     <td th:each="e, i : ${fourppeh}" th:text="${e.numero}" th:classappend="${e.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
-                    <tr>
+                      <tr class="jockcolor">
                     <th scope="">V-J-H(%)</th>
                     <td th:each="j, i : ${fourpvjh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="jockcolor">
                     <th scope="">P-J-H(%)</th>
                     <td th:each="j, i : ${fourppjh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">V-CO(%)</th>
                     <td th:each="j, i : ${fourtxv}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">P-CO(%)</th>
                     <td th:each="j, i : ${fourtxp}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                     
-                      <tr>
+                      <tr class="couplecolor">
                     <th scope="">V-CO-H(%)</th>
                     <td th:each="j, i : ${fourtxvh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">P-CO-H(%)</th>
                     <td th:each="j, i : ${fourtxph}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
@@ -408,52 +416,52 @@
                           
                 <thead>       
     
-                  <tr>
+                  <tr class="horsecolor">
                     <th scope="">V-C-H(%)</th>
                     <td th:each="c, i : ${fivepvch}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                      <tr>
+                      <tr class="horsecolor">
                     <th scope="">P-C-H(%)</th>
                     <td th:each="c, i : ${fiveppch}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                      <tr>
+                      <tr class="entcolor">
                     <th scope="">V-E-H(%)</th>
                     <td th:each="e, i : ${fivepveh}" th:text="${e.numero}" th:classappend="${e.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                    
-                     <tr>
+                      <tr class="entcolor">
                     <th scope="">P-E-H(%)</th>
                     <td th:each="e, i : ${fiveppeh}" th:text="${e.numero}" th:classappend="${e.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
-                    <tr>
+                      <tr class="jockcolor">
                     <th scope="">V-J-H(%)</th>
                     <td th:each="j, i : ${fivepvjh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="jockcolor">
                     <th scope="">P-J-H(%)</th>
                     <td th:each="j, i : ${fiveppjh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">V-CO(%)</th>
                     <td th:each="j, i : ${fivetxv}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">P-CO(%)</th>
                     <td th:each="j, i : ${fivetxp}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                     
-                      <tr>
+                      <tr class="couplecolor">
                     <th scope="">V-CO-H(%)</th>
                     <td th:each="j, i : ${fivetxvh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">P-CO-H(%)</th>
                     <td th:each="j, i : ${fivetxph}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
@@ -499,52 +507,52 @@
                           
                 <thead>       
     
-                   <tr>
+                   <tr class="horsecolor">
                     <th scope="">V-C-H(%)</th>
                     <td th:each="c, i : ${sixpvch}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                      <tr>
+                      <tr class="horsecolor">
                     <th scope="">P-C-H(%)</th>
                     <td th:each="c, i : ${sixppch}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                      <tr>
+                      <tr class="entcolor">
                     <th scope="">V-E-H(%)</th>
                     <td th:each="e, i : ${sixpveh}" th:text="${e.numero}" th:classappend="${e.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                    
-                     <tr>
+                      <tr class="entcolor">
                     <th scope="">P-E-H(%)</th>
                     <td th:each="e, i : ${sixppeh}" th:text="${e.numero}" th:classappend="${e.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
-                    <tr>
+                      <tr class="jockcolor">
                     <th scope="">V-J-H(%)</th>
                     <td th:each="j, i : ${sixpvjh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="jockcolor">
                     <th scope="">P-J-H(%)</th>
                     <td th:each="j, i : ${sixppjh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">V-CO(%)</th>
                     <td th:each="j, i : ${sixtxv}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">P-CO(%)</th>
                     <td th:each="j, i : ${sixtxp}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                     
-                      <tr>
+                      <tr class="couplecolor">
                     <th scope="">V-CO-H(%)</th>
                     <td th:each="j, i : ${sixtxvh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">P-CO-H(%)</th>
                     <td th:each="j, i : ${sixtxph}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
@@ -590,52 +598,52 @@
                           
                 <thead>       
     
-                   <tr>
+                   <tr class="horsecolor">
                     <th scope="">V-C-H(%)</th>
                     <td th:each="c, i : ${sevenpvch}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                      <tr>
+                      <tr class="horsecolor">
                     <th scope="">P-C-H(%)</th>
                     <td th:each="c, i : ${sevenppch}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                      <tr>
+                      <tr class="entcolor">
                     <th scope="">V-E-H(%)</th>
                     <td th:each="e, i : ${sevenpveh}" th:text="${e.numero}" th:classappend="${e.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                    
-                     <tr>
+                      <tr class="entcolor">
                     <th scope="">P-E-H(%)</th>
                     <td th:each="e, i : ${sevenppeh}" th:text="${e.numero}" th:classappend="${e.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
-                    <tr>
+                      <tr class="jockcolor">
                     <th scope="">V-J-H(%)</th>
                     <td th:each="j, i : ${sevenpvjh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="jockcolor">
                     <th scope="">P-J-H(%)</th>
                     <td th:each="j, i : ${sevenppjh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">V-CO(%)</th>
                     <td th:each="j, i : ${seventxv}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">P-CO(%)</th>
                     <td th:each="j, i : ${seventxp}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                     
-                      <tr>
+                      <tr class="couplecolor">
                     <th scope="">V-CO-H(%)</th>
                     <td th:each="j, i : ${seventxvh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">P-CO-H(%)</th>
                     <td th:each="j, i : ${seventxph}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
@@ -682,52 +690,52 @@
                           
                 <thead>   
                     
-                    <tr>
+                    <tr class="horsecolor">
                     <th scope="">V-C-H(%)</th>
                     <td th:each="c, i : ${eightpvch}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                      <tr>
+                      <tr class="horsecolor">
                     <th scope="">P-C-H(%)</th>
                     <td th:each="c, i : ${eightppch}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                      <tr>
+                      <tr class="entcolor">
                     <th scope="">V-E-H(%)</th>
                     <td th:each="e, i : ${eightpveh}" th:text="${e.numero}" th:classappend="${e.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                    
-                     <tr>
+                      <tr class="entcolor">
                     <th scope="">P-E-H(%)</th>
                     <td th:each="e, i : ${eightppeh}" th:text="${e.numero}" th:classappend="${e.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
-                    <tr>
+                      <tr class="jockcolor">
                     <th scope="">V-J-H(%)</th>
                     <td th:each="j, i : ${eightpvjh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="jockcolor">
                     <th scope="">P-J-H(%)</th>
                     <td th:each="j, i : ${eightppjh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">V-CO(%)</th>
                     <td th:each="j, i : ${eighttxv}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">P-CO(%)</th>
                     <td th:each="j, i : ${eighttxp}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                     
-                      <tr>
+                      <tr class="couplecolor">
                     <th scope="">V-CO-H(%)</th>
                     <td th:each="j, i : ${eighttxvh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">P-CO-H(%)</th>
                     <td th:each="j, i : ${eighttxph}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
@@ -775,52 +783,52 @@
                           
                 <thead>   
                     
-                   <tr>
+                   <tr class="horsecolor">
                     <th scope="">V-C-H(%)</th>
                     <td th:each="c, i : ${ninepvch}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                      <tr>
+                      <tr class="horsecolor">
                     <th scope="">P-C-H(%)</th>
                     <td th:each="c, i : ${nineppch}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                      <tr>
+                      <tr class="entcolor">
                     <th scope="">V-E-H(%)</th>
                     <td th:each="e, i : ${ninepveh}" th:text="${e.numero}" th:classappend="${e.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                    
-                     <tr>
+                      <tr class="entcolor">
                     <th scope="">P-E-H(%)</th>
                     <td th:each="e, i : ${nineppeh}" th:text="${e.numero}" th:classappend="${e.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
-                    <tr>
+                      <tr class="jockcolor">
                     <th scope="">V-J-H(%)</th>
                     <td th:each="j, i : ${ninepvjh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="jockcolor">
                     <th scope="">P-J-H(%)</th>
                     <td th:each="j, i : ${nineppjh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">V-CO(%)</th>
                     <td th:each="j, i : ${ninetxv}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">P-CO(%)</th>
                     <td th:each="j, i : ${ninetxp}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                     
-                      <tr>
+                      <tr class="couplecolor">
                     <th scope="">V-CO-H(%)</th>
                     <td th:each="j, i : ${ninetxvh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">P-CO-H(%)</th>
                     <td th:each="j, i : ${ninetxph}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
@@ -866,52 +874,52 @@
                           
                 <thead>   
                     
-                    <tr>
+                    <tr class="horsecolor">
                     <th scope="">V-C-H(%)</th>
                     <td th:each="c, i : ${tenpvch}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                      <tr>
+                      <tr class="horsecolor">
                     <th scope="">P-C-H(%)</th>
                     <td th:each="c, i : ${tenppch}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                      <tr>
+                      <tr class="entcolor">
                     <th scope="">V-E-H(%)</th>
                     <td th:each="e, i : ${tenpveh}" th:text="${e.numero}" th:classappend="${e.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                    
-                     <tr>
+                      <tr class="entcolor">
                     <th scope="">P-E-H(%)</th>
                     <td th:each="e, i : ${tenppeh}" th:text="${e.numero}" th:classappend="${e.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
-                    <tr>
+                      <tr class="jockcolor">
                     <th scope="">V-J-H(%)</th>
                     <td th:each="j, i : ${tenpvjh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="jockcolor">
                     <th scope="">P-J-H(%)</th>
                     <td th:each="j, i : ${tenppjh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">V-CO(%)</th>
                     <td th:each="j, i : ${tentxv}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">P-CO(%)</th>
                     <td th:each="j, i : ${tentxp}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                     
-                      <tr>
+                      <tr class="couplecolor">
                     <th scope="">V-CO-H(%)</th>
                     <td th:each="j, i : ${tentxvh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">P-CO-H(%)</th>
                     <td th:each="j, i : ${tentxph}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
@@ -957,52 +965,52 @@
                           <table class="table-sm table-striped table-responsive">
                           
                 <thead>   
-                    <tr>
+                    <tr class="horsecolor">
                     <th scope="">V-C-H(%)</th>
                     <td th:each="c, i : ${elevenpvch}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                      <tr>
+                      <tr class="horsecolor">
                     <th scope="">P-C-H(%)</th>
                     <td th:each="c, i : ${elevenppch}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                      <tr>
+                      <tr class="entcolor">
                     <th scope="">V-E-H(%)</th>
                     <td th:each="e, i : ${elevenpveh}" th:text="${e.numero}" th:classappend="${e.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                    
-                     <tr>
+                      <tr class="entcolor">
                     <th scope="">P-E-H(%)</th>
                     <td th:each="e, i : ${elevenppeh}" th:text="${e.numero}" th:classappend="${e.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
-                    <tr>
+                      <tr class="jockcolor">
                     <th scope="">V-J-H(%)</th>
                     <td th:each="j, i : ${elevenpvjh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="jockcolor">
                     <th scope="">P-J-H(%)</th>
                     <td th:each="j, i : ${elevenppjh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">V-CO(%)</th>
                     <td th:each="j, i : ${eleventxv}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">P-CO(%)</th>
                     <td th:each="j, i : ${eleventxp}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                     
-                      <tr>
+                      <tr class="couplecolor">
                     <th scope="">V-CO-H(%)</th>
                     <td th:each="j, i : ${eleventxvh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">P-CO-H(%)</th>
                     <td th:each="j, i : ${eleventxph}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
@@ -1049,52 +1057,52 @@
                           
                 <thead>   
                     
-                    <tr>
+                    <tr class="horsecolor">
                     <th scope="">V-C-H(%)</th>
                     <td th:each="c, i : ${twelvepvch}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                      <tr>
+                      <tr class="horsecolor">
                     <th scope="">P-C-H(%)</th>
                     <td th:each="c, i : ${twelveppch}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                      <tr>
+                      <tr class="entcolor">
                     <th scope="">V-E-H(%)</th>
                     <td th:each="e, i : ${twelvepveh}" th:text="${e.numero}" th:classappend="${e.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                    
-                     <tr>
+                      <tr class="entcolor">
                     <th scope="">P-E-H(%)</th>
                     <td th:each="e, i : ${twelveppeh}" th:text="${e.numero}" th:classappend="${e.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
-                    <tr>
+                      <tr class="jockcolor">
                     <th scope="">V-J-H(%)</th>
                     <td th:each="j, i : ${twelvepvjh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="jockcolor">
                     <th scope="">P-J-H(%)</th>
                     <td th:each="j, i : ${twelveppjh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">V-CO(%)</th>
                     <td th:each="j, i : ${twelvetxv}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">P-CO(%)</th>
                     <td th:each="j, i : ${twelvetxp}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                     
-                      <tr>
+                      <tr class="couplecolor">
                     <th scope="">V-CO-H(%)</th>
                     <td th:each="j, i : ${twelvetxvh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>
                     
-                     <tr>
+                      <tr class="couplecolor">
                     <th scope="">P-CO-H(%)</th>
                     <td th:each="j, i : ${twelvetxph}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
@@ -1137,6 +1145,16 @@
 			
 		</div>
 	</div>
+		
+		</div>
+		<div class="col-md-1" style="background-color: silver;">
+		</div>
+	</div>
+</div>
+
+<!-- <h3 style="text-align: center; margin-bottom: 10px; text-decoration: underline;">Bienvenue sur Djetay'Infos</h3> -->
+
+
 
 
 

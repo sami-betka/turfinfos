@@ -23,3 +23,29 @@ font-weight: bold;
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+/*                           COLORS */
+/* ////////////////////////////////////////////////////////////// */
+
+.horsecolor{
+	background-color: #A52A2A;
+	color: white;
+}
+.entcolor{
+	background-color: #1E90FF;
+}
+.jockcolor{
+    background-color: #FFA500;
+}
+.couplecolor{
+	background-color: #FFB6C1;
+}
+/* .chronoscolor{ */
+/*     background-color: #FFA500; */
+/* } */
+/* .pronocolor{ */
+/* 	background-color: 	#FF69B4; */
+/* } */
+
+
+
