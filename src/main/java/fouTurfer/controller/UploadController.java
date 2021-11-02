@@ -204,138 +204,73 @@ public class UploadController {
 					.sorted(Comparator.comparingDouble(TurfInfos::getPourcVictChevalHippo))
 					.filter(ti -> !ti.getPourcVictChevalHippo().equals(0d))
 					.collect(Collectors.toList());
-			Collections.reverse(listBypvch);
-			//Création de "numeroString"
-			listBypvch.forEach(ti-> {
-				
-				Font font = new Font(ti.getNumero().toString(), Font.BOLD, 14);
-				ti.setNumeroString(font.getName() + " (" + ti.getCoursescheval() + " - " + ti.getPourcVictChevalHippo() + "%)");
-				
-			});				
+			Collections.reverse(listBypvch);			
 			
 			List<TurfInfos> listBypvjh =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getPourcVictJockHippo))
 					.filter(ti -> !ti.getPourcVictJockHippo().equals(0d))
 					.collect(Collectors.toList());
 			Collections.reverse(listBypvjh);
-			//Création de "numeroString"
-			listBypvjh.forEach(ti-> {
-				
-				Font font = new Font(ti.getNumero().toString(), Font.BOLD, 14);
-				ti.setNumeroString(font.getName() + " (" + ti.getCoursesjockey() + " - " + ti.getPourcVictJockHippo() + "%)");
-				
-			});
 			
 			List<TurfInfos> listBypveh =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getPourcVictEntHippo))
 					.filter(ti -> !ti.getPourcVictEntHippo().equals(0d))
 					.collect(Collectors.toList());
 			Collections.reverse(listBypveh);
-			//Création de "numeroString"
-			listBypveh.forEach(ti-> {
-				
-				Font font = new Font(ti.getNumero().toString(), Font.BOLD, 14);
-				ti.setNumeroString(font.getName() + " (" + ti.getCoursesentraineur() + " - " + ti.getPourcVictEntHippo() + "%)");
-				
-			});
-						
+			//Verif si plusieurs chevaux pour meme entraineur
+//            for (TurfInfos inf : listBypveh) {
+//            	if
+//            }
+			
 			List<TurfInfos> listByppch =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getPourcPlaceChevalHippo))
 					.filter(ti -> !ti.getPourcPlaceChevalHippo().equals(0d))
 					.collect(Collectors.toList());
 			Collections.reverse(listByppch);
-			//Création de "numeroString"
-			listByppch.forEach(ti-> {
-				
-				Font font = new Font(ti.getNumero().toString(), Font.BOLD, 14);
-				ti.setNumeroString(font.getName() + " (" + ti.getCoursescheval() + " - " + ti.getPourcPlaceChevalHippo() + "%)");
-				
-			});
-								
+						
 			List<TurfInfos> listByppjh =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getPourcPlaceJockHippo))
 					.filter(ti -> !ti.getPourcPlaceJockHippo().equals(0d))
 					.collect(Collectors.toList());
 			Collections.reverse(listByppjh);
-			//Création de "numeroString"
-			listByppjh.forEach(ti-> {
 				
-				Font font = new Font(ti.getNumero().toString(), Font.BOLD, 14);
-				ti.setNumeroString(font.getName() + " (" + ti.getCoursesjockey() + " - " + ti.getPourcPlaceJockHippo() + "%)");
-				
-			});			
 			List<TurfInfos> listByppeh =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getPourcPlaceEntHippo))
 					.filter(ti -> !ti.getPourcPlaceEntHippo().equals(0d))
 					.collect(Collectors.toList());
 			Collections.reverse(listByppeh);
-			//Création de "numeroString"
-			listByppeh.forEach(ti-> {
-				
-				Font font = new Font(ti.getNumero().toString(), Font.BOLD, 14);
-				ti.setNumeroString(font.getName() + " (" + ti.getCoursesentraineur() + " - " + ti.getPourcPlaceEntHippo() + "%)");
-				
-			});		
-			
+		
 			List<TurfInfos> listBytxv =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getTxVictCouple))
 					.filter(ti -> !ti.getTxVictCouple().equals(0d))
 					.collect(Collectors.toList());
 			Collections.reverse(listBytxv);
-			//Création de "numeroString"
-			listBytxv.forEach(ti-> {
-				
-				Font font = new Font(ti.getNumero().toString(), Font.BOLD, 14);
-				ti.setNumeroString(font.getName() + " (" + ti.getNbCourseCouple() + " - " + ti.getTxVictCouple() + "%)");
-				
-			});		
-						
+					
 			List<TurfInfos> listBytxp =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getTxPlaceCouple))
 					.filter(ti -> !ti.getTxPlaceCouple().equals(0d))
 					.collect(Collectors.toList());
 			Collections.reverse(listBytxp);
-			//Création de "numeroString"
-			listBytxp.forEach(ti-> {
 				
-				Font font = new Font(ti.getNumero().toString(), Font.BOLD, 14);
-				ti.setNumeroString(font.getName() + " (" + ti.getNbCourseCouple() + " - " + ti.getTxPlaceCouple() + "%)");
-				
-			});		
-							
 			List<TurfInfos> listBytxvh =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getTxVictCoupleHippo))
 					.filter(ti -> !ti.getTxVictCoupleHippo().equals(0d))
 					.collect(Collectors.toList());
 			Collections.reverse(listBytxvh);
-			//Création de "numeroString"
-			listBytxvh.forEach(ti-> {
 				
-				Font font = new Font(ti.getNumero().toString(), Font.BOLD, 14);
-				ti.setNumeroString(font.getName() + " (" + ti.getNbCourseCouple() + " - " + ti.getTxVictCoupleHippo() + "%)");
-				
-			});		
-							
 			List<TurfInfos> listBytxph =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getTxPlaceCoupleHippo))
 					.filter(ti -> !ti.getTxPlaceCoupleHippo().equals(0d))
 					.collect(Collectors.toList());
 			Collections.reverse(listBytxph);
-			//Création de "numeroString"
-			listBytxph.forEach(ti-> {
-				
-				Font font = new Font(ti.getNumero().toString(), Font.BOLD, 14);
-				ti.setNumeroString(font.getName() + " (" + ti.getNbCourseCouple() + " - " + ti.getTxPlaceCoupleHippo() + "%)");
-				
-			});		
-							
-			
+		
 			//CHRONOS
 			List<TurfInfos> listByChronos =  allraceInfos.stream()
 					.filter(ti -> ti.getChrono()!= null)
 					.sorted(Comparator.comparingInt(TurfInfos::getChrono))
 					.collect(Collectors.toList());
 //			Collections.reverse(listBypvch);
+			
 			//Calcul de la note
 			
 			List<TurfInfos> listByNoteProno =  calculateFinalNoteProno(allraceInfos,

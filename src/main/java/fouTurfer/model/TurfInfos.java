@@ -117,17 +117,27 @@ private String coursescheval;
 //@Column(name = "")
 @CsvBindByName
 //@CsvNumber("###.##")
-private String coursesjockey;
+private String nbrCourseChevalHippo;
 
 //@Column(name = "")
 @CsvBindByName
 //@CsvNumber("###.##")
-private String coursesentraineur;
+private String nbrCourseJockHippo;
+
+//@Column(name = "")
+@CsvBindByName
+//@CsvNumber("###.##")
+private String nbrCourseEntHippo;
 
 //@Column(name = "")
 @CsvBindByName
 //@CsvNumber("###.##")
 private String nbCourseCouple;
+
+//@Column(name = "")
+@CsvBindByName
+//@CsvNumber("###.##")
+private String nbCourseCoupleHippo;
 
 
   private Integer chrono;
@@ -138,7 +148,7 @@ private String nbCourseCouple;
 
   
 
-  public TurfInfos(Long id, String jour, String R, Integer C, Integer numcourse, Integer numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo, Double pourcPlaceChevalHippo, Double pourcPlaceJockHippo, Double pourcPlaceEntHippo, Double TxVictCouple, Double TxPlaceCouple, Double TxVictCoupleHippo, Double TxPlaceCoupleHippo, Integer chrono, Integer noteProno, Integer recence, String numeroString, String coursescheval, String coursesjockey, String coursesentraineur, String nbCourseCouple) {
+  public TurfInfos(Long id, String jour, String R, Integer C, Integer numcourse, Integer numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo, Double pourcPlaceChevalHippo, Double pourcPlaceJockHippo, Double pourcPlaceEntHippo, Double TxVictCouple, Double TxPlaceCouple, Double TxVictCoupleHippo, Double TxPlaceCoupleHippo, Integer chrono, Integer noteProno, Integer recence, String numeroString, String coursescheval, String coursesjockey, String coursesentraineur, String nbCourseCouple, String nbrCourseChevalHippo, String nbrCourseJockHippo, String nbrCourseEntHippo) {
     this.id = id;
     this.R = R;
     this.C = C;
@@ -157,9 +167,13 @@ private String nbCourseCouple;
     this.TxPlaceCoupleHippo = TxPlaceCoupleHippo;
     this.recence = recence;
     this.coursescheval = coursescheval;
-    this.coursesjockey = coursesjockey;
-    this.coursesentraineur = coursesentraineur;
+//    this.coursesjockey = coursesjockey;
+//    this.coursesentraineur = coursesentraineur;
     this.nbCourseCouple = nbCourseCouple;
+    this.nbrCourseChevalHippo = nbrCourseChevalHippo;
+    this.nbrCourseJockHippo = nbrCourseJockHippo;
+    this.nbrCourseEntHippo = nbrCourseEntHippo;
+
 
 
     //Paramètres crées
@@ -358,21 +372,21 @@ public void setCoursescheval(String coursescheval) {
 	this.coursescheval = coursescheval;
 }
 
-public String getCoursesjockey() {
-	return coursesjockey;
-}
-
-public void setCoursesjockey(String coursesjockey) {
-	this.coursesjockey = coursesjockey;
-}
-
-public String getCoursesentraineur() {
-	return coursesentraineur;
-}
-
-public void setCoursesentraineur(String coursesentraineur) {
-	this.coursesentraineur = coursesentraineur;
-}
+//public String getCoursesjockey() {
+//	return coursesjockey;
+//}
+//
+//public void setCoursesjockey(String coursesjockey) {
+//	this.coursesjockey = coursesjockey;
+//}
+//
+//public String getCoursesentraineur() {
+//	return coursesentraineur;
+//}
+//
+//public void setCoursesentraineur(String coursesentraineur) {
+//	this.coursesentraineur = coursesentraineur;
+//}
 
 public String getNbCourseCouple() {
 	return nbCourseCouple;
@@ -380,6 +394,38 @@ public String getNbCourseCouple() {
 
 public void setNbCourseCouple(String nbCourseCouple) {
 	this.nbCourseCouple = nbCourseCouple;
+}
+
+public String getNbrCourseChevalHippo() {
+	return nbrCourseChevalHippo;
+}
+
+public void setNbrCourseChevalHippo(String nbrCourseChevalHippo) {
+	this.nbrCourseChevalHippo = nbrCourseChevalHippo;
+}
+
+public String getNbrCourseJockHippo() {
+	return nbrCourseJockHippo;
+}
+
+public void setNbrCourseJockHippo(String nbrCourseJockHippo) {
+	this.nbrCourseJockHippo = nbrCourseJockHippo;
+}
+
+public String getNbrCourseEntHippo() {
+	return nbrCourseEntHippo;
+}
+
+public void setNbrCourseEntHippo(String nbrCourseEntHippo) {
+	this.nbrCourseEntHippo = nbrCourseEntHippo;
+}
+
+public String getNbCourseCoupleHippo() {
+	return nbCourseCoupleHippo;
+}
+
+public void setNbCourseCoupleHippo(String nbCourseCoupleHippo) {
+	this.nbCourseCoupleHippo = nbCourseCoupleHippo;
 }
 
   

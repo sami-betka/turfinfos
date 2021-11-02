@@ -41,9 +41,15 @@ public class TurfInfoService {
     	infoToUpdate.setTxVictCoupleHippo(info.getTxVictCoupleHippo());
     	
     	infoToUpdate.setCoursescheval(info.getCoursescheval());
-    	infoToUpdate.setCoursesentraineur(info.getCoursesentraineur());
-    	infoToUpdate.setCoursesjockey(info.getCoursesjockey());
+//    	infoToUpdate.setCoursesentraineur(info.getCoursesentraineur());
+//    	infoToUpdate.setCoursesjockey(info.getCoursesjockey());
     	infoToUpdate.setNbCourseCouple(info.getNbCourseCouple());
+    	infoToUpdate.setNbrCourseChevalHippo(info.getNbrCourseChevalHippo());
+    	infoToUpdate.setNbrCourseJockHippo(info.getNbrCourseJockHippo());
+    	infoToUpdate.setNbrCourseEntHippo(info.getNbrCourseEntHippo());
+    	infoToUpdate.setNbCourseCoupleHippo(info.getNbCourseCoupleHippo());
+
+    	
     	
     	turfInfosRepository.save(infoToUpdate);
     	
