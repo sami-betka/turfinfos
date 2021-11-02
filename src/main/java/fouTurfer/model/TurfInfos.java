@@ -109,13 +109,36 @@ private Double TxPlaceCoupleHippo;
 //@CsvNumber("###.##")
 private Integer recence;
 
+//@Column(name = "")
+@CsvBindByName
+//@CsvNumber("###.##")
+private String coursescheval;
+
+//@Column(name = "")
+@CsvBindByName
+//@CsvNumber("###.##")
+private String coursesjockey;
+
+//@Column(name = "")
+@CsvBindByName
+//@CsvNumber("###.##")
+private String coursesentraineur;
+
+//@Column(name = "")
+@CsvBindByName
+//@CsvNumber("###.##")
+private String nbCourseCouple;
+
 
   private Integer chrono;
   
   private Double noteProno;
   
+  private String numeroString;
 
-  public TurfInfos(Long id, String jour, String R, Integer C, Integer numcourse, Integer numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo, Double pourcPlaceChevalHippo, Double pourcPlaceJockHippo, Double pourcPlaceEntHippo, Double TxVictCouple, Double TxPlaceCouple, Double TxVictCoupleHippo, Double TxPlaceCoupleHippo, Integer chrono, Integer noteProno, Integer recence) {
+  
+
+  public TurfInfos(Long id, String jour, String R, Integer C, Integer numcourse, Integer numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo, Double pourcPlaceChevalHippo, Double pourcPlaceJockHippo, Double pourcPlaceEntHippo, Double TxVictCouple, Double TxPlaceCouple, Double TxVictCoupleHippo, Double TxPlaceCoupleHippo, Integer chrono, Integer noteProno, Integer recence, String numeroString, String coursescheval, String coursesjockey, String coursesentraineur, String nbCourseCouple) {
     this.id = id;
     this.R = R;
     this.C = C;
@@ -133,11 +156,17 @@ private Integer recence;
     this.TxVictCoupleHippo = TxVictCoupleHippo;
     this.TxPlaceCoupleHippo = TxPlaceCoupleHippo;
     this.recence = recence;
+    this.coursescheval = coursescheval;
+    this.coursesjockey = coursesjockey;
+    this.coursesentraineur = coursesentraineur;
+    this.nbCourseCouple = nbCourseCouple;
+
 
     //Paramètres crées
     
     this.chrono = chrono;
     this.noteProno = 0d;
+    this.numeroString = numeroString;
 
   }
   
@@ -311,6 +340,46 @@ public Integer getRecence() {
 
 public void setRecence(Integer recence) {
 	this.recence = recence;
+}
+
+public String getNumeroString() {
+	return numeroString;
+}
+
+public void setNumeroString(String numeroString) {
+	this.numeroString = numeroString;
+}
+
+public String getCoursescheval() {
+	return coursescheval;
+}
+
+public void setCoursescheval(String coursescheval) {
+	this.coursescheval = coursescheval;
+}
+
+public String getCoursesjockey() {
+	return coursesjockey;
+}
+
+public void setCoursesjockey(String coursesjockey) {
+	this.coursesjockey = coursesjockey;
+}
+
+public String getCoursesentraineur() {
+	return coursesentraineur;
+}
+
+public void setCoursesentraineur(String coursesentraineur) {
+	this.coursesentraineur = coursesentraineur;
+}
+
+public String getNbCourseCouple() {
+	return nbCourseCouple;
+}
+
+public void setNbCourseCouple(String nbCourseCouple) {
+	this.nbCourseCouple = nbCourseCouple;
 }
 
   

@@ -40,6 +40,11 @@ public class TurfInfoService {
     	infoToUpdate.setTxVictCouple(info.getTxVictCouple());
     	infoToUpdate.setTxVictCoupleHippo(info.getTxVictCoupleHippo());
     	
+    	infoToUpdate.setCoursescheval(info.getCoursescheval());
+    	infoToUpdate.setCoursesentraineur(info.getCoursesentraineur());
+    	infoToUpdate.setCoursesjockey(info.getCoursesjockey());
+    	infoToUpdate.setNbCourseCouple(info.getNbCourseCouple());
+    	
     	turfInfosRepository.save(infoToUpdate);
     	
     }
