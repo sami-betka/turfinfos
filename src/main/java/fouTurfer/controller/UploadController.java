@@ -340,10 +340,10 @@ public class UploadController {
 				model.addAttribute(numToString(num) + "chronos", false); 
 			}
 			
-			if(!listByChronos.isEmpty() || listByTayPronos.size()>0) {
+			if(!listByTayPronos.isEmpty() || listByTayPronos.size()>0) {
 				model.addAttribute(numToString(num) + "taypronos", true); 
 			}
-			if(listByChronos.isEmpty() || listByTayPronos.size()==0) {
+			if(listByTayPronos.isEmpty() || listByTayPronos.size()==0) {
 				model.addAttribute(numToString(num) + "taypronos", false); 
 			}
 			

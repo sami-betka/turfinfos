@@ -15,7 +15,7 @@
 <!-- <h3 style="text-align: center; margin-bottom: 30px; text-decoration: underline;">Bienvenue sur Djetay'Infos</h3> -->
 
 
-<div class="container-fluid" style="margin-top: 20px;">
+<div class="container-fluid" style="margin-top: 20px; text-align: center;">
 	<div class="row">
 <!-- 		<div class="col-md-1" style="background-color: silver;"> -->
 <!-- 		</div> -->
@@ -234,6 +234,22 @@
 
             <!--//Collapse chronos END -->
             
+                 <!--             //Collapse TAYPRONOS BEGIN-->
+
+        <div th:if="${twotaypronos eq false}">
+        		<div th:replace="_components :: taypronos-buttontwo">...</div>
+        		<div th:replace="_components :: taypronos-dropdownstwo(${twohorses})">...</div>
+        </div>
+<!--          <div th:if="${onechronos eq true}"> -->
+<!--         		<div th:replace="_components :: chronos-modif">...</div> -->
+<!--         </div> -->
+        <div th:if="${twotaypronos eq true}">
+                <div th:replace="_components :: taypronos-modiftwo">...</div>
+		        <div th:replace="_components :: taypronos-dropdownstwo(${twohorses})">...</div>
+		</div>
+		
+            <!--//Collapse TAYPRONOS END -->
+            
             
 				</div>
 					</div>
@@ -323,8 +339,23 @@
 		        <div th:replace="_components :: chronos-dropdownsthree(${threehorses})">...</div>
 		</div>
 		
-
             <!--//Collapse chronos END -->
+            
+                 <!--             //Collapse TAYPRONOS BEGIN-->
+
+        <div th:if="${threetaypronos eq false}">
+        		<div th:replace="_components :: taypronos-buttonthree">...</div>
+        		<div th:replace="_components :: taypronos-dropdownsthree(${threehorses})">...</div>
+        </div>
+<!--          <div th:if="${onechronos eq true}"> -->
+<!--         		<div th:replace="_components :: chronos-modif">...</div> -->
+<!--         </div> -->
+        <div th:if="${threetaypronos eq true}">
+                <div th:replace="_components :: taypronos-modifthree">...</div>
+		        <div th:replace="_components :: taypronos-dropdownsthree(${threehorses})">...</div>
+		</div>
+		
+            <!--//Collapse TAYPRONOS END -->
             
             
 				</div>
@@ -416,8 +447,23 @@
 		        <div th:replace="_components :: chronos-dropdownsfour(${fourhorses})">...</div>
 		</div>
 		
-
             <!--//Collapse chronos END -->
+            
+                 <!--             //Collapse TAYPRONOS BEGIN-->
+
+        <div th:if="${fourtaypronos eq false}">
+        		<div th:replace="_components :: taypronos-buttonfour">...</div>
+        		<div th:replace="_components :: taypronos-dropdownsfour(${fourhorses})">...</div>
+        </div>
+<!--          <div th:if="${onechronos eq true}"> -->
+<!--         		<div th:replace="_components :: chronos-modif">...</div> -->
+<!--         </div> -->
+        <div th:if="${fourtaypronos eq true}">
+                <div th:replace="_components :: taypronos-modiffour">...</div>
+		        <div th:replace="_components :: taypronos-dropdownsfour(${fourhorses})">...</div>
+		</div>
+		
+            <!--//Collapse TAYPRONOS END -->
             
 				</div>
 					</div>
@@ -514,8 +560,24 @@
 		        <div th:replace="_components :: chronos-dropdownsfive(${fivehorses})">...</div>
 		</div>
 		
-
             <!--//Collapse chronos END -->
+            
+                 <!--             //Collapse TAYPRONOS BEGIN-->
+
+        <div th:if="${fivetaypronos eq false}">
+        		<div th:replace="_components :: taypronos-buttonfive">...</div>
+        		<div th:replace="_components :: taypronos-dropdownsfive(${fivehorses})">...</div>
+        </div>
+<!--          <div th:if="${onechronos eq true}"> -->
+<!--         		<div th:replace="_components :: chronos-modif">...</div> -->
+<!--         </div> -->
+        <div th:if="${fivetaypronos eq true}">
+                <div th:replace="_components :: taypronos-modiffive">...</div>
+		        <div th:replace="_components :: taypronos-dropdownsone(${fivehorses})">...</div>
+		</div>
+		
+            <!--//Collapse TAYPRONOS END -->
+
             
 				</div>
 					</div>
@@ -605,8 +667,23 @@
 		        <div th:replace="_components :: chronos-dropdownssix(${sixhorses})">...</div>
 		</div>
 		
-
             <!--//Collapse chronos END -->
+            
+                 <!--             //Collapse TAYPRONOS BEGIN-->
+
+        <div th:if="${sixtaypronos eq false}">
+        		<div th:replace="_components :: taypronos-buttonsix">...</div>
+        		<div th:replace="_components :: taypronos-dropdownssix(${sixhorses})">...</div>
+        </div>
+<!--          <div th:if="${onechronos eq true}"> -->
+<!--         		<div th:replace="_components :: chronos-modif">...</div> -->
+<!--         </div> -->
+        <div th:if="${sixtaypronos eq true}">
+                <div th:replace="_components :: taypronos-modifsix">...</div>
+		        <div th:replace="_components :: taypronos-dropdownssix(${sixhorses})">...</div>
+		</div>
+		
+            <!--//Collapse TAYPRONOS END -->
             
 				</div>
 					</div>
@@ -696,8 +773,23 @@
 		        <div th:replace="_components :: chronos-dropdownsseven(${sevenhorses})">...</div>
 		</div>
 		
-
             <!--//Collapse chronos END -->
+            
+                 <!--             //Collapse TAYPRONOS BEGIN-->
+
+        <div th:if="${seventaypronos eq false}">
+        		<div th:replace="_components :: taypronos-buttonseven">...</div>
+        		<div th:replace="_components :: taypronos-dropdownsseven(${sevenhorses})">...</div>
+        </div>
+<!--          <div th:if="${onechronos eq true}"> -->
+<!--         		<div th:replace="_components :: chronos-modif">...</div> -->
+<!--         </div> -->
+        <div th:if="${seventaypronos eq true}">
+                <div th:replace="_components :: taypronos-modifseven">...</div>
+		        <div th:replace="_components :: taypronos-dropdownsseven(${sevenhorses})">...</div>
+		</div>
+		
+            <!--//Collapse TAYPRONOS END -->
             
 				</div>
 					</div>
@@ -788,8 +880,23 @@
 		        <div th:replace="_components :: chronos-dropdownseight(${eighthorses})">...</div>
 		</div>
 		
-
             <!--//Collapse chronos END -->
+            
+                 <!--             //Collapse TAYPRONOS BEGIN-->
+
+        <div th:if="${eighttaypronos eq false}">
+        		<div th:replace="_components :: taypronos-buttoneight">...</div>
+        		<div th:replace="_components :: taypronos-dropdownseight(${eighthorses})">...</div>
+        </div>
+<!--          <div th:if="${onechronos eq true}"> -->
+<!--         		<div th:replace="_components :: chronos-modif">...</div> -->
+<!--         </div> -->
+        <div th:if="${eighttaypronos eq true}">
+                <div th:replace="_components :: taypronos-modifeight">...</div>
+		        <div th:replace="_components :: taypronos-dropdownseight(${eighthorses})">...</div>
+		</div>
+		
+            <!--//Collapse TAYPRONOS END -->
             
 				</div>
 					</div>
@@ -880,8 +987,23 @@
 		        <div th:replace="_components :: chronos-dropdownsnine(${ninehorses})">...</div>
 		</div>
 		
-
             <!--//Collapse chronos END -->
+            
+                 <!--             //Collapse TAYPRONOS BEGIN-->
+
+        <div th:if="${ninetaypronos eq false}">
+        		<div th:replace="_components :: taypronos-buttonnine">...</div>
+        		<div th:replace="_components :: taypronos-dropdownsnine(${ninehorses})">...</div>
+        </div>
+<!--          <div th:if="${onechronos eq true}"> -->
+<!--         		<div th:replace="_components :: chronos-modif">...</div> -->
+<!--         </div> -->
+        <div th:if="${ninetaypronos eq true}">
+                <div th:replace="_components :: taypronos-modifnine">...</div>
+		        <div th:replace="_components :: taypronos-dropdownsnine(${ninehorses})">...</div>
+		</div>
+		
+            <!--//Collapse TAYPRONOS END -->
             
 				</div>
 					</div>
@@ -972,8 +1094,23 @@
 		        <div th:replace="_components :: chronos-dropdownsten(${tenhorses})">...</div>
 		</div>
 		
-
             <!--//Collapse chronos END -->
+            
+                 <!--             //Collapse TAYPRONOS BEGIN-->
+
+        <div th:if="${tentaypronos eq false}">
+        		<div th:replace="_components :: taypronos-buttonten">...</div>
+        		<div th:replace="_components :: taypronos-dropdownsten(${tenhorses})">...</div>
+        </div>
+<!--          <div th:if="${onechronos eq true}"> -->
+<!--         		<div th:replace="_components :: chronos-modif">...</div> -->
+<!--         </div> -->
+        <div th:if="${tentaypronos eq true}">
+                <div th:replace="_components :: taypronos-modiften">...</div>
+		        <div th:replace="_components :: taypronos-dropdownsten(${tenhorses})">...</div>
+		</div>
+		
+            <!--//Collapse TAYPRONOS END -->
             
 				</div>
 					</div>
@@ -1063,8 +1200,23 @@
 		        <div th:replace="_components :: chronos-dropdownseleven(${elevenhorses})">...</div>
 		</div>
 		
-
             <!--//Collapse chronos END -->
+            
+                 <!--             //Collapse TAYPRONOS BEGIN-->
+
+        <div th:if="${eleventaypronos eq false}">
+        		<div th:replace="_components :: taypronos-buttoneleven">...</div>
+        		<div th:replace="_components :: taypronos-dropdownseleven(${elevenhorses})">...</div>
+        </div>
+<!--          <div th:if="${onechronos eq true}"> -->
+<!--         		<div th:replace="_components :: chronos-modif">...</div> -->
+<!--         </div> -->
+        <div th:if="${eleventaypronos eq true}">
+                <div th:replace="_components :: taypronos-modifeleven">...</div>
+		        <div th:replace="_components :: taypronos-dropdownseleven(${elevenhorses})">...</div>
+		</div>
+		
+            <!--//Collapse TAYPRONOS END -->
             
 				</div>
 					</div>
@@ -1156,6 +1308,22 @@
 		</div>
 		
             <!--//Collapse chronos END -->
+            
+                 <!--             //Collapse TAYPRONOS BEGIN-->
+
+        <div th:if="${twelvetaypronos eq false}">
+        		<div th:replace="_components :: taypronos-buttontwelve">...</div>
+        		<div th:replace="_components :: taypronos-dropdownstwelve(${twelvehorses})">...</div>
+        </div>
+<!--          <div th:if="${onechronos eq true}"> -->
+<!--         		<div th:replace="_components :: chronos-modif">...</div> -->
+<!--         </div> -->
+        <div th:if="${twelvetaypronos eq true}">
+                <div th:replace="_components :: taypronos-modiftwelve">...</div>
+		        <div th:replace="_components :: taypronos-dropdownstwelve(${twelvehorses})">...</div>
+		</div>
+		
+            <!--//Collapse TAYPRONOS END -->
             
 				</div>
 					</div>
