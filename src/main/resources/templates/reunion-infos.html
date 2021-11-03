@@ -94,7 +94,8 @@
                     </tr>      
                   
                     <tr>
-                    <th scope="">Chronos</th>
+                    <th th:if="${chronovaleur eq true}" scope="">Chronos:</th>
+                    <th th:if="${chronovaleur eq false}" scope="">Valeurs:</th>
                     <td th:each="c, i : ${onechronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                    
