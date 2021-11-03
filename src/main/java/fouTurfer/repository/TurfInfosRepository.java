@@ -34,7 +34,7 @@ public interface TurfInfosRepository extends JpaRepository<TurfInfos, Long> {
 	
 	List<TurfInfos> findAllByNumcourseAndChrono(Integer numcourse, Integer chrono);
 
+	List<TurfInfos> findAllByNumcourseAndTayProno(Integer numcourse, Integer tayprono);
 
-	
 
 }

@@ -271,6 +271,13 @@ public class UploadController {
 					.collect(Collectors.toList());
 //			Collections.reverse(listBypvch);
 			
+			//TayPronos
+			List<TurfInfos> listByTayPronos =  allraceInfos.stream()
+					.filter(ti -> ti.getTayProno()!= null)
+					.sorted(Comparator.comparingInt(TurfInfos::getTayProno))
+					.collect(Collectors.toList());
+//			Collections.reverse(listBypvch);
+			
 			//Calcul de la note
 			
 			List<TurfInfos> listByNoteProno =  calculateFinalNoteProno(allraceInfos,
@@ -313,6 +320,7 @@ public class UploadController {
 			model.addAttribute(numToString(num) + "txph", listBytxph);
 
 			model.addAttribute(numToString(num) + "chronoslist", listByChronos);
+			model.addAttribute(numToString(num) + "taypronoslist", listByTayPronos);
 			
 			if(listByNoteProno.size() < 9) {
 				model.addAttribute(numToString(num) + "pronoslist", listByNoteProno);
@@ -332,8 +340,15 @@ public class UploadController {
 				model.addAttribute(numToString(num) + "chronos", false); 
 			}
 			
+			if(!listByChronos.isEmpty() || listByTayPronos.size()>0) {
+				model.addAttribute(numToString(num) + "taypronos", true); 
+			}
+			if(listByChronos.isEmpty() || listByTayPronos.size()==0) {
+				model.addAttribute(numToString(num) + "taypronos", false); 
+			}
+			
 						
-//				System.out.println(num + "-" + listByChronos.size());
+
 			
 			model.addAttribute(numToString(num) + "exists", true);
 						

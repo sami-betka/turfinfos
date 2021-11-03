@@ -142,13 +142,15 @@ private String nbCourseCoupleHippo;
 
   private Integer chrono;
   
+  private Integer tayProno;
+  
   private Double noteProno;
   
   private String numeroString;
 
   
 
-  public TurfInfos(Long id, String jour, String R, Integer C, Integer numcourse, Integer numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo, Double pourcPlaceChevalHippo, Double pourcPlaceJockHippo, Double pourcPlaceEntHippo, Double TxVictCouple, Double TxPlaceCouple, Double TxVictCoupleHippo, Double TxPlaceCoupleHippo, Integer chrono, Integer noteProno, Integer recence, String numeroString, String coursescheval, String coursesjockey, String coursesentraineur, String nbCourseCouple, String nbrCourseChevalHippo, String nbrCourseJockHippo, String nbrCourseEntHippo) {
+  public TurfInfos(Long id, String jour, String R, Integer C, Integer numcourse, Integer numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo, Double pourcPlaceChevalHippo, Double pourcPlaceJockHippo, Double pourcPlaceEntHippo, Double TxVictCouple, Double TxPlaceCouple, Double TxVictCoupleHippo, Double TxPlaceCoupleHippo, Integer chrono, Integer noteProno, Integer recence, String numeroString, String coursescheval, String coursesjockey, String coursesentraineur, String nbCourseCouple, String nbrCourseChevalHippo, String nbrCourseJockHippo, String nbrCourseEntHippo, Integer tayProno) {
     this.id = id;
     this.R = R;
     this.C = C;
@@ -179,6 +181,7 @@ private String nbCourseCoupleHippo;
     //Paramètres crées
     
     this.chrono = chrono;
+    this.tayProno = tayProno;
     this.noteProno = 0d;
     this.numeroString = numeroString;
 
@@ -426,6 +429,14 @@ public String getNbCourseCoupleHippo() {
 
 public void setNbCourseCoupleHippo(String nbCourseCoupleHippo) {
 	this.nbCourseCoupleHippo = nbCourseCoupleHippo;
+}
+
+public Integer getTayProno() {
+	return tayProno;
+}
+
+public void setTayProno(Integer tayProno) {
+	this.tayProno = tayProno;
 }
 
   

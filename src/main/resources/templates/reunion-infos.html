@@ -73,21 +73,23 @@
                     
                    <tr class="couplecolor">
                     <th scope="">V-CO(%)</th>
-                    <td th:each="j, i : ${onetxv}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${onetxv}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCouple}]]->([[${p.TxVictCouple}]]%) </p></td>
                     </tr>
                     
                    <tr class="couplecolor">
                     <th scope="">P-CO(%)</th>
-                    <td th:each="j, i : ${onetxp}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${onetxp}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCouple}]]->([[${p.TxPlaceCouple}]]%) </p></td>
                     </tr>      
                     
                    <tr class="couplecolor">
                     <th scope="">V-CO-H(%)</th>
-                    <td th:each="j, i : ${onetxvh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${onetxvh}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]->([[${p.TxVictCoupleHippo}]]%) </p></td>
                     </tr>
                     
                    <tr class="couplecolor">
                     <th scope="">P-CO-H(%)</th>
+                    <td th:each="p, i : ${onetxph}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]->([[${p.TxPlaceCoupleHippo}]]%) </p></td>
+                    
                     <td th:each="j, i : ${onetxph}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                   
@@ -97,9 +99,14 @@
                    </tr>
                    
                     <tr>
-                    <th scope="" class="text-white">Le Prono:</th>
-                    <td th:each="p, i : ${onepronoslist}" th:text="${p.numero + ' (' + p.noteProno + ')'}" th:classappend="${p.recence gt 60 ? 'recence text-danger' : ''}"></td>
-                   </tr>
+                    <th scope="" class="">Le Prono:</th>
+                    <td th:each="p, i : ${onepronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
+                    </tr>
+                    
+                     <tr>
+                    <th scope="" class="">Le Tay'Prono:</th>
+                    <td th:each="p, i : ${onetaypronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
+                    </tr>
                    
                 </thead>
             </table>
@@ -118,8 +125,23 @@
 		        <div th:replace="_components :: chronos-dropdownsone(${onehorses})">...</div>
 		</div>
 		
-
             <!--//Collapse chronos END -->
+            
+            <!--             //Collapse TAYPRONOS BEGIN-->
+
+        <div th:if="${onetaypronos eq false}">
+        		<div th:replace="_components :: taypronos-buttonone">...</div>
+        		<div th:replace="_components :: taypronos-dropdownsone(${onehorses})">...</div>
+        </div>
+<!--          <div th:if="${onechronos eq true}"> -->
+<!--         		<div th:replace="_components :: chronos-modif">...</div> -->
+<!--         </div> -->
+        <div th:if="${onetaypronos eq true}">
+                <div th:replace="_components :: taypronos-modifone">...</div>
+		        <div th:replace="_components :: taypronos-dropdownsone(${onehorses})">...</div>
+		</div>
+		
+            <!--//Collapse TAYPRONOS END -->
                         
 				</div>
 					</div>
@@ -165,22 +187,22 @@
                     
                       <tr class="couplecolor">
                     <th scope="">V-CO(%)</th>
-                    <td th:each="j, i : ${twotxv}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${twotxv}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCouple}]]->([[${p.TxVictCouple}]]%) </p></td>
                     </tr>
                     
                       <tr class="couplecolor">
                     <th scope="">P-CO(%)</th>
-                    <td th:each="j, i : ${twotxp}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${twotxp}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCouple}]]->([[${p.TxPlaceCouple}]]%) </p></td>
                     </tr>      
                     
                       <tr class="couplecolor">
                     <th scope="">V-CO-H(%)</th>
-                    <td th:each="j, i : ${twotxvh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${twotxvh}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]->([[${p.TxVictCoupleHippo}]]%) </p></td>
                     </tr>
                     
                       <tr class="couplecolor">
                     <th scope="">P-CO-H(%)</th>
-                    <td th:each="j, i : ${twotxph}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${twotxph}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]->([[${p.TxPlaceCoupleHippo}]]%) </p></td>
                     </tr>      
                   
                     <tr>
@@ -257,22 +279,22 @@
                     
                       <tr class="couplecolor">
                     <th scope="">V-CO(%)</th>
-                    <td th:each="j, i : ${threetxv}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${threetxv}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCouple}]]->([[${p.TxVictCouple}]]%) </p></td>
                     </tr>
                     
                       <tr class="couplecolor">
                     <th scope="">P-CO(%)</th>
-                    <td th:each="j, i : ${threetxp}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${threetxp}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCouple}]]->([[${p.TxPlaceCouple}]]%) </p></td>
                     </tr>      
                     
                       <tr class="couplecolor">
                     <th scope="">V-CO-H(%)</th>
-                    <td th:each="j, i : ${threetxvh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${threetxvh}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]->([[${p.TxVictCoupleHippo}]]%) </p></td>
                     </tr>
                     
                       <tr class="couplecolor">
                     <th scope="">P-CO-H(%)</th>
-                    <td th:each="j, i : ${threetxph}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${threetxph}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]->([[${p.TxPlaceCoupleHippo}]]%) </p></td>
                     </tr>      
                   
                     <tr>
@@ -350,22 +372,22 @@
                     
                       <tr class="couplecolor">
                     <th scope="">V-CO(%)</th>
-                    <td th:each="j, i : ${fourtxv}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${fourtxv}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCouple}]]->([[${p.TxVictCouple}]]%) </p></td>
                     </tr>
                     
                       <tr class="couplecolor">
                     <th scope="">P-CO(%)</th>
-                    <td th:each="j, i : ${fourtxp}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${fourtxp}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCouple}]]->([[${p.TxPlaceCouple}]]%) </p></td>
                     </tr>      
                     
                       <tr class="couplecolor">
                     <th scope="">V-CO-H(%)</th>
-                    <td th:each="j, i : ${fourtxvh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${fourtxvh}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]->([[${p.TxVictCoupleHippo}]]%) </p></td>
                     </tr>
                     
                       <tr class="couplecolor">
                     <th scope="">P-CO-H(%)</th>
-                    <td th:each="j, i : ${fourtxph}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${fourtxph}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]->([[${p.TxPlaceCoupleHippo}]]%) </p></td>
                     </tr>      
                   
                     <tr>
@@ -448,22 +470,22 @@
                     
                       <tr class="couplecolor">
                     <th scope="">V-CO(%)</th>
-                    <td th:each="j, i : ${fivetxv}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${fivetxv}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCouple}]]->([[${p.TxVictCouple}]]%) </p></td>
                     </tr>
                     
                       <tr class="couplecolor">
                     <th scope="">P-CO(%)</th>
-                    <td th:each="j, i : ${fivetxp}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${fivetxp}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCouple}]]->([[${p.TxPlaceCouple}]]%) </p></td>
                     </tr>      
                     
                       <tr class="couplecolor">
                     <th scope="">V-CO-H(%)</th>
-                    <td th:each="j, i : ${fivetxvh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${fivetxvh}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]->([[${p.TxVictCoupleHippo}]]%) </p></td>
                     </tr>
                     
                       <tr class="couplecolor">
                     <th scope="">P-CO-H(%)</th>
-                    <td th:each="j, i : ${fivetxph}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${fivetxph}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]->([[${p.TxPlaceCoupleHippo}]]%) </p></td>
                     </tr>      
                   
                     <tr>
@@ -539,22 +561,22 @@
                     
                       <tr class="couplecolor">
                     <th scope="">V-CO(%)</th>
-                    <td th:each="j, i : ${sixtxv}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${sixtxv}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCouple}]]->([[${p.TxVictCouple}]]%) </p></td>
                     </tr>
                     
                       <tr class="couplecolor">
                     <th scope="">P-CO(%)</th>
-                    <td th:each="j, i : ${sixtxp}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${sixtxp}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCouple}]]->([[${p.TxPlaceCouple}]]%) </p></td>
                     </tr>      
                     
                       <tr class="couplecolor">
                     <th scope="">V-CO-H(%)</th>
-                    <td th:each="j, i : ${sixtxvh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${sixtxvh}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]->([[${p.TxVictCoupleHippo}]]%) </p></td>
                     </tr>
                     
                       <tr class="couplecolor">
                     <th scope="">P-CO-H(%)</th>
-                    <td th:each="j, i : ${sixtxph}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${sixtxph}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]->([[${p.TxPlaceCoupleHippo}]]%) </p></td>
                     </tr>      
                   
                     <tr>
@@ -630,22 +652,22 @@
                     
                       <tr class="couplecolor">
                     <th scope="">V-CO(%)</th>
-                    <td th:each="j, i : ${seventxv}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${seventxv}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCouple}]]->([[${p.TxVictCouple}]]%) </p></td>
                     </tr>
                     
                       <tr class="couplecolor">
                     <th scope="">P-CO(%)</th>
-                    <td th:each="j, i : ${seventxp}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${seventxp}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCouple}]]->([[${p.TxPlaceCouple}]]%) </p></td>
                     </tr>      
                     
                       <tr class="couplecolor">
                     <th scope="">V-CO-H(%)</th>
-                    <td th:each="j, i : ${seventxvh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${seventxvh}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]->([[${p.TxVictCoupleHippo}]]%) </p></td>
                     </tr>
                     
                       <tr class="couplecolor">
                     <th scope="">P-CO-H(%)</th>
-                    <td th:each="j, i : ${seventxph}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${seventxph}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]->([[${p.TxPlaceCoupleHippo}]]%) </p></td>
                     </tr>      
                   
                     <tr>
@@ -722,22 +744,22 @@
                     
                       <tr class="couplecolor">
                     <th scope="">V-CO(%)</th>
-                    <td th:each="j, i : ${eighttxv}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${eighttxv}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCouple}]]->([[${p.TxVictCouple}]]%) </p></td>
                     </tr>
                     
                       <tr class="couplecolor">
                     <th scope="">P-CO(%)</th>
-                    <td th:each="j, i : ${eighttxp}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${eighttxp}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCouple}]]->([[${p.TxPlaceCouple}]]%) </p></td>
                     </tr>      
                     
                       <tr class="couplecolor">
                     <th scope="">V-CO-H(%)</th>
-                    <td th:each="j, i : ${eighttxvh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${eighttxvh}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]->([[${p.TxVictCoupleHippo}]]%) </p></td>
                     </tr>
                     
                       <tr class="couplecolor">
                     <th scope="">P-CO-H(%)</th>
-                    <td th:each="j, i : ${eighttxph}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${eighttxph}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]->([[${p.TxPlaceCoupleHippo}]]%) </p></td>
                     </tr>      
                   
                     <tr>
@@ -815,22 +837,22 @@
                     
                       <tr class="couplecolor">
                     <th scope="">V-CO(%)</th>
-                    <td th:each="j, i : ${ninetxv}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${ninetxv}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCouple}]]->([[${p.TxVictCouple}]]%) </p></td>
                     </tr>
                     
                       <tr class="couplecolor">
                     <th scope="">P-CO(%)</th>
-                    <td th:each="j, i : ${ninetxp}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${ninetxp}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCouple}]]->([[${p.TxPlaceCouple}]]%) </p></td>
                     </tr>      
                     
                       <tr class="couplecolor">
                     <th scope="">V-CO-H(%)</th>
-                    <td th:each="j, i : ${ninetxvh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${ninetxvh}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]->([[${p.TxVictCoupleHippo}]]%) </p></td>
                     </tr>
                     
                       <tr class="couplecolor">
                     <th scope="">P-CO-H(%)</th>
-                    <td th:each="j, i : ${ninetxph}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${ninetxph}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]->([[${p.TxPlaceCoupleHippo}]]%) </p></td>
                     </tr>      
                   
                     <tr>
@@ -906,22 +928,22 @@
                     
                       <tr class="couplecolor">
                     <th scope="">V-CO(%)</th>
-                    <td th:each="j, i : ${tentxv}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${tentxv}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCouple}]]->([[${p.TxVictCouple}]]%) </p></td>
                     </tr>
                     
                       <tr class="couplecolor">
                     <th scope="">P-CO(%)</th>
-                    <td th:each="j, i : ${tentxp}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${tentxp}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCouple}]]->([[${p.TxPlaceCouple}]]%) </p></td>
                     </tr>      
                     
                       <tr class="couplecolor">
                     <th scope="">V-CO-H(%)</th>
-                    <td th:each="j, i : ${tentxvh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${tentxvh}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]->([[${p.TxVictCoupleHippo}]]%) </p></td>
                     </tr>
                     
                       <tr class="couplecolor">
                     <th scope="">P-CO-H(%)</th>
-                    <td th:each="j, i : ${tentxph}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${tentxph}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]->([[${p.TxPlaceCoupleHippo}]]%) </p></td>
                     </tr>      
                   
                     <tr>
@@ -997,22 +1019,22 @@
                     
                       <tr class="couplecolor">
                     <th scope="">V-CO(%)</th>
-                    <td th:each="j, i : ${eleventxv}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${eleventxv}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCouple}]]->([[${p.TxVictCouple}]]%) </p></td>
                     </tr>
                     
                       <tr class="couplecolor">
                     <th scope="">P-CO(%)</th>
-                    <td th:each="j, i : ${eleventxp}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${eleventxp}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCouple}]]->([[${p.TxPlaceCouple}]]%) </p></td>
                     </tr>      
                     
                       <tr class="couplecolor">
                     <th scope="">V-CO-H(%)</th>
-                    <td th:each="j, i : ${eleventxvh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${eleventxvh}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]->([[${p.TxVictCoupleHippo}]]%) </p></td>
                     </tr>
                     
                       <tr class="couplecolor">
                     <th scope="">P-CO-H(%)</th>
-                    <td th:each="j, i : ${eleventxph}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${eleventxph}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]->([[${p.TxPlaceCoupleHippo}]]%) </p></td>
                     </tr>      
                   
                     <tr>
@@ -1089,22 +1111,22 @@
                     
                       <tr class="couplecolor">
                     <th scope="">V-CO(%)</th>
-                    <td th:each="j, i : ${twelvetxv}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${twelvetxv}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCouple}]]->([[${p.TxVictCouple}]]%) </p></td>
                     </tr>
                     
                       <tr class="couplecolor">
                     <th scope="">P-CO(%)</th>
-                    <td th:each="j, i : ${twelvetxp}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${twelvetxp}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCouple}]]->([[${p.TxPlaceCouple}]]%) </p></td>
                     </tr>      
                     
                       <tr class="couplecolor">
                     <th scope="">V-CO-H(%)</th>
-                    <td th:each="j, i : ${twelvetxvh}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${twelvetxvh}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]->([[${p.TxVictCoupleHippo}]]%) </p></td>
                     </tr>
                     
                       <tr class="couplecolor">
                     <th scope="">P-CO-H(%)</th>
-                    <td th:each="j, i : ${twelvetxph}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td th:each="p, i : ${twelvetxph}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]->([[${p.TxPlaceCoupleHippo}]]%) </p></td>
                     </tr>      
                   
                     <tr>
@@ -1133,7 +1155,6 @@
 		        <div th:replace="_components :: chronos-dropdownstwelve(${twelvehorses})">...</div>
 		</div>
 		
-
             <!--//Collapse chronos END -->
             
 				</div>
