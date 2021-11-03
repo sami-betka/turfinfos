@@ -348,7 +348,7 @@ public class UploadController {
 			}
 			
 			
-			
+			System.out.println(allraceInfos.get(0).getTypec());
 			if(allraceInfos.get(0).getTypec() == "Attelé" || allraceInfos.get(0).getTypec() == "Monté") {
 				model.addAttribute("chronovaleur", true);
 			} else {
