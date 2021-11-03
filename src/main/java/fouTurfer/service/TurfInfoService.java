@@ -48,7 +48,7 @@ public class TurfInfoService {
     	infoToUpdate.setNbrCourseJockHippo(info.getNbrCourseJockHippo());
     	infoToUpdate.setNbrCourseEntHippo(info.getNbrCourseEntHippo());
     	infoToUpdate.setNbCourseCoupleHippo(info.getNbCourseCoupleHippo());
-
+    	infoToUpdate.setTypec(info.getTypec());
     	
     	
     	turfInfosRepository.save(infoToUpdate);

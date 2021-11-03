@@ -347,9 +347,15 @@ public class UploadController {
 				model.addAttribute(numToString(num) + "taypronos", false); 
 			}
 			
-						
-
 			
+			
+			if(allraceInfos.get(0).getTypec() == "Attelé" || allraceInfos.get(0).getTypec() == "Monté") {
+				model.addAttribute("chronovaleur", true);
+			} else {
+				model.addAttribute("chronovaleur", false);
+			}
+			
+						
 			model.addAttribute(numToString(num) + "exists", true);
 						
 

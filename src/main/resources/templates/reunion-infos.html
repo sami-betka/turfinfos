@@ -94,7 +94,8 @@
                     </tr>      
                   
                     <tr>
-                    <th scope="">Chronos</th>
+                    <th th:if="${chronovaleur eq true}" scope="">Chronos</th>
+                    <th th:if="${chronovaleur eq false" scope="">Valeurs</th>
                     <td th:each="c, i : ${onechronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                    
@@ -206,8 +207,9 @@
                     </tr>      
                   
                     <tr>
-                    <th scope="">Chronos</th>
-                    <td th:each="c, i : ${twochronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                <th th:if="${chronovaleur eq true}" scope="">Chronos</th>
+                    <th th:if="${chronovaleur eq false" scope="">Valeurs</th>                   
+                     <td th:each="c, i : ${twochronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
                     <tr>
@@ -319,7 +321,8 @@
                     </tr>      
                   
                     <tr>
-                    <th scope="">Chronos</th>
+                <th th:if="${chronovaleur eq true}" scope="">Chronos</th>
+                    <th th:if="${chronovaleur eq false" scope="">Valeurs</th>                    
                     <td th:each="c, i : ${threechronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
@@ -432,8 +435,9 @@
                     </tr>      
                   
                     <tr>
-                    <th scope="">Chronos</th>
-                    <td th:each="c, i : ${fourchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                <th th:if="${chronovaleur eq true}" scope="">Chronos</th>
+                    <th th:if="${chronovaleur eq false" scope="">Valeurs</th>                   
+                     <td th:each="c, i : ${fourchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
                     <tr>
@@ -550,7 +554,8 @@
                     </tr>      
                   
                     <tr>
-                    <th scope="">Chronos</th>
+                <th th:if="${chronovaleur eq true}" scope="">Chronos</th>
+                    <th th:if="${chronovaleur eq false" scope="">Valeurs</th>                    
                     <td th:each="c, i : ${fivechronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
@@ -662,7 +667,8 @@
                     </tr>      
                   
                     <tr>
-                    <th scope="">Chronos</th>
+                <th th:if="${chronovaleur eq true}" scope="">Chronos</th>
+                    <th th:if="${chronovaleur eq false" scope="">Valeurs</th>                    
                     <td th:each="c, i : ${sixchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
@@ -773,7 +779,8 @@
                     </tr>      
                   
                     <tr>
-                    <th scope="">Chronos</th>
+                <th th:if="${chronovaleur eq true}" scope="">Chronos</th>
+                    <th th:if="${chronovaleur eq false" scope="">Valeurs</th>                    
                     <td th:each="c, i : ${sevenchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
@@ -885,7 +892,8 @@
                     </tr>      
                   
                     <tr>
-                    <th scope="">Chronos</th>
+                <th th:if="${chronovaleur eq true}" scope="">Chronos</th>
+                    <th th:if="${chronovaleur eq false" scope="">Valeurs</th>                    
                     <td th:each="c, i : ${eightchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
@@ -998,8 +1006,9 @@
                     </tr>      
                   
                     <tr>
-                    <th scope="">Chronos</th>
-                    <td th:each="c, i : ${ninechronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                <th th:if="${chronovaleur eq true}" scope="">Chronos</th>
+                    <th th:if="${chronovaleur eq false" scope="">Valeurs</th>                   
+                     <td th:each="c, i : ${ninechronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
                     <tr>
@@ -1109,8 +1118,9 @@
                     </tr>      
                   
                     <tr>
-                    <th scope="">Chronos</th>
-                    <td th:each="c, i : ${tenchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                <th th:if="${chronovaleur eq true}" scope="">Chronos</th>
+                    <th th:if="${chronovaleur eq false" scope="">Valeurs</th>                   
+                     <td th:each="c, i : ${tenchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
                     <tr>
@@ -1220,7 +1230,8 @@
                     </tr>      
                   
                     <tr>
-                    <th scope="">Chronos</th>
+                <th th:if="${chronovaleur eq true}" scope="">Chronos</th>
+                    <th th:if="${chronovaleur eq false" scope="">Valeurs</th>                    
                     <td th:each="c, i : ${elevenchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
@@ -1332,7 +1343,8 @@
                     </tr>      
                   
                     <tr>
-                    <th scope="">Chronos</th>
+                <th th:if="${chronovaleur eq true}" scope="">Chronos</th>
+                    <th th:if="${chronovaleur eq false" scope="">Valeurs</th>                    
                     <td th:each="c, i : ${twelvechronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     

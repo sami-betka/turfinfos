@@ -139,6 +139,11 @@ private String nbCourseCouple;
 //@CsvNumber("###.##")
 private String nbCourseCoupleHippo;
 
+//@Column(name = "")
+@CsvBindByName
+//@CsvNumber("###.##")
+private String typec;
+
 
   private Integer chrono;
   
@@ -150,7 +155,7 @@ private String nbCourseCoupleHippo;
 
   
 
-  public TurfInfos(Long id, String jour, String R, Integer C, Integer numcourse, Integer numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo, Double pourcPlaceChevalHippo, Double pourcPlaceJockHippo, Double pourcPlaceEntHippo, Double TxVictCouple, Double TxPlaceCouple, Double TxVictCoupleHippo, Double TxPlaceCoupleHippo, Integer chrono, Integer noteProno, Integer recence, String numeroString, String coursescheval, String coursesjockey, String coursesentraineur, String nbCourseCouple, String nbrCourseChevalHippo, String nbrCourseJockHippo, String nbrCourseEntHippo, Integer tayProno) {
+  public TurfInfos(Long id, String jour, String R, Integer C, Integer numcourse, Integer numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo, Double pourcPlaceChevalHippo, Double pourcPlaceJockHippo, Double pourcPlaceEntHippo, Double TxVictCouple, Double TxPlaceCouple, Double TxVictCoupleHippo, Double TxPlaceCoupleHippo, Integer chrono, Integer noteProno, Integer recence, String numeroString, String coursescheval, String coursesjockey, String coursesentraineur, String nbCourseCouple, String nbrCourseChevalHippo, String nbrCourseJockHippo, String nbrCourseEntHippo, Integer tayProno, String typec) {
     this.id = id;
     this.R = R;
     this.C = C;
@@ -175,7 +180,7 @@ private String nbCourseCoupleHippo;
     this.nbrCourseChevalHippo = nbrCourseChevalHippo;
     this.nbrCourseJockHippo = nbrCourseJockHippo;
     this.nbrCourseEntHippo = nbrCourseEntHippo;
-
+    this.typec = typec;
 
 
     //Paramètres crées
@@ -437,6 +442,14 @@ public Integer getTayProno() {
 
 public void setTayProno(Integer tayProno) {
 	this.tayProno = tayProno;
+}
+
+public String getTypec() {
+	return typec;
+}
+
+public void setTypec(String typec) {
+	this.typec = typec;
 }
 
   
