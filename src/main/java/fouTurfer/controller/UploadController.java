@@ -563,62 +563,143 @@ public class UploadController {
 		   
 		   List<TurfInfos> listByChronos) {	 
 	   
-	   calculateNoteProno(allraceInfos, listBypvch, 1D);
-	   calculateNoteProno(allraceInfos, listBypvjh, 2D);
-	   calculateNoteProno(allraceInfos, listBypveh, 2D);
+	   calculateNoteProno(allraceInfos, listBypvch, 1D, 1d);
+	   calculateNoteProno(allraceInfos, listBypvjh, 2D, 2d);
+	   calculateNoteProno(allraceInfos, listBypveh, 2D, 3d);
 
-	   calculateNoteProno(allraceInfos, listByppch, 1D);
-	   calculateNoteProno(allraceInfos, listByppjh, 2D);
-	   calculateNoteProno(allraceInfos, listByppeh, 2D);
+	   calculateNoteProno(allraceInfos, listByppch, 1D, 4d);
+	   calculateNoteProno(allraceInfos, listByppjh, 2D, 5d);
+	   calculateNoteProno(allraceInfos, listByppeh, 2D, 6d);
 
-	   calculateNoteProno(allraceInfos, listBytxv, 1d);
-	   calculateNoteProno(allraceInfos, listBytxp, 1d);
-	   calculateNoteProno(allraceInfos, listBytxvh, 2d);
-	   calculateNoteProno(allraceInfos, listBytxph, 2d);
+	   calculateNoteProno(allraceInfos, listBytxv, 1d, 7d);
+	   calculateNoteProno(allraceInfos, listBytxp, 1d, 8d);
+	   calculateNoteProno(allraceInfos, listBytxvh, 2d, 9d);
+	   calculateNoteProno(allraceInfos, listBytxph, 2d, 10d);
 
-	   calculateNoteProno(allraceInfos, listByChronos, 2D);
+	   calculateNoteProno(allraceInfos, listByChronos, 2D, 11d);
 
-	   
-	   
-	
 		return allraceInfos;
    }
    
-   private List<TurfInfos> calculateNoteProno(List<TurfInfos>allRaceInfos, List<TurfInfos>list, Double coeff) {
+   private List<TurfInfos> calculateNoteProno(List<TurfInfos>allRaceInfos, List<TurfInfos>list, Double coeff, Double percentageParameter) {
+	   	   
 	   
 	for(int i =0; i<list.size(); i++) {
 			
 			if(list.size() > 0 && i == 0) {
-				list.get(i).setNoteProno(list.get(i).getNoteProno() + 5 * coeff);
+				setPercentageParam(list.get(i), percentageParameter);
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 10 * coeff);
 			}	
 			if(list.size() > 1 && i == 1) {
-				list.get(i).setNoteProno(list.get(i).getNoteProno() + 4 * coeff);
+				setPercentageParam(list.get(i), percentageParameter);
+				if(list.get(i).getNotePercentageParameter()!=list.get(i-1).getNotePercentageParameter()) {
+					list.get(i).setNoteProno(list.get(i).getNoteProno() + 9 * coeff);
+				}
+				if(list.get(i).getNotePercentageParameter()==list.get(i-1).getNotePercentageParameter()) {
+					list.get(i).setNoteProno(list.get(i-1).getNoteProno());
+				}
+				
 			}
 			if(list.size() > 2 && i == 2) {
-				list.get(i).setNoteProno(list.get(i).getNoteProno() + 3 * coeff);
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 8 * coeff);
 			}
 			if(list.size() > 3 && i == 3) {
-				list.get(i).setNoteProno(list.get(i).getNoteProno() + 2 * coeff);
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 7 * coeff);
 			}
 			if(list.size() > 4 && i == 4) {
-				list.get(i).setNoteProno(list.get(i).getNoteProno() + 1 * coeff);
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 6 * coeff);
 			}
 			if(list.size() > 5 && i == 5) {
-				list.get(i).setNoteProno(list.get(i).getNoteProno() + 1 * coeff);
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 5 * coeff);
 			}
 			if(list.size() > 6 && i == 6) {
-				list.get(i).setNoteProno(list.get(i).getNoteProno() + 0.5 * coeff);
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 4 * coeff);
 			}
 			if(list.size() > 7 && i == 7) {
-				list.get(i).setNoteProno(list.get(i).getNoteProno() + 0.5 * coeff);
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 3 * coeff);
 			}
 			if(list.size() > 8 && i == 8) {
-				list.get(i).setNoteProno(list.get(i).getNoteProno() + 0.5 * coeff);
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 2 * coeff);
 			}
-			
+			if(list.size() > 9 && i == 9) {
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 1 * coeff);
+			}	
+			if(list.size() > 10 && i == 10) {
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 1 * coeff);
+			}
+			if(list.size() > 11 && i == 11) {
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 1 * coeff);
+			}
+			if(list.size() > 12 && i == 12) {
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 1 * coeff);
+			}
+			if(list.size() > 13 && i == 13) {
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 1 * coeff);
+			}
+			if(list.size() > 14 && i == 14) {
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 1 * coeff);
+			}
+			if(list.size() > 15 && i == 15) {
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 1 * coeff);
+			}
+			if(list.size() > 16 && i == 16) {
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 1 * coeff);
+			}
+			if(list.size() > 17 && i == 17) {
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 1 * coeff);
+			}
+			if(list.size() > 18 && i == 18) {
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 1 * coeff);
+			}
+			if(list.size() > 19 && i == 19) {
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 1 * coeff);
+			}
+			if(list.size() > 20 && i == 20) {
+				list.get(i).setNoteProno(list.get(i).getNoteProno() + 1 * coeff);
+			}
 		}
+	
+		
+	   return list;
+   }
+   
+   private TurfInfos setPercentageParam(TurfInfos tinf, Double percentParam){
 	   
-	   return allRaceInfos;
+	   if(percentParam == 1d) {
+		   tinf.setNotePercentageParameter(tinf.getPourcVictChevalHippo());
+	   }
+	   if(percentParam == 2d) {
+		   tinf.setNotePercentageParameter(tinf.getPourcVictJockHippo());
+	   }
+	   if(percentParam == 3d) {
+		   tinf.setNotePercentageParameter(tinf.getPourcVictEntHippo());
+	   }
+	   if(percentParam == 4d) {
+		   tinf.setNotePercentageParameter(tinf.getPourcPlaceChevalHippo());
+	   }
+	   if(percentParam == 5d) {
+		   tinf.setNotePercentageParameter(tinf.getPourcPlaceJockHippo());
+	   }
+	   if(percentParam == 6d) {
+		   tinf.setNotePercentageParameter(tinf.getPourcPlaceEntHippo());
+	   }
+	   if(percentParam == 7d) {
+		   tinf.setNotePercentageParameter(tinf.getTxVictCouple());
+	   }
+	   if(percentParam == 8d) {
+		   tinf.setNotePercentageParameter(tinf.getTxPlaceCouple());
+	   }
+	   if(percentParam == 9d) {
+		   tinf.setNotePercentageParameter(tinf.getTxVictCoupleHippo());
+	   }
+	   if(percentParam == 10d) {
+		   tinf.setNotePercentageParameter(tinf.getTxPlaceCoupleHippo());
+	   }
+//	   if(percentParam == 11d) {
+//		   tinf.setNotePercentageParameter(tinf.getChrono().doubleValue());
+//	   }
+	   
+	   return tinf;
    }
    
    private List<TurfInfos> calculateEntraineur(List<TurfInfos>AllRaceinfos) {

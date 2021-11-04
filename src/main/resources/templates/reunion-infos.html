@@ -95,7 +95,7 @@
                   
                     <tr>
                     <th scope="">Chronos</th>
-                    <td th:each="c, i : ${onechronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td style="font-weight: bold;" th:each="c, i : ${onechronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                    
                     <tr>
@@ -111,10 +111,14 @@
                 </thead>
             </table>
 
-            <button class="btn btn-outline-dark btn-sm" id="buttonminus1" onclick="HideRow1(); ">Masquer les places</button> 
-            <button style="display: none;" class="btn btn-outline-dark btn-sm" id="buttonplus1" onclick="ShowRow1(); ">Afficher les places</button> 
+         
             
 <!--             //Collapse chronos BEGIN-->
+
+<div id="parente">
+
+   <button class="btn btn-outline-dark btn-sm" id="buttonminus1" onclick="HideRow1(); ">Masquer les places</button> 
+   <button style="display: none;" class="btn btn-outline-dark btn-sm" id="buttonplus1" onclick="ShowRow1(); ">Afficher les places</button> 
 
         <div th:if="${onechronos eq false}">
         		<div th:replace="_components :: chronos-buttonone">...</div>
@@ -144,6 +148,8 @@
 		        <div th:replace="_components :: taypronos-dropdownsone(${onehorses})">...</div>
 		</div>
 		
+		
+</div>		
             <!--//Collapse TAYPRONOS END -->
                         
 				</div>
@@ -210,7 +216,7 @@
                   
                     <tr>
                     <th scope="">Chronos</th>
-                    <td th:each="c, i : ${twochronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td style="font-weight: bold;" th:each="c, i : ${twochronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
                     <tr>
@@ -227,12 +233,16 @@
                 </thead>
             </table>
             
-                   <button class="btn btn-outline-dark btn-sm" id="buttonminus2" onclick="HideRow2(); ">Masquer les places</button> 
-            <button style="display: none;" class="btn btn-outline-dark btn-sm" id="buttonplus2" onclick="ShowRow2(); ">Afficher les places</button>
+           
             
             <!--             //Collapse chronos BEGIN-->
-
-        <div th:if="${twochronos eq false}">
+            
+  <div id="parente">
+  
+   <button class="btn btn-outline-dark btn-sm" id="buttonminus2" onclick="HideRow2(); ">Masquer les places</button> 
+            <button style="display: none;" class="btn btn-outline-dark btn-sm" id="buttonplus2" onclick="ShowRow2(); ">Afficher les places</button>
+  
+     <div th:if="${twochronos eq false}">
         		<div th:replace="_components :: chronos-buttontwo">...</div>
         	    <div th:replace="_components :: chronos-dropdownstwo(${twohorses})">...</div>
         		
@@ -258,7 +268,10 @@
                 <div th:replace="_components :: taypronos-modiftwo">...</div>
 		        <div th:replace="_components :: taypronos-dropdownstwo(${twohorses})">...</div>
 		</div>
-		
+  
+  </div>          
+
+
             <!--//Collapse TAYPRONOS END -->
             
             
@@ -326,7 +339,7 @@
                   
                     <tr>
                     <th scope="">Chronos</th>
-                    <td th:each="c, i : ${threechronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td style="font-weight: bold;" th:each="c, i : ${threechronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
                     <tr>
@@ -342,10 +355,15 @@
                    
                 </thead>
             </table>
+         
             
                      <!--             //Collapse chronos BEGIN-->
+<div id="parente">
 
-         <div th:if="${threechronos eq false}">
+    <button class="btn btn-outline-dark btn-sm" id="buttonminus3" onclick="HideRow3(); ">Masquer les places</button> 
+    <button style="display: none;" class="btn btn-outline-dark btn-sm" id="buttonplus3" onclick="ShowRow3(); ">Afficher les places</button>
+
+        <div th:if="${threechronos eq false}">
         		<div th:replace="_components :: chronos-buttonthree">...</div>
         	    <div th:replace="_components :: chronos-dropdownsthree(${threehorses})">...</div>
         		
@@ -371,6 +389,8 @@
 		        <div th:replace="_components :: taypronos-dropdownsthree(${threehorses})">...</div>
 		</div>
 		
+</div>
+ 
             <!--//Collapse TAYPRONOS END -->
             
             
@@ -439,7 +459,7 @@
                   
                     <tr>
                     <th scope="">Chronos</th>
-                    <td th:each="c, i : ${fourchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td style="font-weight: bold;" th:each="c, i : ${fourchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
                     <tr>
@@ -455,10 +475,13 @@
                    
                 </thead>
             </table>
-            
+          
                      <!--             //Collapse chronos BEGIN-->
+<div id="parente">
+   <button class="btn btn-outline-dark btn-sm" id="buttonminus4" onclick="HideRow4(); ">Masquer les places</button> 
+    <button style="display: none;" class="btn btn-outline-dark btn-sm" id="buttonplus4" onclick="ShowRow4(); ">Afficher les places</button>
 
-        <div th:if="${fourchronos eq false}">
+      <div th:if="${fourchronos eq false}">
         		<div th:replace="_components :: chronos-buttonfour">...</div>
         	    <div th:replace="_components :: chronos-dropdownsfour(${fourhorses})">...</div>
         		
@@ -483,6 +506,8 @@
                 <div th:replace="_components :: taypronos-modiffour">...</div>
 		        <div th:replace="_components :: taypronos-dropdownsfour(${fourhorses})">...</div>
 		</div>
+</div>
+  
 		
             <!--//Collapse TAYPRONOS END -->
             
@@ -557,7 +582,7 @@
                   
                     <tr>
                     <th scope="">Chronos</th>
-                    <td th:each="c, i : ${fivechronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td style="font-weight: bold;" th:each="c, i : ${fivechronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
                     <tr>
@@ -575,6 +600,9 @@
             </table>
             
                      <!--             //Collapse chronos BEGIN-->
+<div id="parente">
+        <button class="btn btn-outline-dark btn-sm" id="buttonminus5" onclick="HideRow5(); ">Masquer les places</button> 
+        <button style="display: none;" class="btn btn-outline-dark btn-sm" id="buttonplus5" onclick="ShowRow5(); ">Afficher les places</button>
 
        <div th:if="${fivechronos eq false}">
         		<div th:replace="_components :: chronos-buttonfive">...</div>
@@ -601,6 +629,8 @@
                 <div th:replace="_components :: taypronos-modiffive">...</div>
 		        <div th:replace="_components :: taypronos-dropdownsone(${fivehorses})">...</div>
 		</div>
+</div>
+
 		
             <!--//Collapse TAYPRONOS END -->
 
@@ -669,7 +699,7 @@
                   
                     <tr>
                     <th scope="">Chronos</th>
-                    <td th:each="c, i : ${sixchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td style="font-weight: bold;" th:each="c, i : ${sixchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
                     <tr>
@@ -682,13 +712,17 @@
                     <td th:each="p, i : ${sixtaypronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                     </tr>
                    
-                   
                 </thead>                
             </table>
             
+            
+            
                                     <!--             //Collapse chronos BEGIN-->
+<div id="parente">
+ <button class="btn btn-outline-dark btn-sm" id="buttonminus6" onclick="HideRow6(); ">Masquer les places</button> 
+ <button style="display: none;" class="btn btn-outline-dark btn-sm" id="buttonplus6" onclick="ShowRow6(); ">Afficher les places</button>
 
-        <div th:if="${sixchronos eq false}">
+      <div th:if="${sixchronos eq false}">
         		<div th:replace="_components :: chronos-buttonsix">...</div>
         	    <div th:replace="_components :: chronos-dropdownssix(${sixhorses})">...</div>
         		
@@ -713,6 +747,8 @@
                 <div th:replace="_components :: taypronos-modifsix">...</div>
 		        <div th:replace="_components :: taypronos-dropdownssix(${sixhorses})">...</div>
 		</div>
+</div>
+  
 		
             <!--//Collapse TAYPRONOS END -->
             
@@ -780,7 +816,7 @@
                   
                     <tr>
                     <th scope="">Chronos</th>
-                    <td th:each="c, i : ${sevenchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td style="font-weight: bold;" th:each="c, i : ${sevenchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
                     <tr>
@@ -793,13 +829,16 @@
                     <td th:each="p, i : ${seventaypronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                     </tr>
                    
-                   
                 </thead>
             </table>
             
+            
                             <!--             //Collapse chronos BEGIN-->
+<div id="parente">
+   <button class="btn btn-outline-dark btn-sm" id="buttonminus7" onclick="HideRow7(); ">Masquer les places</button> 
+   <button style="display: none;" class="btn btn-outline-dark btn-sm" id="buttonplus7" onclick="ShowRow7(); ">Afficher les places</button>
 
-        <div th:if="${sevenchronos eq false}">
+       <div th:if="${sevenchronos eq false}">
         		<div th:replace="_components :: chronos-buttonseven">...</div>
         	    <div th:replace="_components :: chronos-dropdownsseven(${sevenhorses})">...</div>
         		
@@ -824,6 +863,8 @@
                 <div th:replace="_components :: taypronos-modifseven">...</div>
 		        <div th:replace="_components :: taypronos-dropdownsseven(${sevenhorses})">...</div>
 		</div>
+</div>
+ 
 		
             <!--//Collapse TAYPRONOS END -->
             
@@ -892,7 +933,7 @@
                   
                     <tr>
                     <th scope="">Chronos</th>
-                    <td th:each="c, i : ${eightchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td style="font-weight: bold;" th:each="c, i : ${eightchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
                     <tr>
@@ -905,11 +946,14 @@
                     <td th:each="p, i : ${eighttaypronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                     </tr>
                    
-                   
                 </thead>
             </table>
             
+            
                             <!--             //Collapse chronos BEGIN-->
+<div id="parente">
+       <button class="btn btn-outline-dark btn-sm" id="buttonminus8" onclick="HideRow8(); ">Masquer les places</button> 
+       <button style="display: none;" class="btn btn-outline-dark btn-sm" id="buttonplus8" onclick="ShowRow8(); ">Afficher les places</button>
 
         <div th:if="${eightchronos eq false}">
         		<div th:replace="_components :: chronos-buttoneight">...</div>
@@ -936,6 +980,8 @@
                 <div th:replace="_components :: taypronos-modifeight">...</div>
 		        <div th:replace="_components :: taypronos-dropdownseight(${eighthorses})">...</div>
 		</div>
+</div>
+
 		
             <!--//Collapse TAYPRONOS END -->
             
@@ -1005,7 +1051,7 @@
                   
                     <tr>
                     <th scope="">Chronos</th>
-                    <td th:each="c, i : ${ninechronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td style="font-weight: bold;" th:each="c, i : ${ninechronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
                     <tr>
@@ -1021,7 +1067,11 @@
                 </thead>
             </table>
             
+            
                             <!--             //Collapse chronos BEGIN-->
+<div id="parente">
+          <button class="btn btn-outline-dark btn-sm" id="buttonminus9" onclick="HideRow9(); ">Masquer les places</button> 
+          <button style="display: none;" class="btn btn-outline-dark btn-sm" id="buttonplus9" onclick="ShowRow9(); ">Afficher les places</button>
 
         <div th:if="${ninechronos eq false}">
         		<div th:replace="_components :: chronos-buttonnine">...</div>
@@ -1048,6 +1098,8 @@
                 <div th:replace="_components :: taypronos-modifnine">...</div>
 		        <div th:replace="_components :: taypronos-dropdownsnine(${ninehorses})">...</div>
 		</div>
+</div>
+
 		
             <!--//Collapse TAYPRONOS END -->
             
@@ -1116,7 +1168,7 @@
                   
                     <tr>
                     <th scope="">Chronos</th>
-                    <td th:each="c, i : ${tenchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td style="font-weight: bold;" th:each="c, i : ${tenchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
                     <tr>
@@ -1129,13 +1181,17 @@
                     <td th:each="p, i : ${tentaypronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                     </tr>
                    
-                   
                 </thead>
             </table>
             
-                            <!--             //Collapse chronos BEGIN-->
 
-        <div th:if="${tenchronos eq false}">
+            
+                            <!--             //Collapse chronos BEGIN-->
+<div id="parente">
+             <button class="btn btn-outline-dark btn-sm" id="buttonminus10" onclick="HideRow10(); ">Masquer les places</button> 
+            <button style="display: none;" class="btn btn-outline-dark btn-sm" id="buttonplus10" onclick="ShowRow10(); ">Afficher les places</button>
+
+       <div th:if="${tenchronos eq false}">
         		<div th:replace="_components :: chronos-buttonten">...</div>
         	    <div th:replace="_components :: chronos-dropdownsten(${tenhorses})">...</div>
         		
@@ -1160,6 +1216,8 @@
                 <div th:replace="_components :: taypronos-modiften">...</div>
 		        <div th:replace="_components :: taypronos-dropdownsten(${tenhorses})">...</div>
 		</div>
+</div>
+ 
 		
             <!--//Collapse TAYPRONOS END -->
             
@@ -1227,7 +1285,7 @@
                   
                     <tr>
                     <th scope="">Chronos</th>
-                    <td th:each="c, i : ${elevenchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td style="font-weight: bold;" th:each="c, i : ${elevenchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
                     <tr>
@@ -1240,11 +1298,15 @@
                     <td th:each="p, i : ${eleventaypronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                     </tr>
                    
-                   
                 </thead>
             </table>
             
+      
+            
                             <!--             //Collapse chronos BEGIN-->
+<div id="parente">
+       <button class="btn btn-outline-dark btn-sm" id="buttonminus11" onclick="HideRow11(); ">Masquer les places</button> 
+            <button style="display: none;" class="btn btn-outline-dark btn-sm" id="buttonplus11" onclick="ShowRow11(); ">Afficher les places</button>
 
        <div th:if="${elevenchronos eq false}">
         		<div th:replace="_components :: chronos-buttoneleven">...</div>
@@ -1271,6 +1333,8 @@
                 <div th:replace="_components :: taypronos-modifeleven">...</div>
 		        <div th:replace="_components :: taypronos-dropdownseleven(${elevenhorses})">...</div>
 		</div>
+</div>
+
 		
             <!--//Collapse TAYPRONOS END -->
             
@@ -1339,7 +1403,7 @@
                   
                     <tr>
                     <th scope="">Chronos</th>
-                    <td th:each="c, i : ${twelvechronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
+                    <td style="font-weight: bold;" th:each="c, i : ${twelvechronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
                     
                     <tr>
@@ -1352,11 +1416,15 @@
                     <td th:each="p, i : ${twelvetaypronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                     </tr>
                    
-                   
                 </thead>
             </table>
             
+       
+            
                             <!--             //Collapse chronos BEGIN-->
+<div id="parente">
+      <button class="btn btn-outline-dark btn-sm" id="buttonminus12" onclick="HideRow12(); ">Masquer les places</button> 
+            <button style="display: none;" class="btn btn-outline-dark btn-sm" id="buttonplus12" onclick="ShowRow12(); ">Afficher les places</button>
 
       <div th:if="${twelvechronos eq false}">
         		<div th:replace="_components :: chronos-buttontwelve">...</div>
@@ -1383,6 +1451,8 @@
                 <div th:replace="_components :: taypronos-modiftwelve">...</div>
 		        <div th:replace="_components :: taypronos-dropdownstwelve(${twelvehorses})">...</div>
 		</div>
+</div>
+
 		
             <!--//Collapse TAYPRONOS END -->
             

@@ -157,10 +157,13 @@ private String entraineur;
   private Double noteProno;
   
   private String numeroString;
+  
+  private Double notePercentageParameter;
+
 
   
 
-  public TurfInfos(Long id, String jour, String R, Integer C, Integer numcourse, Integer numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo, Double pourcPlaceChevalHippo, Double pourcPlaceJockHippo, Double pourcPlaceEntHippo, Double TxVictCouple, Double TxPlaceCouple, Double TxVictCoupleHippo, Double TxPlaceCoupleHippo, Integer chrono, Integer noteProno, Integer recence, String numeroString, String coursescheval, String coursesjockey, String coursesentraineur, String nbCourseCouple, String nbrCourseChevalHippo, String nbrCourseJockHippo, String nbrCourseEntHippo, Integer tayProno, String typec, String entraineur) {
+  public TurfInfos(Long id, String jour, String R, Integer C, Integer numcourse, Integer numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo, Double pourcPlaceChevalHippo, Double pourcPlaceJockHippo, Double pourcPlaceEntHippo, Double TxVictCouple, Double TxPlaceCouple, Double TxVictCoupleHippo, Double TxPlaceCoupleHippo, Integer chrono, Integer noteProno, Integer recence, String numeroString, String coursescheval, String coursesjockey, String coursesentraineur, String nbCourseCouple, String nbrCourseChevalHippo, String nbrCourseJockHippo, String nbrCourseEntHippo, Integer tayProno, String typec, String entraineur, Double notePercentageParameter) {
     this.id = id;
     this.R = R;
     this.C = C;
@@ -196,6 +199,7 @@ private String entraineur;
     this.tayProno = tayProno;
     this.noteProno = 0d;
     this.numeroString = numeroString;
+    this.notePercentageParameter = notePercentageParameter;
 
   }
 
@@ -459,6 +463,14 @@ public String getEntraineur() {
 
 public void setEntraineur(String entraineur) {
 	this.entraineur = entraineur;
+}
+
+public Double getNotePercentageParameter() {
+	return notePercentageParameter;
+}
+
+public void setNotePercentageParameter(Double notePercentageParameter) {
+	this.notePercentageParameter = notePercentageParameter;
 }
 
   

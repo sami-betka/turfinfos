@@ -18,20 +18,22 @@
   <!--             //First Collapse chronos BEGIN-->
 
 <!-- <p th:fragment="chronos-modifone"> -->
-  <a th:fragment="chronos-modifone" class="" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">
+  <a th:fragment="chronos-modifone" class="btn btn-outline-danger btn-sm" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">
     Modifier les chronos
   </a>
 <!-- </p> -->
 
 <!-- <p th:fragment="chronos-buttonone"> -->
-  <a th:fragment="chronos-buttonone" class="btn btn-primary btn-sm" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">
+  <a th:fragment="chronos-buttonone" class="btn btn-outline-primary btn-sm" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">
     Renseigner les chronos
   </a>
 <!-- </p> -->
 
-<div th:fragment="chronos-dropdownsone(racehorses)" class="collapse" id="collapseExample1">
+<div th:fragment="chronos-dropdownsone(racehorses)" class="collapse dropdownborder" id="collapseExample1">
 
  <form th:action="@{set-chronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST">
+ 
+ <h1 style="margin-bottom: 10px;">Chronos</h1>
  
   <div class="form-group col-md-4">
       <label for="">1er chrono</label>
@@ -133,20 +135,22 @@
               <!--             //Second Collapse chronos BEGIN-->
 
 <!-- <p th:fragment="chronos-modiftwo"> -->
-  <a th:fragment="chronos-modiftwo" class="" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+  <a th:fragment="chronos-modiftwo" class="btn btn-outline-danger btn-sm" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
     Modifier les chronos
   </a>
 <!-- </p> -->
 
 <!-- <p th:fragment="chronos-buttontwo"> -->
-  <a th:fragment="chronos-buttontwo" class="btn btn-primary" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+  <a th:fragment="chronos-buttontwo" class="btn btn-outline-primary btn-sm" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
     Renseigner les chronos
   </a>
 <!-- </p> -->
 
-<div th:fragment="chronos-dropdownstwo(racehorses)" class="collapse" id="collapseExample2">
+<div th:fragment="chronos-dropdownstwo(racehorses)" class="collapse dropdownborder" id="collapseExample2">
 
  <form th:action="@{set-chronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST">
+ 
+  <h1 style="margin-bottom: 10px;">Chronos</h1>
  
   <div class="form-group col-md-4">
       <label for="">1er chrono</label>
@@ -247,20 +251,22 @@
               <!--             //Third Collapse chronos BEGIN-->
 
 <!-- <p th:fragment="chronos-modifthree"> -->
-  <a th:fragment="chronos-modifthree" class="" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
+  <a th:fragment="chronos-modifthree" class="btn btn-outline-danger btn-sm" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
     Modifier les chronos
   </a>
 <!-- </p> -->
 
 <!-- <p th:fragment="chronos-buttonthree"> -->
-  <a th:fragment="chronos-buttonthree" class="btn btn-primary" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
+  <a th:fragment="chronos-buttonthree" class="btn  btn-outline-primary btn-sm" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
     Renseigner les chronos
   </a>
 <!-- </p> -->
 
-<div th:fragment="chronos-dropdownsthree(racehorses)" class="collapse" id="collapseExample3">
+<div th:fragment="chronos-dropdownsthree(racehorses)" class="collapse dropdownborder" id="collapseExample3">
 
  <form th:action="@{set-chronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST">
+ 
+  <h1 style="margin-bottom: 10px;">Chronos</h1>
  
   <div class="form-group col-md-4">
       <label for="">1er chrono</label>
@@ -361,20 +367,22 @@
               <!--             //Fourth Collapse chronos BEGIN-->
 
 <!-- <p th:fragment="chronos-modiffour"> -->
-  <a th:fragment="chronos-modiffour" class="" data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample4">
+  <a th:fragment="chronos-modiffour" class="btn btn-outline-danger btn-sm" data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample4">
     Modifier les chronos
   </a>
 <!-- </p> -->
 
 <!-- <p th:fragment="chronos-buttonfour"> -->
-  <a th:fragment="chronos-buttonfour" class="btn btn-primary" data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample4">
+  <a th:fragment="chronos-buttonfour" class="btn  btn-outline-primary btn-sm" data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample4">
     Renseigner les chronos
   </a>
 <!-- </p> -->
 
-<div th:fragment="chronos-dropdownsfour(racehorses)" class="collapse" id="collapseExample4">
+<div th:fragment="chronos-dropdownsfour(racehorses)" class="collapse dropdownborder" id="collapseExample4">
 
  <form th:action="@{set-chronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST">
+ 
+  <h1 style="margin-bottom: 10px;">Chronos</h1>
  
   <div class="form-group col-md-4">
       <label for="">1er chrono</label>
@@ -475,20 +483,22 @@
               <!--             //Five Collapse chronos BEGIN-->
 
 <!-- <p th:fragment="chronos-modiffive"> -->
-  <a th:fragment="chronos-modiffive" class="" data-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample5">
+  <a th:fragment="chronos-modiffive" class="btn btn-outline-danger btn-sm" data-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample5">
     Modifier les chronos
   </a>
 <!-- </p> -->
 
 <!-- <p th:fragment="chronos-buttonfive"> -->
-  <a th:fragment="chronos-buttonfive" class="btn btn-primary" data-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample5">
+  <a th:fragment="chronos-buttonfive" class="btn  btn-outline-primary btn-sm" data-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample5">
     Renseigner les chronos
   </a>
 <!-- </p> -->
 
-<div th:fragment="chronos-dropdownsfive(racehorses)" class="collapse" id="collapseExample5">
+<div th:fragment="chronos-dropdownsfive(racehorses)" class="collapse dropdownborder" id="collapseExample5">
 
  <form th:action="@{set-chronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST">
+ 
+  <h1 style="margin-bottom: 10px;">Chronos</h1>
  
   <div class="form-group col-md-4">
       <label for="">1er chrono</label>
@@ -589,20 +599,22 @@
               <!--             //Sixth Collapse chronos BEGIN-->
 
 <!-- <p th:fragment="chronos-modifsix"> -->
-  <a th:fragment="chronos-modifsix" class="" data-toggle="collapse" href="#collapseExample6" role="button" aria-expanded="false" aria-controls="collapseExample6">
+  <a th:fragment="chronos-modifsix" class="btn btn-outline-danger btn-sm" data-toggle="collapse" href="#collapseExample6" role="button" aria-expanded="false" aria-controls="collapseExample6">
     Modifier les chronos
   </a>
 <!-- </p> -->
 
 <!-- <p th:fragment="chronos-buttonsix"> -->
-  <a th:fragment="chronos-buttonsix" class="btn btn-primary" data-toggle="collapse" href="#collapseExample6" role="button" aria-expanded="false" aria-controls="collapseExample6">
+  <a th:fragment="chronos-buttonsix" class="btn  btn-outline-primary btn-sm" data-toggle="collapse" href="#collapseExample6" role="button" aria-expanded="false" aria-controls="collapseExample6">
     Renseigner les chronos
   </a>
 <!-- </p> -->
 
-<div th:fragment="chronos-dropdownssix(racehorses)" class="collapse" id="collapseExample6">
+<div th:fragment="chronos-dropdownssix(racehorses)" class="collapse dropdownborder" id="collapseExample6">
 
  <form th:action="@{set-chronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST">
+ 
+  <h1 style="margin-bottom: 10px;">Chronos</h1>
  
   <div class="form-group col-md-4">
       <label for="">1er chrono</label>
@@ -703,20 +715,22 @@
               <!--             //Seventh Collapse chronos BEGIN-->
 
 <!-- <p th:fragment="chronos-modifseven"> -->
-  <a th:fragment="chronos-modifseven" class="" data-toggle="collapse" href="#collapseExample7" role="button" aria-expanded="false" aria-controls="collapseExample7">
+  <a th:fragment="chronos-modifseven" class="btn btn-outline-danger btn-sm" data-toggle="collapse" href="#collapseExample7" role="button" aria-expanded="false" aria-controls="collapseExample7">
     Modifier les chronos
   </a>
 <!-- </p> -->
 
 <!-- <p th:fragment="chronos-buttonseven"> -->
-  <a th:fragment="chronos-buttonseven" class="btn btn-primary" data-toggle="collapse" href="#collapseExample7" role="button" aria-expanded="false" aria-controls="collapseExample7">
+  <a th:fragment="chronos-buttonseven" class="btn  btn-outline-primary btn-sm" data-toggle="collapse" href="#collapseExample7" role="button" aria-expanded="false" aria-controls="collapseExample7">
     Renseigner les chronos
   </a>
 <!-- </p> -->
 
-<div th:fragment="chronos-dropdownsseven(racehorses)" class="collapse" id="collapseExample7">
+<div th:fragment="chronos-dropdownsseven(racehorses)" class="collapse dropdownborder" id="collapseExample7">
 
  <form th:action="@{set-chronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST">
+ 
+  <h1 style="margin-bottom: 10px;">Chronos</h1>
  
   <div class="form-group col-md-4">
       <label for="">1er chrono</label>
@@ -817,20 +831,22 @@
               <!--             //Eighth Collapse chronos BEGIN-->
 
 <!-- <p th:fragment="chronos-modifeight"> -->
-  <a th:fragment="chronos-modifeight" class="" data-toggle="collapse" href="#collapseExample8" role="button" aria-expanded="false" aria-controls="collapseExample8">
+  <a th:fragment="chronos-modifeight" class="btn btn-outline-danger btn-sm" data-toggle="collapse" href="#collapseExample8" role="button" aria-expanded="false" aria-controls="collapseExample8">
     Modifier les chronos
   </a>
 <!-- </p> -->
 
 <!-- <p th:fragment="chronos-buttoneight"> -->
-  <a th:fragment="chronos-buttoneight" class="btn btn-primary" data-toggle="collapse" href="#collapseExample8" role="button" aria-expanded="false" aria-controls="collapseExample8">
+  <a th:fragment="chronos-buttoneight" class="btn  btn-outline-primary btn-sm" data-toggle="collapse" href="#collapseExample8" role="button" aria-expanded="false" aria-controls="collapseExample8">
     Renseigner les chronos
   </a>
 <!-- </p> -->
 
-<div th:fragment="chronos-dropdownseight(racehorses)" class="collapse" id="collapseExample8">
+<div th:fragment="chronos-dropdownseight(racehorses)" class="collapse dropdownborder" id="collapseExample8">
 
  <form th:action="@{set-chronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST">
+ 
+  <h1 style="margin-bottom: 10px;">Chronos</h1>
  
   <div class="form-group col-md-4">
       <label for="">1er chrono</label>
@@ -931,20 +947,22 @@
               <!--             //Ninth Collapse chronos BEGIN-->
 
 <!-- <p th:fragment="chronos-modifnine"> -->
-  <a th:fragment="chronos-modifnine" class="" data-toggle="collapse" href="#collapseExample9" role="button" aria-expanded="false" aria-controls="collapseExample9">
+  <a th:fragment="chronos-modifnine" class="btn btn-outline-danger btn-sm" data-toggle="collapse" href="#collapseExample9" role="button" aria-expanded="false" aria-controls="collapseExample9">
     Modifier les chronos
   </a>
 <!-- </p> -->
 
 <!-- <p th:fragment="chronos-buttonnine"> -->
-  <a th:fragment="chronos-buttonnine" class="btn btn-primary" data-toggle="collapse" href="#collapseExample9" role="button" aria-expanded="false" aria-controls="collapseExample9">
+  <a th:fragment="chronos-buttonnine" class="btn  btn-outline-primary btn-sm" data-toggle="collapse" href="#collapseExample9" role="button" aria-expanded="false" aria-controls="collapseExample9">
     Renseigner les chronos
   </a>
 <!-- </p> -->
 
-<div th:fragment="chronos-dropdownsnine(racehorses)" class="collapse" id="collapseExample9">
+<div th:fragment="chronos-dropdownsnine(racehorses)" class="collapse dropdownborder" id="collapseExample9">
 
  <form th:action="@{set-chronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST">
+ 
+  <h1 style="margin-bottom: 10px;">Chronos</h1>
  
   <div class="form-group col-md-4">
       <label for="">1er chrono</label>
@@ -1045,21 +1063,23 @@
               <!--             //Tenth Collapse chronos BEGIN-->
 
 <!-- <p th:fragment="chronos-modiften"> -->
-  <a th:fragment="chronos-modiften" class="" data-toggle="collapse" href="#collapseExample10" role="button" aria-expanded="false" aria-controls="collapseExample10">
+  <a th:fragment="chronos-modiften" class="btn btn-outline-danger btn-sm" data-toggle="collapse" href="#collapseExample10" role="button" aria-expanded="false" aria-controls="collapseExample10">
     Modifier les chronos
   </a>
 <!-- </p> -->
 
 <!-- <p th:fragment="chronos-buttonten"> -->
-  <a th:fragment="chronos-buttonten" class="btn btn-primary" data-toggle="collapse" href="#collapseExample10" role="button" aria-expanded="false" aria-controls="collapseExample10">
+  <a th:fragment="chronos-buttonten" class="btn  btn-outline-primary btn-sm" data-toggle="collapse" href="#collapseExample10" role="button" aria-expanded="false" aria-controls="collapseExample10">
     Renseigner les chronos
   </a>
 <!-- </p> -->
 
-<div th:fragment="chronos-dropdownsten(racehorses)" class="collapse" id="collapseExample10">
+<div th:fragment="chronos-dropdownsten(racehorses)" class="collapse dropdownborder" id="collapseExample10">
 
  <form th:action="@{set-chronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST">
  
+  <h1 style="margin-bottom: 10px;">Chronos</h1>
+  
   <div class="form-group col-md-4">
       <label for="">1er chrono</label>
       <select class="form-control" name="one">
@@ -1159,21 +1179,23 @@
               <!--             //Eleventh Collapse chronos BEGIN-->
 
 <!-- <p th:fragment="chronos-modifeleven"> -->
-  <a th:fragment="chronos-modifeleven" class="" data-toggle="collapse" href="#collapseExample11" role="button" aria-expanded="false" aria-controls="collapseExample11">
+  <a th:fragment="chronos-modifeleven" class="btn btn-outline-danger btn-sm" data-toggle="collapse" href="#collapseExample11" role="button" aria-expanded="false" aria-controls="collapseExample11">
     Modifier les chronos
   </a>
 <!-- </p> -->
 
 <!-- <p th:fragment="chronos-buttoneleven"> -->
-  <a th:fragment="chronos-buttoneleven" class="btn btn-primary" data-toggle="collapse" href="#collapseExample11" role="button" aria-expanded="false" aria-controls="collapseExample11">
+  <a th:fragment="chronos-buttoneleven" class="btn  btn-outline-primary btn-sm" data-toggle="collapse" href="#collapseExample11" role="button" aria-expanded="false" aria-controls="collapseExample11">
     Renseigner les chronos
   </a>
 <!-- </p> -->
 
-<div th:fragment="chronos-dropdownseleven(racehorses)" class="collapse" id="collapseExample11">
+<div th:fragment="chronos-dropdownseleven(racehorses)" class="collapse dropdownborder" id="collapseExample11">
 
  <form th:action="@{set-chronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST">
  
+  <h1 style="margin-bottom: 10px;">Chronos</h1>
+  
   <div class="form-group col-md-4">
       <label for="">1er chrono</label>
       <select class="form-control" name="one">
@@ -1273,21 +1295,23 @@
               <!--             //Twelvth Collapse chronos BEGIN-->
 
 <!-- <p th:fragment="chronos-modiftwelve"> -->
-  <a th:fragment="chronos-modiftwelve" class="" data-toggle="collapse" href="#collapseExample12" role="button" aria-expanded="false" aria-controls="collapseExample12">
+  <a th:fragment="chronos-modiftwelve" class="btn btn-outline-danger btn-sm" data-toggle="collapse" href="#collapseExample12" role="button" aria-expanded="false" aria-controls="collapseExample12">
     Modifier les chronos
   </a>
 <!-- </p> -->
 
 <!-- <p th:fragment="chronos-buttontwelve"> -->
-  <a th:fragment="chronos-buttontwelve" class="btn btn-primary" data-toggle="collapse" href="#collapseExample12" role="button" aria-expanded="false" aria-controls="collapseExample12">
+  <a th:fragment="chronos-buttontwelve" class="btn  btn-outline-primary btn-sm" data-toggle="collapse" href="#collapseExample12" role="button" aria-expanded="false" aria-controls="collapseExample12">
     Renseigner les chronos
   </a>
 <!-- </p> -->
 
-<div th:fragment="chronos-dropdownstwelve(racehorses)" class="collapse" id="collapseExample12">
+<div th:fragment="chronos-dropdownstwelve(racehorses)" class="collapse dropdownborder" id="collapseExample12">
 
  <form th:action="@{set-chronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST">
  
+  <h1 style="margin-bottom: 10px;">Chronos</h1>
+  
   <div class="form-group col-md-4">
       <label for="">1er chrono</label>
       <select class="form-control" name="one">
@@ -1401,20 +1425,22 @@
               <!--//First Collapse TAYPRONO Begin -->
               
 <!--  <p th:fragment="taypronos-modifone"> -->
-  <a th:fragment="taypronos-modifone" class="" data-toggle="collapse" href="#taycollapseExample1" role="button" aria-expanded="false" aria-controls="taycollapseExample1">
+  <a th:fragment="taypronos-modifone" class="btn btn-outline-danger btn-sm" data-toggle="collapse" href="#taycollapseExample1" role="button" aria-expanded="false" aria-controls="taycollapseExample1">
     Modifier le Tay'Prono
   </a>
 <!-- </p> -->
 
 <!-- <p th:fragment="taypronos-buttonone"> -->
-  <a th:fragment="taypronos-buttonone" class="btn btn-primary btn-sm" data-toggle="collapse" href="#taycollapseExample1" role="button" aria-expanded="false" aria-controls="taycollapseExample1">
+  <a th:fragment="taypronos-buttonone" class="btn  btn-outline-primary btn-sm" data-toggle="collapse" href="#taycollapseExample1" role="button" aria-expanded="false" aria-controls="taycollapseExample1">
     Renseigner le Tay'Prono
   </a>
 <!-- </p> -->
 
-<div th:fragment="taypronos-dropdownsone(racehorses)" class="collapse" id="taycollapseExample1">
+<div th:fragment="taypronos-dropdownsone(racehorses)" class="collapse dropdownborder" id="taycollapseExample1">
 
  <form th:action="@{set-tay-pronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST">
+ 
+  <h1 style="margin-bottom: 10px;">Tay'Prono</h1> 
  
   <div class="form-group col-md-4">
       <label for="">1er Cheval</label>
@@ -1516,21 +1542,23 @@
                             <!--//Second Collapse TAYPRONO Begin -->
               
               <p th:fragment="taypronos-modiftwo">
-  <a class="" data-toggle="collapse" href="#taycollapseExample2" role="button" aria-expanded="false" aria-controls="taycollapseExample2">
+  <a class="btn btn-outline-danger btn-sm" data-toggle="collapse" href="#taycollapseExample2" role="button" aria-expanded="false" aria-controls="taycollapseExample2">
     Modifier le Tay'Prono
   </a>
 </p>
 
 <p th:fragment="taypronos-buttontwo">
-  <a class="btn btn-primary" data-toggle="collapse" href="#taycollapseExample2" role="button" aria-expanded="false" aria-controls="taycollapseExample2">
+  <a class="btn btn-outline-primary btn-sm" data-toggle="collapse" href="#taycollapseExample2" role="button" aria-expanded="false" aria-controls="taycollapseExample2">
     Renseigner le Tay'Prono
   </a>
 </p>
 
-<div th:fragment="taypronos-dropdownstwo(racehorses)" class="collapse" id="taycollapseExample2">
+<div th:fragment="taypronos-dropdownstwo(racehorses)" class="collapse dropdownborder" id="taycollapseExample2">
 
  <form th:action="@{set-tay-pronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST">
  
+   <h1 style="margin-bottom: 10px;">Tay'Prono</h1>
+  
   <div class="form-group col-md-4">
       <label for="">1er Cheval</label>
       <select class="form-control" name="one">
@@ -1591,21 +1619,23 @@
                                           <!--//Third Collapse TAYPRONO Begin -->
               
               <p th:fragment="taypronos-modifthree">
-  <a class="" data-toggle="collapse" href="#taycollapseExample3" role="button" aria-expanded="false" aria-controls="taycollapseExample3">
+  <a class="btn btn-outline-danger btn-sm" data-toggle="collapse" href="#taycollapseExample3" role="button" aria-expanded="false" aria-controls="taycollapseExample3">
     Modifier le Tay'Prono
   </a>
 </p>
 
 <p th:fragment="taypronos-buttonthree">
-  <a class="btn btn-primary" data-toggle="collapse" href="#taycollapseExample3" role="button" aria-expanded="false" aria-controls="taycollapseExample3">
+  <a class="btn btn-outline-primary btn-sm" data-toggle="collapse" href="#taycollapseExample3" role="button" aria-expanded="false" aria-controls="taycollapseExample3">
     Renseigner le Tay'Prono
   </a>
 </p>
 
-<div th:fragment="taypronos-dropdownsthree(racehorses)" class="collapse" id="taycollapseExample3">
+<div th:fragment="taypronos-dropdownsthree(racehorses)" class="collapse dropdownborder" id="taycollapseExample3">
 
  <form th:action="@{set-tay-pronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST">
  
+   <h1 style="margin-bottom: 10px;">Tay'Prono</h1>
+  
   <div class="form-group col-md-4">
       <label for="">1er Cheval</label>
       <select class="form-control" name="one">
@@ -1666,21 +1696,23 @@
                                           <!--//Fourth Collapse TAYPRONO Begin -->
               
               <p th:fragment="taypronos-modiffour">
-  <a class="" data-toggle="collapse" href="#taycollapseExample4" role="button" aria-expanded="false" aria-controls="taycollapseExample4">
+  <a class="btn btn-outline-danger btn-sm" data-toggle="collapse" href="#taycollapseExample4" role="button" aria-expanded="false" aria-controls="taycollapseExample4">
     Modifier le Tay'Prono
   </a>
 </p>
 
 <p th:fragment="taypronos-buttonfour">
-  <a class="btn btn-primary" data-toggle="collapse" href="#taycollapseExample4" role="button" aria-expanded="false" aria-controls="taycollapseExample4">
+  <a class="btn btn-outline-primary btn-sm" data-toggle="collapse" href="#taycollapseExample4" role="button" aria-expanded="false" aria-controls="taycollapseExample4">
     Renseigner le Tay'Prono
   </a>
 </p>
 
-<div th:fragment="taypronos-dropdownsfour(racehorses)" class="collapse" id="taycollapseExample4">
+<div th:fragment="taypronos-dropdownsfour(racehorses)" class="collapse dropdownborder" id="taycollapseExample4">
 
  <form th:action="@{set-tay-pronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST">
  
+   <h1 style="margin-bottom: 10px;">Tay'Prono</h1>
+  
   <div class="form-group col-md-4">
       <label for="">1er Cheval</label>
       <select class="form-control" name="one">
@@ -1741,21 +1773,23 @@
                                           <!--//Fifth Collapse TAYPRONO Begin -->
               
               <p th:fragment="taypronos-modiffive">
-  <a class="" data-toggle="collapse" href="#taycollapseExample5" role="button" aria-expanded="false" aria-controls="taycollapseExample5">
+  <a class="btn btn-outline-danger btn-sm" data-toggle="collapse" href="#taycollapseExample5" role="button" aria-expanded="false" aria-controls="taycollapseExample5">
     Modifier le Tay'Prono
   </a>
 </p>
 
 <p th:fragment="taypronos-buttonfive">
-  <a class="btn btn-primary" data-toggle="collapse" href="#taycollapseExample5" role="button" aria-expanded="false" aria-controls="taycollapseExample5">
+  <a class="btn btn-outline-primary btn-sm" data-toggle="collapse" href="#taycollapseExample5" role="button" aria-expanded="false" aria-controls="taycollapseExample5">
     Renseigner le Tay'Prono
   </a>
 </p>
 
-<div th:fragment="taypronos-dropdownsfive(racehorses)" class="collapse" id="taycollapseExample5">
+<div th:fragment="taypronos-dropdownsfive(racehorses)" class="collapse dropdownborder" id="taycollapseExample5">
 
  <form th:action="@{set-tay-pronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST">
  
+   <h1 style="margin-bottom: 10px;">Tay'Prono</h1>
+  
   <div class="form-group col-md-4">
       <label for="">1er Cheval</label>
       <select class="form-control" name="one">
@@ -1816,21 +1850,23 @@
                                           <!--//Sixth Collapse TAYPRONO Begin -->
               
               <p th:fragment="taypronos-modifsix">
-  <a class="" data-toggle="collapse" href="#taycollapseExample6" role="button" aria-expanded="false" aria-controls="taycollapseExample6">
+  <a class="btn btn-outline-danger btn-sm" data-toggle="collapse" href="#taycollapseExample6" role="button" aria-expanded="false" aria-controls="taycollapseExample6">
     Modifier le Tay'Prono
   </a>
 </p>
 
 <p th:fragment="taypronos-buttonsix">
-  <a class="btn btn-primary" data-toggle="collapse" href="#taycollapseExample6" role="button" aria-expanded="false" aria-controls="taycollapseExample6">
+  <a class="btn btn-outline-primary btn-sm" data-toggle="collapse" href="#taycollapseExample6" role="button" aria-expanded="false" aria-controls="taycollapseExample6">
     Renseigner le Tay'Prono
   </a>
 </p>
 
-<div th:fragment="taypronos-dropdownssix(racehorses)" class="collapse" id="taycollapseExample6">
+<div th:fragment="taypronos-dropdownssix(racehorses)" class="collapse dropdownborder" id="taycollapseExample6">
 
  <form th:action="@{set-tay-pronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST">
  
+   <h1 style="margin-bottom: 10px;">Tay'Prono</h1>
+  
   <div class="form-group col-md-4">
       <label for="">1er Cheval</label>
       <select class="form-control" name="one">
@@ -1891,21 +1927,23 @@
                                           <!--//Seventh Collapse TAYPRONO Begin -->
               
               <p th:fragment="taypronos-modifseven">
-  <a class="" data-toggle="collapse" href="#taycollapseExample7" role="button" aria-expanded="false" aria-controls="taycollapseExample7">
+  <a class="btn btn-outline-danger btn-sm" data-toggle="collapse" href="#taycollapseExample7" role="button" aria-expanded="false" aria-controls="taycollapseExample7">
     Modifier le Tay'Prono
   </a>
 </p>
 
 <p th:fragment="taypronos-buttonseven">
-  <a class="btn btn-primary" data-toggle="collapse" href="#taycollapseExample7" role="button" aria-expanded="false" aria-controls="taycollapseExample7">
+  <a class="btn btn-outline-primary btn-sm" data-toggle="collapse" href="#taycollapseExample7" role="button" aria-expanded="false" aria-controls="taycollapseExample7">
     Renseigner le Tay'Prono
   </a>
 </p>
 
-<div th:fragment="taypronos-dropdownsseven(racehorses)" class="collapse" id="taycollapseExample7">
+<div th:fragment="taypronos-dropdownsseven(racehorses)" class="collapse dropdownborder" id="taycollapseExample7">
 
  <form th:action="@{set-tay-pronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST">
  
+   <h1 style="margin-bottom: 10px;">Tay'Prono</h1>
+  
   <div class="form-group col-md-4">
       <label for="">1er Cheval</label>
       <select class="form-control" name="one">
@@ -1966,21 +2004,23 @@
                                           <!--//Eighth Collapse TAYPRONO Begin -->
               
               <p th:fragment="taypronos-modifeight">
-  <a class="" data-toggle="collapse" href="#taycollapseExample8" role="button" aria-expanded="false" aria-controls="taycollapseExample8">
+  <a class="btn btn-outline-danger btn-sm" data-toggle="collapse" href="#taycollapseExample8" role="button" aria-expanded="false" aria-controls="taycollapseExample8">
     Modifier le Tay'Prono
   </a>
 </p>
 
 <p th:fragment="taypronos-buttoneight">
-  <a class="btn btn-primary" data-toggle="collapse" href="#taycollapseExample8" role="button" aria-expanded="false" aria-controls="taycollapseExample8">
+  <a class="btn btn-outline-primary btn-sm" data-toggle="collapse" href="#taycollapseExample8" role="button" aria-expanded="false" aria-controls="taycollapseExample8">
     Renseigner le Tay'Prono
   </a>
 </p>
 
-<div th:fragment="taypronos-dropdownseight(racehorses)" class="collapse" id="taycollapseExample8">
+<div th:fragment="taypronos-dropdownseight(racehorses)" class="collapse dropdownborder" id="taycollapseExample8">
 
  <form th:action="@{set-tay-pronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST">
  
+   <h1 style="margin-bottom: 10px;">Tay'Prono</h1>
+  
   <div class="form-group col-md-4">
       <label for="">1er Cheval</label>
       <select class="form-control" name="one">
@@ -2041,21 +2081,23 @@
                                           <!--//Ninth Collapse TAYPRONO Begin -->
               
               <p th:fragment="taypronos-modifnine">
-  <a class="" data-toggle="collapse" href="#taycollapseExample9" role="button" aria-expanded="false" aria-controls="taycollapseExample9">
+  <a class="btn btn-outline-danger btn-sm" data-toggle="collapse" href="#taycollapseExample9" role="button" aria-expanded="false" aria-controls="taycollapseExample9">
     Modifier le Tay'Prono
   </a>
 </p>
 
 <p th:fragment="taypronos-buttonnine">
-  <a class="btn btn-primary" data-toggle="collapse" href="#taycollapseExample9" role="button" aria-expanded="false" aria-controls="taycollapseExample9">
+  <a class="btn btn-outline-primary btn-sm" data-toggle="collapse" href="#taycollapseExample9" role="button" aria-expanded="false" aria-controls="taycollapseExample9">
     Renseigner le Tay'Prono
   </a>
 </p>
 
-<div th:fragment="taypronos-dropdownsnine(racehorses)" class="collapse" id="taycollapseExample9">
+<div th:fragment="taypronos-dropdownsnine(racehorses)" class="collapse dropdownborder" id="taycollapseExample9">
 
  <form th:action="@{set-tay-pronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST">
  
+   <h1 style="margin-bottom: 10px;">Tay'Prono</h1>
+  
   <div class="form-group col-md-4">
       <label for="">1er Cheval</label>
       <select class="form-control" name="one">
@@ -2116,21 +2158,23 @@
                                           <!--//Tenth Collapse TAYPRONO Begin -->
               
               <p th:fragment="taypronos-modiften">
-  <a class="" data-toggle="collapse" href="#taycollapseExample10" role="button" aria-expanded="false" aria-controls="taycollapseExample10">
+  <a class="btn btn-outline-danger btn-sm" data-toggle="collapse" href="#taycollapseExample10" role="button" aria-expanded="false" aria-controls="taycollapseExample10">
     Modifier le Tay'Prono
   </a>
 </p>
 
 <p th:fragment="taypronos-buttonten">
-  <a class="btn btn-primary" data-toggle="collapse" href="#taycollapseExample10" role="button" aria-expanded="false" aria-controls="taycollapseExample10">
+  <a class="btn btn-outline-primary btn-sm" data-toggle="collapse" href="#taycollapseExample10" role="button" aria-expanded="false" aria-controls="taycollapseExample10">
     Renseigner le Tay'Prono
   </a>
 </p>
 
-<div th:fragment="taypronos-dropdownsten(racehorses)" class="collapse" id="taycollapseExample10">
+<div th:fragment="taypronos-dropdownsten(racehorses)" class="collapse dropdownborder" id="taycollapseExample10">
 
  <form th:action="@{set-tay-pronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST">
  
+   <h1 style="margin-bottom: 10px;">Tay'Prono</h1>
+  
   <div class="form-group col-md-4">
       <label for="">1er Cheval</label>
       <select class="form-control" name="one">
@@ -2191,21 +2235,23 @@
                                           <!--//Eleventh Collapse TAYPRONO Begin -->
               
               <p th:fragment="taypronos-modifeleven">
-  <a class="" data-toggle="collapse" href="#taycollapseExample11" role="button" aria-expanded="false" aria-controls="taycollapseExample11">
+  <a class="btn btn-outline-danger btn-sm" data-toggle="collapse" href="#taycollapseExample11" role="button" aria-expanded="false" aria-controls="taycollapseExample11">
     Modifier le Tay'Prono
   </a>
 </p>
 
 <p th:fragment="taypronos-buttoneleven">
-  <a class="btn btn-primary" data-toggle="collapse" href="#taycollapseExample11" role="button" aria-expanded="false" aria-controls="taycollapseExample11">
+  <a class="btn btn-outline-primary btn-sm" data-toggle="collapse" href="#taycollapseExample11" role="button" aria-expanded="false" aria-controls="taycollapseExample11">
     Renseigner le Tay'Prono
   </a>
 </p>
 
-<div th:fragment="taypronos-dropdownseleven(racehorses)" class="collapse" id="taycollapseExample11">
+<div th:fragment="taypronos-dropdownseleven(racehorses)" class="collapse dropdownborder" id="taycollapseExample11">
 
  <form th:action="@{set-tay-pronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST">
  
+   <h1 style="margin-bottom: 10px;">Tay'Prono</h1>
+  
   <div class="form-group col-md-4">
       <label for="">1er Cheval</label>
       <select class="form-control" name="one">
@@ -2266,21 +2312,23 @@
                                           <!--//Twelvth Collapse TAYPRONO Begin -->
               
               <p th:fragment="taypronos-modiftwelve">
-  <a class="" data-toggle="collapse" href="#taycollapseExample12" role="button" aria-expanded="false" aria-controls="taycollapseExample12">
+  <a class="btn btn-outline-danger btn-sm" data-toggle="collapse" href="#taycollapseExample12" role="button" aria-expanded="false" aria-controls="taycollapseExample12">
     Modifier le Tay'Prono
   </a>
 </p>
 
 <p th:fragment="taypronos-buttontwelve">
-  <a class="btn btn-primary" data-toggle="collapse" href="#taycollapseExample12" role="button" aria-expanded="false" aria-controls="taycollapseExample12">
+  <a class="btn btn-outline-primary btn-sm" data-toggle="collapse" href="#taycollapseExample12" role="button" aria-expanded="false" aria-controls="taycollapseExample12">
     Renseigner le Tay'Prono
   </a>
 </p>
 
-<div th:fragment="taypronos-dropdownstwelve(racehorses)" class="collapse" id="taycollapseExample12">
+<div th:fragment="taypronos-dropdownstwelve(racehorses)" class="collapse dropdownborder" id="taycollapseExample12">
 
  <form th:action="@{set-tay-pronos?jour={jour}&reunion={reunion}(jour=${jour}, reunion=${reunion})}" method="POST">
  
+   <h1 style="margin-bottom: 10px;">Tay'Prono</h1>
+  
   <div class="form-group col-md-4">
       <label for="">1er Cheval</label>
       <select class="form-control" name="one">
