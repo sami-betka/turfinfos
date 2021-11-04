@@ -629,15 +629,17 @@ public class UploadController {
 			   
 			   TurfInfos tinf = new TurfInfos();
 			   
-			   tinf.setNumeroString("");
+			   tinf.setNumeroString("[" + listByEnt.get(0).getNumero().toString());
 			   tinf.setPourcPlaceEntHippo(listByEnt.get(0).getPourcPlaceEntHippo());
 			   tinf.setPourcVictEntHippo(listByEnt.get(0).getPourcVictEntHippo());
 			   
-			   for(int i =0; i<listByEnt.size(); i++) {
+			   for(int i =1; i<listByEnt.size(); i++) {
+				   
 				   tinf.setNumeroString(tinf.getNumeroString() + ", " + listByEnt.get(i).getNumero().toString());
 				   System.out.println(tinf.getNumeroString());
-
 			   }
+			   tinf.setNumeroString(tinf.getNumeroString() + "]");
+
 			   newList.add(tinf);
 		   }
 	   }
