@@ -212,7 +212,7 @@ public class UploadController {
 					.collect(Collectors.toList());
 			Collections.reverse(listBypvjh);
 			
-			List<TurfInfos> listBypveh =  calculateEntraineur(allraceInfos, allraceInfos.get(0).getNumcourse()).stream()
+			List<TurfInfos> listBypveh =  calculateEntraineur(allraceInfos).stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getPourcVictEntHippo))
 					.filter(ti -> !ti.getPourcVictEntHippo().equals(0d))
 					.collect(Collectors.toList());
@@ -236,7 +236,7 @@ public class UploadController {
 					.collect(Collectors.toList());
 			Collections.reverse(listByppjh);
 				
-			List<TurfInfos> listByppeh =  calculateEntraineur(allraceInfos, allraceInfos.get(0).getNumcourse()).stream()
+			List<TurfInfos> listByppeh =  calculateEntraineur(allraceInfos).stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getPourcPlaceEntHippo))
 					.filter(ti -> !ti.getPourcPlaceEntHippo().equals(0d))
 					.collect(Collectors.toList());
@@ -621,11 +621,11 @@ public class UploadController {
 	   return allRaceInfos;
    }
    
-   private List<TurfInfos> calculateEntraineur(List<TurfInfos>AlllistEnt, Integer numcourse) {
+   private List<TurfInfos> calculateEntraineur(List<TurfInfos>AllRaceinfos) {
 	   
 	   LinkedList<TurfInfos> newList = new LinkedList<TurfInfos>();
 	   
-	   Set<String> distinctEntraineurs = AlllistEnt.stream()
+	   Set<String> distinctEntraineurs = AllRaceinfos.stream()
 				.map(TurfInfos :: getEntraineur)
 //				.sorted()
 				.collect(Collectors.toSet());
@@ -633,7 +633,13 @@ public class UploadController {
 	   
 	   for(String entraineur : distinctEntraineurs) {
 		   
-		   List<TurfInfos> listByEnt = turfInfosRepository.findAllByNumcourseAndEntraineur(numcourse, entraineur);
+//		   List<TurfInfos> listByEnt = turfInfosRepository.findAllByNumcourseAndEntraineur(numcourse, entraineur);
+		   
+		   List<TurfInfos> listByEnt = AllRaceinfos.stream()
+				   .filter(ti-> ti.getEntraineur()==entraineur)
+				   .collect(Collectors.toList());
+
+		   
 		   
 		   if(listByEnt.size() == 1) {
 			   TurfInfos tinf = listByEnt.get(0);

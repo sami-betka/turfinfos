@@ -37,7 +37,7 @@
 			    <p th:text="${onetitle}" style="font-weight: bold;"></p>
 				<div class="col-md-11">
 <!-- 				              <table class="" th:if="${status}"> -->
-                          <table class="table-sm table-striped table-responsive">
+                          <table id="tab1" class="table-sm table-striped table-responsive">
                           
                 <thead>       
     
@@ -110,6 +110,9 @@
                    
                 </thead>
             </table>
+
+            <button class="btn btn-outline-dark btn-sm" id="buttonminus1" onclick="HideRow1(); ">Masquer les places</button> 
+            <button style="display: none;" class="btn btn-outline-dark btn-sm" id="buttonplus1" onclick="ShowRow1(); ">Afficher les places</button> 
             
 <!--             //Collapse chronos BEGIN-->
 
@@ -151,7 +154,7 @@
 			    <p th:text="${twotitle}" style="font-weight: bold;"></p>
 				<div class="col-md-11">
 <!-- 				              <table class="" th:if="${status}"> -->
-                          <table class="table-sm table-striped table-responsive">
+                          <table id="tab2" class="table-sm table-striped table-responsive">
                           
                 <thead>       
     
@@ -224,6 +227,9 @@
                 </thead>
             </table>
             
+                   <button class="btn btn-outline-dark btn-sm" id="buttonminus2" onclick="HideRow2(); ">Masquer les places</button> 
+            <button style="display: none;" class="btn btn-outline-dark btn-sm" id="buttonplus2" onclick="ShowRow2(); ">Afficher les places</button>
+            
             <!--             //Collapse chronos BEGIN-->
 
         <div th:if="${twochronos eq false}">
@@ -264,7 +270,7 @@
 			    <p th:text="${threetitle}" style="font-weight: bold;"></p>
 				<div class="col-md-11">
 <!-- 				              <table class="" th:if="${status}"> -->
-                          <table class="table-sm table-striped table-responsive">
+                          <table id="tab3" class="table-sm table-striped table-responsive">
                           
                 <thead>       
     
@@ -377,7 +383,7 @@
 			    <p th:text="${fourtitle}" style="font-weight: bold;"></p>
 				<div class="col-md-11">
 <!-- 				              <table class="" th:if="${status}"> -->
-                          <table class="table-sm table-striped table-responsive">
+                          <table id="tab4" class="table-sm table-striped table-responsive">
                           
                 <thead>   
                     
@@ -495,7 +501,7 @@
 			    <p th:text="${fivetitle}" style="font-weight: bold;"></p>
 				<div class="col-md-11">
 <!-- 				              <table class="" th:if="${status}"> -->
-                          <table class="table-sm table-striped table-responsive">
+                          <table id="tab5" class="table-sm table-striped table-responsive">
                           
                 <thead>       
     
@@ -607,7 +613,7 @@
 			    <p th:text="${sixtitle}" style="font-weight: bold;"></p>
 				<div class="col-md-11">
 <!-- 				              <table class="" th:if="${status}"> -->
-                          <table class="table-sm table-striped table-responsive">
+                          <table id="tab6" class="table-sm table-striped table-responsive">
                           
                 <thead>       
     
@@ -718,7 +724,7 @@
 			    <p th:text="${seventitle}" style="font-weight: bold;"></p>
 				<div class="col-md-11">
 <!-- 				              <table class="" th:if="${status}"> -->
-                          <table class="table-sm table-striped table-responsive">
+                          <table id="tab7" class="table-sm table-striped table-responsive">
                           
                 <thead>       
     
@@ -830,7 +836,7 @@
 			    <p th:text="${eighttitle}" style="font-weight: bold;"></p>
 				<div class="col-md-11">
 <!-- 				              <table class="" th:if="${status}"> -->
-                          <table class="table-sm table-striped table-responsive">
+                          <table id="tab8" class="table-sm table-striped table-responsive">
                           
                 <thead>   
                     
@@ -943,7 +949,7 @@
 			    <p th:text="${ninetitle}" style="font-weight: bold;"></p>
 				<div class="col-md-11">
 <!-- 				              <table class="" th:if="${status}"> -->
-                          <table class="table-sm table-striped table-responsive">
+                          <table id="tab9" class="table-sm table-striped table-responsive">
                           
                 <thead>   
                     
@@ -1054,7 +1060,7 @@
 			    <p th:text="${tentitle}" style="font-weight: bold;"></p>
 				<div class="col-md-11">
 <!-- 				              <table class="" th:if="${status}"> -->
-                          <table class="table-sm table-striped table-responsive">
+                          <table id="tab10" class="table-sm table-striped table-responsive">
                           
                 <thead>   
                     
@@ -1166,7 +1172,7 @@
 			    <p th:text="${eleventitle}" style="font-weight: bold;"></p>
 				<div class="col-md-11">
 <!-- 				              <table class="" th:if="${status}"> -->
-                          <table class="table-sm table-striped table-responsive">
+                          <table id="tab11" class="table-sm table-striped table-responsive">
                           
                 <thead>   
                     <tr class="horsecolor">
@@ -1277,7 +1283,7 @@
 			    <p th:text="${twelvetitle}" style="font-weight: bold;"></p>
 				<div class="col-md-11">
 <!-- 				              <table class="" th:if="${status}"> -->
-                          <table class="table-sm table-striped table-responsive">
+                          <table id="tab12" class="table-sm table-striped table-responsive">
                           
                 <thead>   
                     
@@ -1402,6 +1408,7 @@
 
 
 
+	<script type="text/javascript" th:src="@{/js/hide.js}"></script>
 
 
  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

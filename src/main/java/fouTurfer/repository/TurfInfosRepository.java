@@ -1,6 +1,7 @@
 package fouTurfer.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -17,8 +18,9 @@ public interface TurfInfosRepository extends JpaRepository<TurfInfos, Long> {
 //	TurfInfos findByNumcourse(Integer numcourse);
 	
 	TurfInfos findByNumeroAndNumcourse(Integer numero, Integer numcourse);
-
 	
+	Optional <TurfInfos> findByChronoAndNumcourse(Integer chrono, Integer numcourse);
+
 	List<TurfInfos> findAllByNumcourse(Integer numcourse);
 	
 	List<TurfInfos> findAllByJour(String jour);

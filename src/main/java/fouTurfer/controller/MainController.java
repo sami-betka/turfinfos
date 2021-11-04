@@ -1,8 +1,6 @@
 package fouTurfer.controller;
 
-import java.awt.Color;
 import java.awt.Font;
-import java.awt.Graphics;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +8,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class MainController {
+	
+	 @GetMapping("/test")
+	    public String test(Model model) {
+
+	        return "test";
+	    }
 	
     @GetMapping("/nav")
     public String nav(Model model) {

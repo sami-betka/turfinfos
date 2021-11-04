@@ -1,6 +1,7 @@
 package fouTurfer.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -47,6 +48,15 @@ public class TurfInfoController {
 			  repo.save(tinf);
 
 		   }
+//		   else {
+//				  Optional<TurfInfos> OptInf = repo.findByChrono(1);
+//				  if(OptInf.isPresent()) {
+//					  TurfInfos tinf = OptInf.get();
+//					  tinf.setChrono(null);
+//					  repo.save(tinf);
+//				  }
+//		   }
+		   
 		   if(two != null && two != "") {
 				  TurfInfos tinf = repo.findById(Long.valueOf(two)).get();
 				  
