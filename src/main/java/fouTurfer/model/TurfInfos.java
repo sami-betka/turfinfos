@@ -144,6 +144,11 @@ private String nbCourseCoupleHippo;
 //@CsvNumber("###.##")
 private String typec;
 
+//@Column(name = "")
+@CsvBindByName
+//@CsvNumber("###.##")
+private String entraineur;
+
 
   private Integer chrono;
   
@@ -155,7 +160,7 @@ private String typec;
 
   
 
-  public TurfInfos(Long id, String jour, String R, Integer C, Integer numcourse, Integer numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo, Double pourcPlaceChevalHippo, Double pourcPlaceJockHippo, Double pourcPlaceEntHippo, Double TxVictCouple, Double TxPlaceCouple, Double TxVictCoupleHippo, Double TxPlaceCoupleHippo, Integer chrono, Integer noteProno, Integer recence, String numeroString, String coursescheval, String coursesjockey, String coursesentraineur, String nbCourseCouple, String nbrCourseChevalHippo, String nbrCourseJockHippo, String nbrCourseEntHippo, Integer tayProno, String typec) {
+  public TurfInfos(Long id, String jour, String R, Integer C, Integer numcourse, Integer numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo, Double pourcPlaceChevalHippo, Double pourcPlaceJockHippo, Double pourcPlaceEntHippo, Double TxVictCouple, Double TxPlaceCouple, Double TxVictCoupleHippo, Double TxPlaceCoupleHippo, Integer chrono, Integer noteProno, Integer recence, String numeroString, String coursescheval, String coursesjockey, String coursesentraineur, String nbCourseCouple, String nbrCourseChevalHippo, String nbrCourseJockHippo, String nbrCourseEntHippo, Integer tayProno, String typec, String entraineur) {
     this.id = id;
     this.R = R;
     this.C = C;
@@ -181,6 +186,8 @@ private String typec;
     this.nbrCourseJockHippo = nbrCourseJockHippo;
     this.nbrCourseEntHippo = nbrCourseEntHippo;
     this.typec = typec;
+    this.entraineur = entraineur;
+
 
 
     //Paramètres crées
@@ -191,16 +198,10 @@ private String typec;
     this.numeroString = numeroString;
 
   }
-  
-//  public void init() {
-//	  
-//	    this.noteProno = 0;
-//
-//  }
 
   public TurfInfos() {
 	    this.noteProno = 0d;
-
+	    
   }
 
 public Long getId() {
@@ -450,6 +451,14 @@ public String getTypec() {
 
 public void setTypec(String typec) {
 	this.typec = typec;
+}
+
+public String getEntraineur() {
+	return entraineur;
+}
+
+public void setEntraineur(String entraineur) {
+	this.entraineur = entraineur;
 }
 
   

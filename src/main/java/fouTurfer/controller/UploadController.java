@@ -212,15 +212,11 @@ public class UploadController {
 					.collect(Collectors.toList());
 			Collections.reverse(listBypvjh);
 			
-			List<TurfInfos> listBypveh =  allraceInfos.stream()
+			List<TurfInfos> listBypveh =  calculateEntraineur(allraceInfos, allraceInfos.get(0).getNumcourse()).stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getPourcVictEntHippo))
 					.filter(ti -> !ti.getPourcVictEntHippo().equals(0d))
 					.collect(Collectors.toList());
 			Collections.reverse(listBypveh);
-			//Verif si plusieurs chevaux pour meme entraineur
-//            for (TurfInfos inf : listBypveh) {
-//            	if
-//            }
 			
 			List<TurfInfos> listByppch =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getPourcPlaceChevalHippo))
@@ -234,7 +230,7 @@ public class UploadController {
 					.collect(Collectors.toList());
 			Collections.reverse(listByppjh);
 				
-			List<TurfInfos> listByppeh =  allraceInfos.stream()
+			List<TurfInfos> listByppeh =  calculateEntraineur(allraceInfos, allraceInfos.get(0).getNumcourse()).stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getPourcPlaceEntHippo))
 					.filter(ti -> !ti.getPourcPlaceEntHippo().equals(0d))
 					.collect(Collectors.toList());
@@ -279,7 +275,6 @@ public class UploadController {
 //			Collections.reverse(listBypvch);
 			
 			//Calcul de la note
-			
 			List<TurfInfos> listByNoteProno =  calculateFinalNoteProno(allraceInfos,
 				    listBypvch,
 				    listBypvjh,
@@ -313,6 +308,7 @@ public class UploadController {
 			model.addAttribute(numToString(num) + "ppch", listByppch);
 			model.addAttribute(numToString(num) + "ppjh", listByppjh);
 			model.addAttribute(numToString(num) + "ppeh", listByppeh);
+			
 			
 			model.addAttribute(numToString(num) + "txv", listBytxv);
 			model.addAttribute(numToString(num) + "txp", listBytxp);
@@ -348,7 +344,7 @@ public class UploadController {
 			}
 			
 			
-			System.out.println(allraceInfos.get(0).getTypec());
+//			System.out.println(allraceInfos.get(0).getTypec());
 			
 			if(allraceInfos.get(0).getTypec() == "Attelé" || allraceInfos.get(0).getTypec() == "Monté") {
 				model.addAttribute("chronovaleur", true);
@@ -608,6 +604,45 @@ public class UploadController {
 	   
 	   return allRaceInfos;
    }
+   
+   private List<TurfInfos> calculateEntraineur(List<TurfInfos>AlllistEnt, Integer numcourse) {
+	   
+	   LinkedList<TurfInfos> newList = new LinkedList<TurfInfos>();
+	   
+	   Set<String> distinctEntraineurs = AlllistEnt.stream()
+				.map(TurfInfos :: getEntraineur)
+//				.sorted()
+				.collect(Collectors.toSet());
+	   
+	   
+	   for(String entraineur : distinctEntraineurs) {
+		   
+		   List<TurfInfos> listByEnt = turfInfosRepository.findAllByNumcourseAndEntraineur(numcourse, entraineur);
+		   
+		   if(listByEnt.size() == 1) {
+			   TurfInfos tinf = listByEnt.get(0);
+			   tinf.setNumeroString(tinf.getNumero().toString());
+			   newList.add(tinf);
+		   }
+		   
+		   if(listByEnt.size() > 1) {
+			   
+			   TurfInfos tinf = new TurfInfos();
+			   
+			   tinf.setNumeroString("");
+			   tinf.setPourcPlaceEntHippo(listByEnt.get(0).getPourcPlaceEntHippo());
+			   tinf.setPourcVictEntHippo(listByEnt.get(0).getPourcVictEntHippo());
+			   
+			   for(int i =0; i<listByEnt.size(); i++) {
+				   tinf.setNumeroString(tinf.getNumeroString() + ", " + listByEnt.get(i).getNumero().toString());
+				   System.out.println(tinf.getNumeroString());
 
+			   }
+			   newList.add(tinf);
+		   }
+	   }
+	   
+	   return newList;
+   }
     
 }
