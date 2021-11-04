@@ -218,11 +218,17 @@ public class UploadController {
 					.collect(Collectors.toList());
 			Collections.reverse(listBypveh);
 			
+			
+			allraceInfos.forEach(ti -> {
+				if(ti.getPourcVictChevalHippo()==100) {
+					ti.setPourcPlaceChevalHippo(0d);
+				}
+			});	
 			List<TurfInfos> listByppch =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getPourcPlaceChevalHippo))
 					.filter(ti -> !ti.getPourcPlaceChevalHippo().equals(0d))
 					.collect(Collectors.toList());
-			Collections.reverse(listByppch);
+			Collections.reverse(listByppch);		
 						
 			List<TurfInfos> listByppjh =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getPourcPlaceJockHippo))
@@ -242,6 +248,11 @@ public class UploadController {
 					.collect(Collectors.toList());
 			Collections.reverse(listBytxv);
 					
+			allraceInfos.forEach(ti -> {
+				if(ti.getTxVictCouple()==100) {
+					ti.setTxPlaceCouple(0d);
+				}
+			});	
 			List<TurfInfos> listBytxp =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getTxPlaceCouple))
 					.filter(ti -> !ti.getTxPlaceCouple().equals(0d))
@@ -254,6 +265,11 @@ public class UploadController {
 					.collect(Collectors.toList());
 			Collections.reverse(listBytxvh);
 				
+			allraceInfos.forEach(ti -> {
+				if(ti.getTxVictCoupleHippo()==100) {
+					ti.setTxPlaceCoupleHippo(0d);
+				}
+			});	
 			List<TurfInfos> listBytxph =  allraceInfos.stream()
 					.sorted(Comparator.comparingDouble(TurfInfos::getTxPlaceCoupleHippo))
 					.filter(ti -> !ti.getTxPlaceCoupleHippo().equals(0d))
