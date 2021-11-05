@@ -35,7 +35,7 @@ table{
 /*   background-color: yellow; */
 /* } */
 
-#parente div, button{
+#parente div, #parente button{
     float: left;
     line-height: 22px;
     margin-right: 6px;

@@ -4,11 +4,11 @@ var buttonplus1 = document.getElementById ("buttonplus1");
 function HideRow1() { 
     var table = document.getElementById ("tab1"); 
         
-    var x1 = table.rows[1].style; 
-    var x2 = table.rows[3].style; 
-    var x3 = table.rows[5].style; 
-    var x4 = table.rows[7].style; 
-    var x5 = table.rows[9].style; 
+    var x1 = table.rows[2].style; 
+    var x2 = table.rows[4].style; 
+    var x3 = table.rows[6].style; 
+    var x4 = table.rows[8].style; 
+    var x5 = table.rows[10].style; 
 
     x1.display = 'none'; 
     x2.display = 'none'; 
@@ -23,11 +23,11 @@ function HideRow1() {
     function ShowRow1() { 
     var table = document.getElementById ("tab1"); 
     
-    var x1 = table.rows[1].style; 
-    var x2 = table.rows[3].style; 
-    var x3 = table.rows[5].style; 
-    var x4 = table.rows[7].style; 
-    var x5 = table.rows[9].style; 
+    var x1 = table.rows[2].style; 
+    var x2 = table.rows[4].style; 
+    var x3 = table.rows[6].style; 
+    var x4 = table.rows[8].style; 
+    var x5 = table.rows[10].style; 
     
     x1.display = ''; 
     x2.display = ''; 
@@ -45,11 +45,11 @@ var buttonplus2 = document.getElementById ("buttonplus2");
 function HideRow2() { 
     var table = document.getElementById ("tab2"); 
         
-    var x1 = table.rows[1].style; 
-    var x2 = table.rows[3].style; 
-    var x3 = table.rows[5].style; 
-    var x4 = table.rows[7].style; 
-    var x5 = table.rows[9].style; 
+    var x1 = table.rows[2].style; 
+    var x2 = table.rows[4].style; 
+    var x3 = table.rows[6].style; 
+    var x4 = table.rows[8].style; 
+    var x5 = table.rows[10].style; 
 
     x1.display = 'none'; 
     x2.display = 'none'; 
@@ -64,11 +64,11 @@ function HideRow2() {
     function ShowRow2() { 
     var table = document.getElementById ("tab2"); 
     
-    var x1 = table.rows[1].style; 
-    var x2 = table.rows[3].style; 
-    var x3 = table.rows[5].style; 
-    var x4 = table.rows[7].style; 
-    var x5 = table.rows[9].style; 
+    var x1 = table.rows[2].style; 
+    var x2 = table.rows[4].style; 
+    var x3 = table.rows[6].style; 
+    var x4 = table.rows[8].style; 
+    var x5 = table.rows[10].style; 
     
     x1.display = ''; 
     x2.display = ''; 
@@ -86,11 +86,11 @@ var buttonplus3 = document.getElementById ("buttonplus3");
 function HideRow3() { 
     var table = document.getElementById ("tab3"); 
         
-    var x1 = table.rows[1].style; 
-    var x2 = table.rows[3].style; 
-    var x3 = table.rows[5].style; 
-    var x4 = table.rows[7].style; 
-    var x5 = table.rows[9].style; 
+    var x1 = table.rows[2].style; 
+    var x2 = table.rows[4].style; 
+    var x3 = table.rows[6].style; 
+    var x4 = table.rows[8].style; 
+    var x5 = table.rows[10].style; 
 
     x1.display = 'none'; 
     x2.display = 'none'; 
@@ -105,11 +105,11 @@ function HideRow3() {
     function ShowRow3() { 
     var table = document.getElementById ("tab3"); 
     
-    var x1 = table.rows[1].style; 
-    var x2 = table.rows[3].style; 
-    var x3 = table.rows[5].style; 
-    var x4 = table.rows[7].style; 
-    var x5 = table.rows[9].style; 
+    var x1 = table.rows[2].style; 
+    var x2 = table.rows[4].style; 
+    var x3 = table.rows[6].style; 
+    var x4 = table.rows[8].style; 
+    var x5 = table.rows[10].style; 
     
     x1.display = ''; 
     x2.display = ''; 
@@ -127,11 +127,11 @@ var buttonplus4 = document.getElementById ("buttonplus4");
 function HideRow4() { 
     var table = document.getElementById ("tab4"); 
         
-    var x1 = table.rows[1].style; 
-    var x2 = table.rows[3].style; 
-    var x3 = table.rows[5].style; 
-    var x4 = table.rows[7].style; 
-    var x5 = table.rows[9].style; 
+    var x1 = table.rows[2].style; 
+    var x2 = table.rows[4].style; 
+    var x3 = table.rows[6].style; 
+    var x4 = table.rows[8].style; 
+    var x5 = table.rows[10].style; 
 
     x1.display = 'none'; 
     x2.display = 'none'; 
@@ -146,11 +146,11 @@ function HideRow4() {
     function ShowRow4() { 
     var table = document.getElementById ("tab4"); 
     
-    var x1 = table.rows[1].style; 
-    var x2 = table.rows[3].style; 
-    var x3 = table.rows[5].style; 
-    var x4 = table.rows[7].style; 
-    var x5 = table.rows[9].style; 
+    var x1 = table.rows[2].style; 
+    var x2 = table.rows[4].style; 
+    var x3 = table.rows[6].style; 
+    var x4 = table.rows[8].style; 
+    var x5 = table.rows[10].style; 
     
     x1.display = ''; 
     x2.display = ''; 
@@ -168,11 +168,11 @@ var buttonplus5 = document.getElementById ("buttonplus5");
 function HideRow5() { 
     var table = document.getElementById ("tab5"); 
         
-    var x1 = table.rows[1].style; 
-    var x2 = table.rows[3].style; 
-    var x3 = table.rows[5].style; 
-    var x4 = table.rows[7].style; 
-    var x5 = table.rows[9].style; 
+    var x1 = table.rows[2].style; 
+    var x2 = table.rows[4].style; 
+    var x3 = table.rows[6].style; 
+    var x4 = table.rows[8].style; 
+    var x5 = table.rows[10].style; 
 
     x1.display = 'none'; 
     x2.display = 'none'; 
@@ -187,11 +187,11 @@ function HideRow5() {
     function ShowRow5() { 
     var table = document.getElementById ("tab5"); 
     
-    var x1 = table.rows[1].style; 
-    var x2 = table.rows[3].style; 
-    var x3 = table.rows[5].style; 
-    var x4 = table.rows[7].style; 
-    var x5 = table.rows[9].style; 
+    var x1 = table.rows[2].style; 
+    var x2 = table.rows[4].style; 
+    var x3 = table.rows[6].style; 
+    var x4 = table.rows[8].style; 
+    var x5 = table.rows[10].style; 
     
     x1.display = ''; 
     x2.display = ''; 
@@ -209,11 +209,11 @@ var buttonplus6 = document.getElementById ("buttonplus6");
 function HideRow6() { 
     var table = document.getElementById ("tab6"); 
         
-    var x1 = table.rows[1].style; 
-    var x2 = table.rows[3].style; 
-    var x3 = table.rows[5].style; 
-    var x4 = table.rows[7].style; 
-    var x5 = table.rows[9].style; 
+    var x1 = table.rows[2].style; 
+    var x2 = table.rows[4].style; 
+    var x3 = table.rows[6].style; 
+    var x4 = table.rows[8].style; 
+    var x5 = table.rows[10].style; 
 
     x1.display = 'none'; 
     x2.display = 'none'; 
@@ -228,11 +228,11 @@ function HideRow6() {
     function ShowRow6() { 
     var table = document.getElementById ("tab6"); 
     
-    var x1 = table.rows[1].style; 
-    var x2 = table.rows[3].style; 
-    var x3 = table.rows[5].style; 
-    var x4 = table.rows[7].style; 
-    var x5 = table.rows[9].style; 
+    var x1 = table.rows[2].style; 
+    var x2 = table.rows[4].style; 
+    var x3 = table.rows[6].style; 
+    var x4 = table.rows[8].style; 
+    var x5 = table.rows[10].style; 
     
     x1.display = ''; 
     x2.display = ''; 
@@ -250,11 +250,11 @@ var buttonplus7 = document.getElementById ("buttonplus7");
 function HideRow7() { 
     var table = document.getElementById ("tab7"); 
         
-    var x1 = table.rows[1].style; 
-    var x2 = table.rows[3].style; 
-    var x3 = table.rows[5].style; 
-    var x4 = table.rows[7].style; 
-    var x5 = table.rows[9].style; 
+    var x1 = table.rows[2].style; 
+    var x2 = table.rows[4].style; 
+    var x3 = table.rows[6].style; 
+    var x4 = table.rows[8].style; 
+    var x5 = table.rows[10].style; 
 
     x1.display = 'none'; 
     x2.display = 'none'; 
@@ -269,11 +269,11 @@ function HideRow7() {
     function ShowRow7() { 
     var table = document.getElementById ("tab7"); 
     
-    var x1 = table.rows[1].style; 
-    var x2 = table.rows[3].style; 
-    var x3 = table.rows[5].style; 
-    var x4 = table.rows[7].style; 
-    var x5 = table.rows[9].style; 
+    var x1 = table.rows[2].style; 
+    var x2 = table.rows[4].style; 
+    var x3 = table.rows[6].style; 
+    var x4 = table.rows[8].style; 
+    var x5 = table.rows[10].style; 
     
     x1.display = ''; 
     x2.display = ''; 
@@ -291,11 +291,11 @@ var buttonplus8 = document.getElementById ("buttonplus8");
 function HideRow8() { 
     var table = document.getElementById ("tab8"); 
         
-    var x1 = table.rows[1].style; 
-    var x2 = table.rows[3].style; 
-    var x3 = table.rows[5].style; 
-    var x4 = table.rows[7].style; 
-    var x5 = table.rows[9].style; 
+    var x1 = table.rows[2].style; 
+    var x2 = table.rows[4].style; 
+    var x3 = table.rows[6].style; 
+    var x4 = table.rows[8].style; 
+    var x5 = table.rows[10].style; 
 
     x1.display = 'none'; 
     x2.display = 'none'; 
@@ -310,11 +310,11 @@ function HideRow8() {
     function ShowRow8() { 
     var table = document.getElementById ("tab8"); 
     
-    var x1 = table.rows[1].style; 
-    var x2 = table.rows[3].style; 
-    var x3 = table.rows[5].style; 
-    var x4 = table.rows[7].style; 
-    var x5 = table.rows[9].style; 
+    var x1 = table.rows[2].style; 
+    var x2 = table.rows[4].style; 
+    var x3 = table.rows[6].style; 
+    var x4 = table.rows[8].style; 
+    var x5 = table.rows[10].style; 
     
     x1.display = ''; 
     x2.display = ''; 
@@ -332,17 +332,17 @@ var buttonplus9 = document.getElementById ("buttonplus9");
 function HideRow9() { 
     var table = document.getElementById ("tab9"); 
         
-    var x1 = table.rows[1].style; 
-    var x2 = table.rows[3].style; 
-    var x3 = table.rows[5].style; 
-    var x4 = table.rows[7].style; 
-    var x5 = table.rows[9].style; 
+    var x1 = table.rows[2].style; 
+    var x2 = table.rows[4].style; 
+    var x3 = table.rows[6].style; 
+    var x4 = table.rows[8].style; 
+    var x5 = table.rows[10].style; 
 
     x1.display = 'none'; 
     x2.display = 'none'; 
     x3.display = 'none'; 
     x4.display = 'none'; 
-    x5.display = 'none'; 
+    x5.display = 'none';  
 
     buttonminus9.style.display = 'none';
     buttonplus9.style.display = '';
@@ -351,11 +351,11 @@ function HideRow9() {
     function ShowRow9() { 
     var table = document.getElementById ("tab9"); 
     
-    var x1 = table.rows[1].style; 
-    var x2 = table.rows[3].style; 
-    var x3 = table.rows[5].style; 
-    var x4 = table.rows[7].style; 
-    var x5 = table.rows[9].style; 
+    var x1 = table.rows[2].style; 
+    var x2 = table.rows[4].style; 
+    var x3 = table.rows[6].style; 
+    var x4 = table.rows[8].style; 
+    var x5 = table.rows[10].style; 
     
     x1.display = ''; 
     x2.display = ''; 
@@ -373,11 +373,11 @@ var buttonplus10 = document.getElementById ("buttonplus10");
 function HideRow10() { 
     var table = document.getElementById ("tab10"); 
         
-    var x1 = table.rows[1].style; 
-    var x2 = table.rows[3].style; 
-    var x3 = table.rows[5].style; 
-    var x4 = table.rows[7].style; 
-    var x5 = table.rows[9].style; 
+    var x1 = table.rows[2].style; 
+    var x2 = table.rows[4].style; 
+    var x3 = table.rows[6].style; 
+    var x4 = table.rows[8].style; 
+    var x5 = table.rows[10].style; 
 
     x1.display = 'none'; 
     x2.display = 'none'; 
@@ -392,11 +392,11 @@ function HideRow10() {
     function ShowRow10() { 
     var table = document.getElementById ("tab10"); 
     
-    var x1 = table.rows[1].style; 
-    var x2 = table.rows[3].style; 
-    var x3 = table.rows[5].style; 
-    var x4 = table.rows[7].style; 
-    var x5 = table.rows[9].style; 
+    var x1 = table.rows[2].style; 
+    var x2 = table.rows[4].style; 
+    var x3 = table.rows[6].style; 
+    var x4 = table.rows[8].style; 
+    var x5 = table.rows[10].style; 
     
     x1.display = ''; 
     x2.display = ''; 
@@ -414,11 +414,11 @@ var buttonplus11 = document.getElementById ("buttonplus11");
 function HideRow11() { 
     var table = document.getElementById ("tab11"); 
         
-    var x1 = table.rows[1].style; 
-    var x2 = table.rows[3].style; 
-    var x3 = table.rows[5].style; 
-    var x4 = table.rows[7].style; 
-    var x5 = table.rows[9].style; 
+    var x1 = table.rows[2].style; 
+    var x2 = table.rows[4].style; 
+    var x3 = table.rows[6].style; 
+    var x4 = table.rows[8].style; 
+    var x5 = table.rows[10].style; 
 
     x1.display = 'none'; 
     x2.display = 'none'; 
@@ -433,11 +433,11 @@ function HideRow11() {
     function ShowRow11() { 
     var table = document.getElementById ("tab11"); 
     
-    var x1 = table.rows[1].style; 
-    var x2 = table.rows[3].style; 
-    var x3 = table.rows[5].style; 
-    var x4 = table.rows[7].style; 
-    var x5 = table.rows[9].style; 
+    var x1 = table.rows[2].style; 
+    var x2 = table.rows[4].style; 
+    var x3 = table.rows[6].style; 
+    var x4 = table.rows[8].style; 
+    var x5 = table.rows[10].style; 
     
     x1.display = ''; 
     x2.display = ''; 
@@ -455,11 +455,11 @@ var buttonplus12 = document.getElementById ("buttonplus12");
 function HideRow12() { 
     var table = document.getElementById ("tab12"); 
         
-    var x1 = table.rows[1].style; 
-    var x2 = table.rows[3].style; 
-    var x3 = table.rows[5].style; 
-    var x4 = table.rows[7].style; 
-    var x5 = table.rows[9].style; 
+    var x1 = table.rows[2].style; 
+    var x2 = table.rows[4].style; 
+    var x3 = table.rows[6].style; 
+    var x4 = table.rows[8].style; 
+    var x5 = table.rows[10].style; 
 
     x1.display = 'none'; 
     x2.display = 'none'; 
@@ -474,11 +474,11 @@ function HideRow12() {
     function ShowRow12() { 
     var table = document.getElementById ("tab12"); 
     
-    var x1 = table.rows[1].style; 
-    var x2 = table.rows[3].style; 
-    var x3 = table.rows[5].style; 
-    var x4 = table.rows[7].style; 
-    var x5 = table.rows[9].style; 
+    var x1 = table.rows[2].style; 
+    var x2 = table.rows[4].style; 
+    var x3 = table.rows[6].style; 
+    var x4 = table.rows[8].style; 
+    var x5 = table.rows[10].style; 
     
     x1.display = ''; 
     x2.display = ''; 

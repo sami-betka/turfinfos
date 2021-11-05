@@ -887,7 +887,7 @@ public class UploadController {
        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
        String jour = LocalDateTime.now().format(formatter);
        model.addAttribute("journav", jour);
-       System.out.println(jour);
+//       System.out.println(jour);
        
     	 Set<String> reunions = allInfos.stream()
 				.filter(ti-> ti.getJour()==jour)
