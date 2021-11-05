@@ -149,6 +149,16 @@ private String typec;
 //@CsvNumber("###.##")
 private String entraineur;
 
+//@Column(name = "")
+@CsvBindByName
+//@CsvNumber("###.##")
+private String cl;
+
+//@Column(name = "")
+@CsvBindByName
+//@CsvNumber("###.##")
+private Double cotedirect;
+
 
   private Integer chrono;
   
@@ -159,11 +169,12 @@ private String entraineur;
   private String numeroString;
   
   private Double notePercentageParameter;
-
-
   
+  private Integer clInt;
 
-  public TurfInfos(Long id, String jour, String R, Integer C, Integer numcourse, Integer numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo, Double pourcPlaceChevalHippo, Double pourcPlaceJockHippo, Double pourcPlaceEntHippo, Double TxVictCouple, Double TxPlaceCouple, Double TxVictCoupleHippo, Double TxPlaceCoupleHippo, Integer chrono, Integer noteProno, Integer recence, String numeroString, String coursescheval, String coursesjockey, String coursesentraineur, String nbCourseCouple, String nbrCourseChevalHippo, String nbrCourseJockHippo, String nbrCourseEntHippo, Integer tayProno, String typec, String entraineur, Double notePercentageParameter) {
+
+
+  public TurfInfos(Long id, String jour, String R, Integer C, Integer numcourse, Integer numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo, Double pourcPlaceChevalHippo, Double pourcPlaceJockHippo, Double pourcPlaceEntHippo, Double TxVictCouple, Double TxPlaceCouple, Double TxVictCoupleHippo, Double TxPlaceCoupleHippo, Integer chrono, Integer noteProno, Integer recence, String numeroString, String coursescheval, String coursesjockey, String coursesentraineur, String nbCourseCouple, String nbrCourseChevalHippo, String nbrCourseJockHippo, String nbrCourseEntHippo, Integer tayProno, String typec, String entraineur, Double notePercentageParameter, String cl, Integer clInt, Double cotedirect) {
     this.id = id;
     this.R = R;
     this.C = C;
@@ -190,8 +201,12 @@ private String entraineur;
     this.nbrCourseEntHippo = nbrCourseEntHippo;
     this.typec = typec;
     this.entraineur = entraineur;
+    this.cl = cl;
+    this.cotedirect = cotedirect;
 
 
+    
+    
 
     //Paramètres crées
     
@@ -200,6 +215,8 @@ private String entraineur;
     this.noteProno = 0d;
     this.numeroString = numeroString;
     this.notePercentageParameter = notePercentageParameter;
+    this.clInt = clInt;
+
 
   }
 
@@ -471,6 +488,30 @@ public Double getNotePercentageParameter() {
 
 public void setNotePercentageParameter(Double notePercentageParameter) {
 	this.notePercentageParameter = notePercentageParameter;
+}
+
+public String getCl() {
+	return cl;
+}
+
+public void setCl(String cl) {
+	this.cl = cl;
+}
+
+public Integer getClInt() {
+	return clInt;
+}
+
+public void setClInt(Integer clInt) {
+	this.clInt = clInt;
+}
+
+public Double getCotedirect() {
+	return cotedirect;
+}
+
+public void setCotedirect(Double cotedirect) {
+	this.cotedirect = cotedirect;
 }
 
   

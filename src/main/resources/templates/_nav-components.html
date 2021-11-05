@@ -39,55 +39,61 @@
    
            <li class="nav-item dropdown" style="border: solid gold; border-radius: 15px; margin-right: 20px">
            
-<!--         <a class="nav-link dropdown-toggle text-white" href="/doigt" style="text-align: center; font-size: 1.23em; font-weight: bold; text-shadow: 3px 3px 4px #000000;" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false"> -->
-                 <a class="nav-link dropdown-toggle text-white" href="/doigt" style="text-align: center; font-size: 1.23em; font-weight: bold; text-shadow: 3px 3px 4px #000000;" id="navbarDropdownMenuLink" role="button" data-toggle="" aria-expanded="false">
+        <a class="nav-link dropdown-toggle text-white" href="#" style="text-align: center; font-size: 1.23em; font-weight: bold; text-shadow: 3px 3px 4px #000000;" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+<!--                  <a class="nav-link dropdown-toggle text-white" href="/doigt" style="text-align: center; font-size: 1.23em; font-weight: bold; text-shadow: 3px 3px 4px #000000;" id="navbarDropdownMenuLink" role="button" data-toggle="" aria-expanded="false"> -->
          
           Réunions du jour
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+        <div style="border: solid 3px gold; padding: 5px;" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+         
+          <form style="margin-bottom: 5px;" method="POST" th:action="@{/redirect-to-reunion-infos?jour=${journav}}" enctype="multipart/form-data">
+
+                            <div class="">
+								<label class="text-dark" style="font-weight: bold;">Choisir une R&eacute;union:</label><br> 
+								<select class="form-control form-control-user" name="reunion" required="required">
+									<option value="">--Choisir--</option>
+
+									<option th:each="r : ${reunionsofday}" th:value="${r}"
+										th:text="${r}"></option>
+								</select>
+							</div>
+							
+							    <button type="submit" class="btn btn-small btn-primary">Acc&eacute;der</button>					
+                   </form>
+         
         </div>
       </li>
       
             <li class="nav-item dropdown" style="border: solid gold; border-radius: 15px; margin-right: 20px">
 <!--       <h4> -->
-<!--         <a class="nav-link dropdown-toggle text-white" href="#" style="text-align: center; font-size: 1.23em; font-weight: bold; text-shadow: 3px 3px 4px #000000;" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false"> -->
-                <a class="nav-link dropdown-toggle text-white" href="/doigt" style="text-align: center; font-size: 1.23em; font-weight: bold; text-shadow: 3px 3px 4px #000000;" id="navbarDropdownMenuLink" role="button" data-toggle="" aria-expanded="false">
+        <a class="nav-link dropdown-toggle text-white" href="#" style="text-align: center; font-size: 1.23em; font-weight: bold; text-shadow: 3px 3px 4px #000000;" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+<!--                 <a class="nav-link dropdown-toggle text-white" href="/doigt" style="text-align: center; font-size: 1.23em; font-weight: bold; text-shadow: 3px 3px 4px #000000;" id="navbarDropdownMenuLink" role="button" data-toggle="" aria-expanded="false"> -->
         
           Dates
         </a>
 <!--         </h4> -->
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+        <div style="border: solid 3px gold; padding: 5px;" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        
+        
+          <form style="margin-bottom: 5px;" method="POST" th:action="@{/day-infos}" enctype="multipart/form-data">
+
+                            <div class="">
+								<label class="text-dark" style="font-weight: bold;">Choisir une date:</label><br> 
+								<select class="form-control form-control-user" name="jour" required="required">
+									<option value="">--Choisir--</option>
+
+									<option th:each="d : ${datesnav}" th:value="${d}"
+										th:text="${d}"></option>
+								</select>
+							</div>
+							
+							    <button type="submit" class="btn btn-small btn-primary">Acc&eacute;der</button>					
+                   </form>
+        
+        
         </div>
       </li>
-      
-            <li class="nav-item dropdown" style="border: solid gold; border-radius: 15px; margin-right: 20px">
-<!--       <h4> -->
-<!--         <a class="nav-link dropdown-toggle text-white" href="#" style="text-align: center; font-size: 1.23em; font-weight: bold; text-shadow: 3px 3px 4px #000000;" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false"> -->
-               <a class="nav-link dropdown-toggle text-white" href="/doigt" style="text-align: center; font-size: 1.23em; font-weight: bold; text-shadow: 3px 3px 4px #000000;" id="navbarDropdownMenuLink" role="button" data-toggle="" aria-expanded="false">
-       
-          Date et réunion
-        </a>
-<!--         </h4> -->
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-        
-<!--           <li class="nav-item active"> -->
-<!--          <a class="nav-link text-white" href="#" style="text-align: center; font-weight: bold; text-shadow: 3px 3px 4px #000000;">Navbar</a>	 -->
-<!--         </li> -->
-        
-<!--           <li class="nav-item active"> -->
-<!--          <a class="nav-link text-white" href="#" style="text-align: center; font-weight: bold; text-shadow: 3px 3px 4px #000000;">Navbar</a>	 -->
-<!--         </li> -->
+             
         
     </ul>
     

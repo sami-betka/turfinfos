@@ -1,11 +1,11 @@
 package fouTurfer.controller;
 
-import java.awt.Font;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedHashSet;
@@ -46,12 +46,8 @@ public class UploadController {
  				.map(TurfInfos :: getJour)
  				.collect(Collectors.toSet());
     	 
-//    	 System.out.println(dates.size());
-//    	 System.out.println(dates.toString());
-
-         
-         model.addAttribute("dates", dates);
-        return "upload";
+         navbarInfos(model);
+    	 return "upload";
     }
 
     @PostMapping("/upload-csv-file")
@@ -67,11 +63,12 @@ public class UploadController {
             model.addAttribute("messageempty", "Aucun fichier sélectionné, veuillez sélectionner un fichier.");
             model.addAttribute("status", false);
             // Envoyer les dates au model
-            Set<String> dates = turfInfosRepository.findAll().stream()
-    				.map(TurfInfos :: getJour)
-    				.collect(Collectors.toSet());
-            
-            model.addAttribute("dates", dates);
+//            Set<String> dates = turfInfosRepository.findAll().stream()
+//    				.map(TurfInfos :: getJour)
+//    				.collect(Collectors.toSet());
+//            model.addAttribute("dates", dates);
+            navbarInfos(model);
+
         } else {
 
             // parse CSV file to create a list of `User` objects
@@ -103,11 +100,12 @@ public class UploadController {
                 }
 
                 // Envoyer les dates au model
-                Set<String> dates = turfInfosRepository.findAll().stream()
-        				.map(TurfInfos :: getJour)
-        				.collect(Collectors.toSet());
-                
-                model.addAttribute("dates", dates);
+//                Set<String> dates = turfInfosRepository.findAll().stream()
+//        				.map(TurfInfos :: getJour)
+//        				.collect(Collectors.toSet());
+//                model.addAttribute("dates", dates);
+                navbarInfos(model);
+
 
                 model.addAttribute("infos", infos);
                 model.addAttribute("pvch", turfInfosRepository.findAllByOrderByPourcVictChevalHippoDesc());
@@ -123,15 +121,16 @@ public class UploadController {
                 model.addAttribute("messageerror", "Une erreur est apparue durant l'import du fichier.");
                 model.addAttribute("status", false);
                 // Envoyer les dates au model
-                Set<String> dates = turfInfosRepository.findAll().stream()
-        				.map(TurfInfos :: getJour)
-        				.collect(Collectors.toSet());
-                
-                model.addAttribute("dates", dates);
+//                Set<String> dates = turfInfosRepository.findAll().stream()
+//        				.map(TurfInfos :: getJour)
+//        				.collect(Collectors.toSet());
+//                model.addAttribute("dates", dates);
+                navbarInfos(model);
+
             }
         }
         
-        
+        navbarInfos(model);
         return "upload";
 //        return "file-upload-status";
 //        return "races-page";
@@ -150,6 +149,7 @@ public class UploadController {
      	model.addAttribute("reunions", reunions);
     	model.addAttribute("jour", jour);
     	
+        navbarInfos(model);
     	return "day-infos";
     }
     
@@ -195,6 +195,8 @@ public class UploadController {
 					.stream()
 					.filter(ti -> ti.getC().equals(num))
 					.collect(Collectors.toList());
+			
+			createClassementList(allraceInfos);
 			
 
 			
@@ -333,12 +335,20 @@ public class UploadController {
 
 			model.addAttribute(numToString(num) + "chronoslist", listByChronos);
 			model.addAttribute(numToString(num) + "taypronoslist", listByTayPronos);
-			
+						
 			if(listByNoteProno.size() < 9) {
 				model.addAttribute(numToString(num) + "pronoslist", listByNoteProno);
 			}
 			if(listByNoteProno.size() >= 9){
 				model.addAttribute(numToString(num) + "pronoslist", listByNoteProno.subList(0, 9));
+			}
+			
+			
+			if(createClassementList(allraceInfos).size() < 8) {
+				model.addAttribute(numToString(num) + "classementlist", createClassementList(allraceInfos));
+			}
+			if(createClassementList(allraceInfos).size() >= 8){
+				model.addAttribute(numToString(num) + "classementlist", createClassementList(allraceInfos).subList(0, 8));
 			}
 			
 						
@@ -423,7 +433,7 @@ public class UploadController {
 //			-vict chev 
 //			-vict chev hippo
 				
-		
+		navbarInfos(model);
     	
     	return "reunion-infos";
     }
@@ -748,6 +758,143 @@ public class UploadController {
 	   }
 	   
 	   return newList;
+   }
+   
+   private List<TurfInfos> createClassementList(List<TurfInfos> allraceInfos){
+
+	   LinkedList<TurfInfos> list = new LinkedList<>();
+	   
+
+	   for(TurfInfos t: allraceInfos) {
+//			System.out.println(t.getCl());
+			if(t.getCl().equals("1er")) {
+				t.setClInt(1);
+				list.add(t);
+			}
+			if(t.getCl().equals("2e")) {
+				t.setClInt(2);
+				list.add(t);
+
+			}
+			if(t.getCl().equals("3e")) {
+				t.setClInt(3);
+				list.add(t);
+
+			}
+			if(t.getCl().equals("4e")) {
+				t.setClInt(4);
+				list.add(t);
+
+			}
+			if(t.getCl().equals("5e")) {
+				t.setClInt(5);
+				list.add(t);
+
+			}
+			if(t.getCl().equals("6e")) {
+				t.setClInt(6);
+				list.add(t);
+
+			}
+			if(t.getCl().equals("7e")) {
+				t.setClInt(7);
+				list.add(t);
+
+			}
+			if(t.getCl().equals("8e")) {
+				t.setClInt(8);
+				list.add(t);
+
+			}
+			if(t.getCl().equals("9e")) {
+				t.setClInt(9);
+				list.add(t);
+
+			}
+			if(t.getCl().equals("10e")) {
+				t.setClInt(10);
+				list.add(t);
+			}
+			if(t.getCl().equals("11e")) {
+				t.setClInt(11);
+				list.add(t);
+			}
+			if(t.getCl().equals("12e")) {
+				t.setClInt(12);
+				list.add(t);
+			}
+			if(t.getCl().equals("13e")) {
+				t.setClInt(13);
+				list.add(t);
+
+			}
+			if(t.getCl().equals("14e")) {
+				t.setClInt(14);
+				list.add(t);
+			}
+			if(t.getCl().equals("15e")) {
+				t.setClInt(15);
+				list.add(t);
+			}
+			if(t.getCl().equals("16e")) {
+				t.setClInt(16);
+				list.add(t);
+			}
+			if(t.getCl().equals("17e")) {
+				t.setClInt(17);
+				list.add(t);
+			}
+			if(t.getCl().equals("18e")) {
+				t.setClInt(18);
+				list.add(t);
+			}
+			if(t.getCl().equals("19e")) {
+				t.setClInt(19);
+				list.add(t);
+			}
+			if(t.getCl().equals("20e")) {
+				t.setClInt(20);
+				list.add(t);
+			}
+		}
+	   
+	   List<TurfInfos> listByCl =  list.stream()
+				.filter(ti -> ti.getClInt()!= null)
+				.sorted(Comparator.comparingInt(TurfInfos::getClInt))
+				.collect(Collectors.toList());
+	   
+//	   for(TurfInfos t: listByCl) {
+//		   System.out.println(t.getClInt());
+////		   System.out.println(t.getCl());
+//
+//	   }
+//		System.out.println("Stop");
+	   
+	   return listByCl;
+   }
+   
+   private void navbarInfos(Model model) {
+	   
+	   List<TurfInfos> allInfos = turfInfosRepository.findAll();
+	   
+	   //DATES
+  	 Set<String> dates = allInfos.stream()
+				.map(TurfInfos :: getJour)
+				.collect(Collectors.toSet());
+       model.addAttribute("datesnav", dates);
+	   
+       //REUNIONS
+       DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+       String jour = LocalDateTime.now().format(formatter);
+       model.addAttribute("journav", jour);
+       System.out.println(jour);
+       
+    	 Set<String> reunions = allInfos.stream()
+				.filter(ti-> ti.getJour()==jour)
+  				.map(TurfInfos :: getR)
+  				.collect(Collectors.toSet());
+         model.addAttribute("reunionsofday", reunions);
+       
    }
     
 }

@@ -48,6 +48,10 @@ public class TurfInfoService {
     	infoToUpdate.setNbCourseCoupleHippo(info.getNbCourseCoupleHippo());
 //    	infoToUpdate.setTypec(info.getTypec());
     	infoToUpdate.setEntraineur(info.getEntraineur());
+    	infoToUpdate.setCl(info.getCl());
+    	infoToUpdate.setCotedirect(info.getCotedirect());
+
+
     	
     	
 //    	infoToUpdate.setNoteProno(null);
