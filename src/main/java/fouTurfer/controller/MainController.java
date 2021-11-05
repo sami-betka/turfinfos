@@ -2,6 +2,7 @@ package fouTurfer.controller;
 
 import java.security.Principal;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,8 +10,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import fouTurfer.model.UserAccount;
+import fouTurfer.model.UserRole;
+import fouTurfer.repository.UserAccountRepository;
+import fouTurfer.repository.UserRoleRepository;
+
 @Controller
 public class MainController {
+	
+	@Autowired
+	UserAccountRepository userRepository;
+	
+	@Autowired
+	UserRoleRepository userRoleRepository;
 	
 	 @GetMapping("/test")
 	    public String test(Model model) {
@@ -37,19 +49,19 @@ public class MainController {
 //	        return "logoutSuccessfulPage";
 		}
 		
-//		@RequestMapping(value = "/userAccountInfo", method = RequestMethod.GET)
-//		public String loginSuccess(Model model, Principal principal) {
-//
-//			UserAccount user = gamblerRepository.findByUserName(principal.getName());
-//			for (UserRole userRole : userRoleRepository.findAll()) {
-//				if (userRole.getAppRole().getRoleId() == 1 && userRole.getUser().getId() == user.getId()) {
-//					return "redirect:/admingate";
-//				}
-//			}
-////			SmsRequest smsRequest = new SmsRequest("+33652463080", "Youhou !");
-////			service.sendSms(smsRequest);
-//			return "redirect:/bankroll-list";
-//		}
+		@RequestMapping(value = "/userAccountInfo", method = RequestMethod.GET)
+		public String loginSuccess(Model model, Principal principal) {
+
+			UserAccount user = userRepository.findByUserName(principal.getName());
+			for (UserRole userRole : userRoleRepository.findAll()) {
+				if (userRole.getAppRole().getRoleId() == 1 && userRole.getUser().getId() == user.getId()) {
+					return "redirect:/admingate";
+				}
+			}
+//			SmsRequest smsRequest = new SmsRequest("+33652463080", "Youhou !");
+//			service.sendSms(smsRequest);
+			return "redirect:/bankroll-list";
+		}
 	 
 	 @GetMapping("/redirect-to-reunion-infos")
 	    public String redirectToReunionInfos(

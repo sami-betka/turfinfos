@@ -4,6 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import fouTurfer.repository.TurfInfosRepository;
+
 @SpringBootApplication
 public class FouTurferApplication {
 
@@ -13,6 +15,7 @@ public class FouTurferApplication {
 		
 //		TurfInfosRepository repository = ctx.getBean(TurfInfosRepository.class);
 
+		
 	}
 
 }
