@@ -1,6 +1,5 @@
 package fouTurfer.controller;
 
-import java.awt.Font;
 import java.security.Principal;
 
 import org.springframework.stereotype.Controller;
@@ -9,10 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import combibet.entity.Gambler;
-import combibet.entity.UserRole;
-import fouTurfer.model.UserAccount;
 
 @Controller
 public class MainController {
@@ -42,19 +37,19 @@ public class MainController {
 //	        return "logoutSuccessfulPage";
 		}
 		
-		@RequestMapping(value = "/userAccountInfo", method = RequestMethod.GET)
-		public String loginSuccess(Model model, Principal principal) {
-
-			UserAccount user = gamblerRepository.findByUserName(principal.getName());
-			for (UserRole userRole : userRoleRepository.findAll()) {
-				if (userRole.getAppRole().getRoleId() == 1 && userRole.getUser().getId() == user.getId()) {
-					return "redirect:/admingate";
-				}
-			}
-//			SmsRequest smsRequest = new SmsRequest("+33652463080", "Youhou !");
-//			service.sendSms(smsRequest);
-			return "redirect:/bankroll-list";
-		}
+//		@RequestMapping(value = "/userAccountInfo", method = RequestMethod.GET)
+//		public String loginSuccess(Model model, Principal principal) {
+//
+//			UserAccount user = gamblerRepository.findByUserName(principal.getName());
+//			for (UserRole userRole : userRoleRepository.findAll()) {
+//				if (userRole.getAppRole().getRoleId() == 1 && userRole.getUser().getId() == user.getId()) {
+//					return "redirect:/admingate";
+//				}
+//			}
+////			SmsRequest smsRequest = new SmsRequest("+33652463080", "Youhou !");
+////			service.sendSms(smsRequest);
+//			return "redirect:/bankroll-list";
+//		}
 	 
 	 @GetMapping("/redirect-to-reunion-infos")
 	    public String redirectToReunionInfos(
