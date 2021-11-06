@@ -6,6 +6,21 @@ th, td {
 /* font-weight: bold; */
 }
 
+div{
+	
+}
+
+body{
+	background-color: #EDF1FF;
+}
+
+nav{
+}
+
+video {
+   filter: brightness(40%);
+}
+
 table{
 	margin-bottom: 4px;
 }
@@ -16,6 +31,12 @@ table{
 
 .recence{
 	background-color: #DCDCDC;
+}
+
+.divrace{
+	 border: solid 2px black; 
+	 padding: 0px; 
+	 background-color: #F5FFFA;
 }
 
 .borderbold{
@@ -31,9 +52,11 @@ table{
   animation: spin 2s linear infinite;
 }
 
-/* #parente{ */
-/*   background-color: yellow; */
-/* } */
+#parente button{
+    background-color: white;
+    margin-left: 2px;
+    margin-bottom: 2px;
+}
 
 #parente div, #parente button{
     float: left;
@@ -54,6 +77,28 @@ table{
   100% { transform: rotate(360deg); }
 }
 
+#background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+/* @media (max-width: 750px) { */
+/*     #background-video { display: none; } */
+/*     body { */
+/*       background: url("https://assets.codepen.io/6093409/river.jpg") no-repeat; */
+/*       background-size: cover; */
+/*     } */
+/* } */
+
+
+
+
 /*                           COLORS */
 /* ////////////////////////////////////////////////////////////// */
 
@@ -70,9 +115,9 @@ table{
 .couplecolor{
 	background-color: #FFB6C1;
 }
-/* .chronoscolor{ */
-/*     background-color: #FFA500; */
-/* } */
+.chronoscolor{
+    background-color: white;
+}
 /* .pronocolor{ */
 /* 	background-color: 	#FF69B4; */
 /* } */

@@ -8,40 +8,55 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link th:href="@{css/style.css}" rel="stylesheet" />
+        <link th:href="@{css/bounce.css}" rel="stylesheet" />
+    
 </head>
 
 <body>
+
+		        		<video th:replace="_nav-components :: background-video"></video>
+
+
         		<div th:replace="_nav-components :: nav">...</div>
+        		
 <!-- <h3 style="text-align: center; margin-bottom: 30px; text-decoration: underline;">Bienvenue sur Djetay'Infos</h3> -->
 
 
-<div class="container-fluid" style="margin-top: 20px;">
+<div class="container-fluid" style="margin-top: 120px; opacity: 0.94;">
+
+
 	<div class="row">
-<!-- 		<div class="col-md-1" style="background-color: silver;"> -->
-<!-- 		</div> -->
-		<div class="col-md-12">
+		<div class="col-md-1">
+		</div>
+		<div class="col-md-10">
 		
-		<h5 th:text="${'Courses du : ' + date}" style="text-align: center; margin-bottom: 20px; text-decoration: underline;margin-top: 20px;"></h5>
-
-
-
-
+		
+		<div class="badge-danger text-wrap" style="width: 22rem; margin: 0 auto; border-radius: 10px;">
+		<h3 class="text-white" th:text="${'Courses du : ' + date}" style="text-align: center; margin-bottom: 20px;margin-top: 20px;"></h3>
+       </div>
 
             <div class="container-fluid">
 	<div class="row">
 	
-		<div class="col-md-12">
+		<div class="col-md-12">		
 		
 <!-- 		FIRST -->
 			<div th:if="${oneexists}" class="row" style="margin-bottom: 10px;">
-			    <p th:text="${onetitle}" style="font-weight: bold;"></p>
-				<div class="col-md-11">
+<!-- 			    <p th:text="${onetitle}" style="font-weight: bold;"></p> -->
+			    <h4><span th:text="${onetitle}" class="badge badge-info" style="margin-right: 6px;"></span></h4>
+			    
+				<div class="col-md-11 divrace">
 <!-- 				              <table class="" th:if="${status}"> -->
                           <table id="tab1" class="table-sm table-striped table-responsive">
                           
                 <thead>       
                     
-                    <tr>
+                    <tr class="chronoscolor">
+<!--                     <th scope=""> -->
+<!--                      <button class="btn btn-outline-dark btn-sm" id="buttonminus1" onclick="HideRow1(); ">Masquer</button>  -->
+<!--                      <button style="display: none;" class="btn btn-outline-dark btn-sm" id="buttonplus1" onclick="ShowRow1(); ">Afficher</button>  -->
+<!--                     </th> -->
+                    
                     <th scope="">Chronos</th>
                     <td style="font-weight: bold;" th:each="c, i : ${onechronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
@@ -98,17 +113,17 @@
                     <td th:each="j, i : ${onetxph}" th:text="${j.numero}" th:classappend="${j.recence gt 60 ? 'recence text-danger' : ''}"></td>
                     </tr>      
                    
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="" class="">Le Prono:</th>
                     <td th:each="p, i : ${onepronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                     </tr>
                     
-                     <tr>
+                     <tr class="chronoscolor">
                     <th scope="" class="">Le Tay'Prono:</th>
                     <td th:each="p, i : ${onetaypronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                     </tr>
                     
-                     <tr th:if="${#lists.size(oneclassementlist) gt 0}">
+                     <tr class="chronoscolor" th:if="${#lists.size(oneclassementlist) gt 0}">
                     <th scope="" class="">Arrivée:</th>
                     <td th:each="p, i : ${oneclassementlist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.cotedirect}]]/1) </p></td>
                     </tr>
@@ -162,14 +177,14 @@
 					
 <!-- 				SECOND	 -->
 								<div th:if="${twoexists}" class="row" style="margin-bottom: 10px;">
-			    <p th:text="${twotitle}" style="font-weight: bold;"></p>
-				<div class="col-md-11">
+			    <h4><span th:text="${twotitle}" class="badge badge-info" style="margin-right: 6px;"></span></h4>
+				<div class="col-md-11 divrace">
 <!-- 				              <table class="" th:if="${status}"> -->
                           <table id="tab2" class="table-sm table-striped table-responsive">
                           
                 <thead>       
                     
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="">Chronos</th>
                     <td style="font-weight: bold;" th:each="c, i : ${twochronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
@@ -224,17 +239,17 @@
                     <td th:each="p, i : ${twotxph}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]([[${p.TxPlaceCoupleHippo}]]%) </p></td>
                     </tr>      
                   
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="">Prono:</th>
                     <td th:each="p, i : ${twopronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                    </tr>
                    
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="" class="">Le Tay'Prono:</th>
                     <td th:each="p, i : ${twotaypronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                     </tr>
                     
-                     <tr th:if="${#lists.size(twoclassementlist) gt 0}">
+                     <tr class="chronoscolor" th:if="${#lists.size(twoclassementlist) gt 0}">
                     <th scope="" class="">Arrivée:</th>
                     <td th:each="p, i : ${twoclassementlist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.cotedirect}]]/1) </p></td>
                     </tr>
@@ -290,14 +305,14 @@
 					
 <!-- 					THIRD -->
 								<div th:if="${threeexists}" class="row" style="margin-bottom: 10px;">
-			    <p th:text="${threetitle}" style="font-weight: bold;"></p>
-				<div class="col-md-11">
+			    <h4><span th:text="${threetitle}" class="badge badge-info" style="margin-right: 6px;"></span></h4>
+				<div class="col-md-11 divrace">
 <!-- 				              <table class="" th:if="${status}"> -->
                           <table id="tab3" class="table-sm table-striped table-responsive">
                           
                 <thead>       
                     
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="">Chronos</th>
                     <td style="font-weight: bold;" th:each="c, i : ${threechronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
@@ -352,17 +367,17 @@
                     <td th:each="p, i : ${threetxph}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]([[${p.TxPlaceCoupleHippo}]]%) </p></td>
                     </tr>      
                     
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="">Prono:</th>
                     <td th:each="p, i : ${threepronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                    </tr>
                    
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="" class="">Le Tay'Prono:</th>
                     <td th:each="p, i : ${threetaypronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                     </tr>
                     
-                     <tr th:if="${#lists.size(threeclassementlist) gt 0}">
+                     <tr class="chronoscolor" th:if="${#lists.size(threeclassementlist) gt 0}">
                     <th scope="" class="">Arrivée:</th>
                     <td th:each="p, i : ${threeclassementlist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.cotedirect}]]/1) </p></td>
                     </tr>
@@ -415,14 +430,14 @@
 <!-- 					FOURTH -->
 
 			<div th:if="${fourexists}" class="row" style="margin-bottom: 10px;">
-			    <p th:text="${fourtitle}" style="font-weight: bold;"></p>
-				<div class="col-md-11">
+			    <h4><span th:text="${fourtitle}" class="badge badge-info" style="margin-right: 6px;"></span></h4>
+				<div class="col-md-11 divrace">
 <!-- 				              <table class="" th:if="${status}"> -->
                           <table id="tab4" class="table-sm table-striped table-responsive">
                           
                 <thead>   
                      
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="">Chronos</th>
                     <td style="font-weight: bold;" th:each="c, i : ${fourchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
@@ -477,17 +492,17 @@
                     <td th:each="p, i : ${fourtxph}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]([[${p.TxPlaceCoupleHippo}]]%) </p></td>
                     </tr>      
                  
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="">Prono:</th>
                     <td th:each="p, i : ${fourpronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                    </tr>
                    
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="" class="">Le Tay'Prono:</th>
                     <td th:each="p, i : ${fourtaypronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                     </tr>
                     
-                     <tr th:if="${#lists.size(fourclassementlist) gt 0}">
+                     <tr class="chronoscolor" th:if="${#lists.size(fourclassementlist) gt 0}">
                     <th scope="" class="">Arrivée:</th>
                     <td th:each="p, i : ${fourclassementlist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.cotedirect}]]/1) </p></td>
                     </tr>
@@ -532,10 +547,7 @@
             <!--//Collapse TAYPRONOS END -->
             
 				</div>
-					</div>
-		
-			</div>
-			
+					</div>			
 			
                               <!-- COL 6 to 12 -->
 			
@@ -543,14 +555,14 @@
 		
 <!-- 		FIFTH -->
 			<div th:if="${fiveexists}" class="row" style="margin-bottom: 10px;">
-			    <p th:text="${fivetitle}" style="font-weight: bold;"></p>
-				<div class="col-md-11">
+			    <h4><span th:text="${fivetitle}" class="badge badge-info" style="margin-right: 6px;"></span></h4>
+				<div class="col-md-11 divrace">
 <!-- 				              <table class="" th:if="${status}"> -->
                           <table id="tab5" class="table-sm table-striped table-responsive">
                           
                 <thead>       
                     
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="">Chronos</th>
                     <td style="font-weight: bold;" th:each="c, i : ${fivechronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
@@ -605,17 +617,17 @@
                     <td th:each="p, i : ${fivetxph}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]([[${p.TxPlaceCoupleHippo}]]%) </p></td>
                     </tr>      
                   
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="">Prono:</th>
                     <td th:each="p, i : ${fivepronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                    </tr>
                    
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="" class="">Le Tay'Prono:</th>
                     <td th:each="p, i : ${fivetaypronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                     </tr>
                     
-                     <tr th:if="${#lists.size(fiveclassementlist) gt 0}">
+                     <tr class="chronoscolor" th:if="${#lists.size(fiveclassementlist) gt 0}">
                     <th scope="" class="">Arrivée:</th>
                     <td th:each="p, i : ${fiveclassementlist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.cotedirect}]]/1) </p></td>
                     </tr>
@@ -665,14 +677,14 @@
 					
 <!-- 				SIXTH	 -->
 								<div th:if="${sixexists}" class="row" style="margin-bottom: 10px;">
-			    <p th:text="${sixtitle}" style="font-weight: bold;"></p>
-				<div class="col-md-11">
+			    <h4><span th:text="${sixtitle}" class="badge badge-info" style="margin-right: 6px;"></span></h4>
+				<div class="col-md-11 divrace">
 <!-- 				              <table class="" th:if="${status}"> -->
                           <table id="tab6" class="table-sm table-striped table-responsive">
                           
                 <thead>       
                     
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="">Chronos</th>
                     <td style="font-weight: bold;" th:each="c, i : ${sixchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
@@ -727,17 +739,17 @@
                     <td th:each="p, i : ${sixtxph}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]([[${p.TxPlaceCoupleHippo}]]%) </p></td>
                     </tr>      
                     
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="">Prono:</th>
                     <td th:each="p, i : ${sixpronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                    </tr>
                    
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="" class="">Le Tay'Prono:</th>
                     <td th:each="p, i : ${sixtaypronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                     </tr>
                     
-                     <tr th:if="${#lists.size(sixclassementlist) gt 0}">
+                     <tr class="chronoscolor" th:if="${#lists.size(sixclassementlist) gt 0}">
                     <th scope="" class="">Arrivée:</th>
                     <td th:each="p, i : ${sixclassementlist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.cotedirect}]]/1) </p></td>
                     </tr>
@@ -787,14 +799,14 @@
 					
 <!-- 					SEVENTH -->
 								<div th:if="${sevenexists}" class="row" style="margin-bottom: 10px;">
-			    <p th:text="${seventitle}" style="font-weight: bold;"></p>
-				<div class="col-md-11">
+			    <h4><span th:text="${seventitle}" class="badge badge-info" style="margin-right: 6px;"></span></h4>
+				<div class="col-md-11 divrace">
 <!-- 				              <table class="" th:if="${status}"> -->
                           <table id="tab7" class="table-sm table-striped table-responsive">
                           
                 <thead>       
                      
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="">Chronos</th>
                     <td style="font-weight: bold;" th:each="c, i : ${sevenchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
@@ -849,17 +861,17 @@
                     <td th:each="p, i : ${seventxph}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]([[${p.TxPlaceCoupleHippo}]]%) </p></td>
                     </tr>      
                     
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="">Prono:</th>
                     <td th:each="p, i : ${sevenpronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                    </tr>
                    
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="" class="">Le Tay'Prono:</th>
                     <td th:each="p, i : ${seventaypronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                     </tr>
                      
-                     <tr th:if="${#lists.size(sevenclassementlist) gt 0}">
+                     <tr class="chronoscolor" th:if="${#lists.size(sevenclassementlist) gt 0}">
                     <th scope="" class="">Arrivée:</th>
                     <td th:each="p, i : ${sevenclassementlist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.cotedirect}]]/1) </p></td>
                     </tr>
@@ -909,14 +921,14 @@
 <!-- 					EIGHTH -->
 
 			<div th:if="${eightexists}" class="row" style="margin-bottom: 10px;">
-			    <p th:text="${eighttitle}" style="font-weight: bold;"></p>
-				<div class="col-md-11">
+			    <h4><span th:text="${eighttitle}" class="badge badge-info" style="margin-right: 6px;"></span></h4>
+				<div class="col-md-11 divrace">
 <!-- 				              <table class="" th:if="${status}"> -->
                           <table id="tab8" class="table-sm table-striped table-responsive">
                           
                 <thead>   
                     
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="">Chronos</th>
                     <td style="font-weight: bold;" th:each="c, i : ${eightchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
@@ -971,17 +983,17 @@
                     <td th:each="p, i : ${eighttxph}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]([[${p.TxPlaceCoupleHippo}]]%) </p></td>
                     </tr>      
                   
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="">Prono:</th>
                     <td th:each="p, i : ${eightpronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                    </tr>
                    
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="" class="">Le Tay'Prono:</th>
                     <td th:each="p, i : ${eighttaypronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                     </tr>
                      
-                     <tr th:if="${#lists.size(eightclassementlist) gt 0}">
+                     <tr class="chronoscolor" th:if="${#lists.size(eightclassementlist) gt 0}">
                     <th scope="" class="">Arrivée:</th>
                     <td th:each="p, i : ${eightclassementlist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.cotedirect}]]/1) </p></td>
                     </tr>
@@ -1032,14 +1044,14 @@
 					<!-- 					NINTH -->
 
 			<div th:if="${nineexists}" class="row" style="margin-bottom: 10px;">
-			    <p th:text="${ninetitle}" style="font-weight: bold;"></p>
-				<div class="col-md-11">
+			    <h4><span th:text="${ninetitle}" class="badge badge-info" style="margin-right: 6px;"></span></h4>
+				<div class="col-md-11 divrace">
 <!-- 				              <table class="" th:if="${status}"> -->
                           <table id="tab9" class="table-sm table-striped table-responsive">
                           
                 <thead>   
                      
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="">Chronos</th>
                     <td style="font-weight: bold;" th:each="c, i : ${ninechronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
@@ -1094,17 +1106,17 @@
                     <td th:each="p, i : ${ninetxph}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]([[${p.TxPlaceCoupleHippo}]]%) </p></td>
                     </tr>      
                     
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="">Prono:</th>
                     <td th:each="p, i : ${ninepronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                    </tr>
                    
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="" class="">Le Tay'Prono:</th>
                     <td th:each="p, i : ${ninetaypronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                     </tr>
                      
-                     <tr th:if="${#lists.size(nineclassementlist) gt 0}">
+                     <tr class="chronoscolor" th:if="${#lists.size(nineclassementlist) gt 0}">
                     <th scope="" class="">Arrivée:</th>
                     <td th:each="p, i : ${nineclassementlist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.cotedirect}]]/1) </p></td>
                     </tr>
@@ -1154,14 +1166,14 @@
 					<!-- 					TENTH -->
 
 			<div th:if="${tenexists}" class="row" style="margin-bottom: 10px;">
-			    <p th:text="${tentitle}" style="font-weight: bold;"></p>
-				<div class="col-md-11">
+			    <h4><span th:text="${tentitle}" class="badge badge-info" style="margin-right: 6px;"></span></h4>
+				<div class="col-md-11 divrace">
 <!-- 				              <table class="" th:if="${status}"> -->
                           <table id="tab10" class="table-sm table-striped table-responsive">
                           
                 <thead>   
                     
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="">Chronos</th>
                     <td style="font-weight: bold;" th:each="c, i : ${tenchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
@@ -1216,17 +1228,17 @@
                     <td th:each="p, i : ${tentxph}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]([[${p.TxPlaceCoupleHippo}]]%) </p></td>
                     </tr>      
                     
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="">Prono:</th>
                     <td th:each="p, i : ${tenpronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                    </tr>
                    
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="" class="">Le Tay'Prono:</th>
                     <td th:each="p, i : ${tentaypronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                     </tr>
                      
-                     <tr th:if="${#lists.size(tenclassementlist) gt 0}">
+                     <tr class="chronoscolor" th:if="${#lists.size(tenclassementlist) gt 0}">
                     <th scope="" class="">Arrivée:</th>
                     <td th:each="p, i : ${tenclassementlist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.cotedirect}]]/1) </p></td>
                     </tr>
@@ -1277,14 +1289,14 @@
 					<!-- 					ELEVENTH -->
 
 			<div th:if="${elevenexists}" class="row" style="margin-bottom: 10px;">
-			    <p th:text="${eleventitle}" style="font-weight: bold;"></p>
-				<div class="col-md-11">
+			    <h4><span th:text="${eleventitle}" class="badge badge-info" style="margin-right: 6px;"></span></h4>
+				<div class="col-md-11 divrace">
 <!-- 				              <table class="" th:if="${status}"> -->
                           <table id="tab11" class="table-sm table-striped table-responsive">
                           
                 <thead>   
                      
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="">Chronos</th>
                     <td style="font-weight: bold;" th:each="c, i : ${elevenchronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
@@ -1339,17 +1351,17 @@
                     <td th:each="p, i : ${eleventxph}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]([[${p.TxPlaceCoupleHippo}]]%) </p></td>
                     </tr>      
                     
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="">Prono:</th>
                     <td th:each="p, i : ${elevenpronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                    </tr>
                    
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="" class="">Le Tay'Prono:</th>
                     <td th:each="p, i : ${eleventaypronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                     </tr>
                      
-                     <tr th:if="${#lists.size(elevenclassementlist) gt 0}">
+                     <tr class="chronoscolor" th:if="${#lists.size(elevenclassementlist) gt 0}">
                     <th scope="" class="">Arrivée:</th>
                     <td th:each="p, i : ${elevenclassementlist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.cotedirect}]]/1) </p></td>
                     </tr>
@@ -1400,14 +1412,14 @@
 					<!-- 					TWELVTH -->
 
 			<div th:if="${twelveexists}" class="row" style="margin-bottom: 10px;">
-			    <p th:text="${twelvetitle}" style="font-weight: bold;"></p>
-				<div class="col-md-11">
+			    <h4><span th:text="${twelvetitle}" class="badge badge-info" style="margin-right: 6px;"></span></h4>
+				<div class="col-md-11 divrace">
 <!-- 				              <table class="" th:if="${status}"> -->
                           <table id="tab12" class="table-sm table-striped table-responsive">
                           
                 <thead>   
                     
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="">Chronos</th>
                     <td style="font-weight: bold;" th:each="c, i : ${twelvechronoslist}" th:text="${c.numero}" th:classappend="${c.recence gt 60 ? 'recence text-danger' : ''}"></td>
                    </tr>
@@ -1462,17 +1474,17 @@
                     <td th:each="p, i : ${twelvetxph}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- [[${p.nbCourseCoupleHippo}]]([[${p.TxPlaceCoupleHippo}]]%) </p></td>
                     </tr>      
                  
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="">Prono:</th>
                     <td th:each="p, i : ${twelvepronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                    </tr>
                    
-                    <tr>
+                    <tr class="chronoscolor">
                     <th scope="" class="">Le Tay'Prono:</th>
                     <td th:each="p, i : ${twelvetaypronoslist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.noteProno}]]) </p></td>
                     </tr>
                      
-                     <tr th:if="${#lists.size(twelveclassementlist) gt 0}">
+                     <tr class="chronoscolor" th:if="${#lists.size(twelveclassementlist) gt 0}">
                     <th scope="" class="">Arrivée:</th>
                     <td th:each="p, i : ${twelveclassementlist}" ><p th:inline="text"><strong>[[${p.numero}]] </strong>- ([[${p.cotedirect}]]/1) </p></td>
                     </tr>
@@ -1520,24 +1532,19 @@
 				</div>
 					</div>
 							
-<!-- 			</div> -->
+			</div>
 			
 
 			
 		</div>
 	</div>
 		
-<!-- 		</div> -->
-<!-- 		<div class="col-md-1" style="background-color: silver;"> -->
-<!-- 		</div> -->
+		</div>
+		<div class="col-md-1">
+		</div>
 
 		</div>
 	</div>
-</div>
-
-<!-- <h3 style="text-align: center; margin-bottom: 10px; text-decoration: underline;">Bienvenue sur Djetay'Infos</h3> -->
-
-
 
 	<script type="text/javascript" th:src="@{/js/hide.js}"></script>
 

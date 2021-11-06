@@ -44,7 +44,7 @@ public class MainController {
 		public String logoutSuccessfulPage(Model model, Principal principal) {
 			model.addAttribute("title", "Logout");
 //	        navbarAttributes(model, principal);
-			return "redirect:/bankroll-list";
+			return "redirect:/";
 
 //	        return "logoutSuccessfulPage";
 		}
@@ -60,7 +60,7 @@ public class MainController {
 			}
 //			SmsRequest smsRequest = new SmsRequest("+33652463080", "Youhou !");
 //			service.sendSms(smsRequest);
-			return "redirect:/bankroll-list";
+			return "redirect:/";
 		}
 	 
 	 @GetMapping("/redirect-to-reunion-infos")
