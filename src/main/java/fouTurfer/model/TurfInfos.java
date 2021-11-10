@@ -171,10 +171,13 @@ private Double cotedirect;
   private Double notePercentageParameter;
   
   private Integer clInt;
+  
+  private String tableId;
 
 
 
-  public TurfInfos(Long id, String jour, String R, Integer C, Integer numcourse, Integer numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo, Double pourcPlaceChevalHippo, Double pourcPlaceJockHippo, Double pourcPlaceEntHippo, Double TxVictCouple, Double TxPlaceCouple, Double TxVictCoupleHippo, Double TxPlaceCoupleHippo, Integer chrono, Integer noteProno, Integer recence, String numeroString, String coursescheval, String coursesjockey, String coursesentraineur, String nbCourseCouple, String nbrCourseChevalHippo, String nbrCourseJockHippo, String nbrCourseEntHippo, Integer tayProno, String typec, String entraineur, Double notePercentageParameter, String cl, Integer clInt, Double cotedirect) {
+
+  public TurfInfos(Long id, String jour, String R, Integer C, Integer numcourse, Integer numero, String cheval, Double pourcVictChevalHippo, Double pourcVictJockHippo, Double pourcVictEntHippo, Double pourcPlaceChevalHippo, Double pourcPlaceJockHippo, Double pourcPlaceEntHippo, Double TxVictCouple, Double TxPlaceCouple, Double TxVictCoupleHippo, Double TxPlaceCoupleHippo, Integer chrono, Integer noteProno, Integer recence, String numeroString, String coursescheval, String coursesjockey, String coursesentraineur, String nbCourseCouple, String nbrCourseChevalHippo, String nbrCourseJockHippo, String nbrCourseEntHippo, Integer tayProno, String typec, String entraineur, Double notePercentageParameter, String cl, Integer clInt, Double cotedirect, String tableId) {
     this.id = id;
     this.R = R;
     this.C = C;
@@ -203,9 +206,7 @@ private Double cotedirect;
     this.entraineur = entraineur;
     this.cl = cl;
     this.cotedirect = cotedirect;
-
-
-    
+  
     
 
     //Paramètres crées
@@ -216,6 +217,7 @@ private Double cotedirect;
     this.numeroString = numeroString;
     this.notePercentageParameter = notePercentageParameter;
     this.clInt = clInt;
+    this.tableId = tableId;
 
 
   }
@@ -514,5 +516,14 @@ public void setCotedirect(Double cotedirect) {
 	this.cotedirect = cotedirect;
 }
 
+public String getTableId() {
+	return tableId;
+}
+
+public void setTableId(String tableId) {
+	this.tableId = tableId;
+}
+
   
+
 }
